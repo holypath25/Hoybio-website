@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership — LOMIERE by HOYBIO</title>
+    <meta name="description" content="LOMIERE 글로벌 파트너십 — OEM/ODM, 글로벌 유통, 프라이빗 라벨. HOYBIO와 함께 성장하는 비즈니스 파트너십.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream:      #F7F3ED;
+            --cream-mid:  #EDE8DF;
+            --cream-deep: #E4DDD2;
+            --charcoal:   #252018;
+            --charcoal-2: #3A342A;
+            --gold:       #B5924C;
+            --gold-light: #D4AF6F;
+            --gold-pale:  #E8D5A8;
+            --white:      #FFFFFF;
+            --text-muted: #6B6055;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--charcoal); overflow-x: hidden; }
+        img { display: block; max-width: 100%; }
+        html[data-lang="ko"] .en { display: none !important; }
+        html[data-lang="en"] .ko { display: none !important; }
+        .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== NAV ===== */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 28px 64px;
+            display: flex; align-items: center; justify-content: space-between;
+            transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+        }
+        #nav.scrolled {
+            background: rgba(247,243,237,0.96);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 18px 64px;
+            box-shadow: 0 1px 0 rgba(37,32,24,0.08);
+        }
+        .nav-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); transition: filter 0.4s; }
+        #nav.scrolled .nav-logo img { filter: none; }
+        .nav-links { display: flex; gap: 44px; list-style: none; }
+        .nav-links a {
+            font-size: 10.5px; font-weight: 400; letter-spacing: 0.18em;
+            text-transform: uppercase; text-decoration: none;
+            color: rgba(247,243,237,0.75); transition: color 0.25s;
+        }
+        #nav.scrolled .nav-links a { color: var(--charcoal); }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-right { display: flex; align-items: center; gap: 24px; }
+        .nav-lang { font-size: 10.5px; font-weight: 400; letter-spacing: 0.14em; color: rgba(247,243,237,0.5); cursor: pointer; transition: color 0.25s; background: none; border: none; font-family: inherit; }
+        #nav.scrolled .nav-lang { color: var(--text-muted); }
+        .nav-lang:hover { color: var(--gold); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { width: 22px; height: 1px; background: var(--cream); transition: background 0.4s; }
+        #nav.scrolled .nav-hamburger span { background: var(--charcoal); }
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: var(--cream);
+            z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; text-decoration: none; color: var(--charcoal); letter-spacing: 0.1em; }
+        .mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
+        .mobile-close { position: absolute; top: 28px; right: 28px; font-size: 28px; cursor: pointer; color: var(--charcoal); background: none; border: none; line-height: 1; }
+
+        /* ===== HERO ===== */
+        #partnership-hero {
+            min-height: 60vh;
+            background: linear-gradient(160deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+            position: relative; display: flex; align-items: flex-end;
+            padding: 0 64px 72px; overflow: hidden;
+        }
+        #partnership-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 25% 60%, rgba(181,146,76,0.13) 0%, transparent 60%);
+        }
+        .hero-deco-word {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(60px, 10vw, 160px);
+            font-weight: 300; letter-spacing: 0.1em;
+            color: rgba(247,243,237,0.03); white-space: nowrap;
+            pointer-events: none; user-select: none;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 1100px; width: 100%; }
+        .hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 14px; }
+        .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 88px); font-weight: 300; color: var(--cream); line-height: 1.05; letter-spacing: 0.02em; }
+        .hero-title em { font-style: italic; color: var(--gold-light); }
+        .hero-subtitle { margin-top: 24px; font-size: 13px; font-weight: 300; letter-spacing: 0.06em; line-height: 1.85; color: rgba(247,243,237,0.45); max-width: 520px; }
+
+        /* ===== SHARED TYPOGRAPHY ===== */
+        .eyebrow { font-size: 9.5px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 14px; }
+        .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .eyebrow-center { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 24px; }
+        .eyebrow-center::before, .eyebrow-center::after { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3vw, 52px); font-weight: 300; line-height: 1.15; letter-spacing: 0.02em; color: var(--charcoal); margin-bottom: 28px; }
+        .section-title em { font-style: italic; color: var(--gold); }
+        .section-body { font-size: 13px; font-weight: 300; letter-spacing: 0.04em; line-height: 2.2; color: var(--text-muted); }
+
+        /* ===== BUTTONS ===== */
+        .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.3s; }
+        .btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; transition: transform 0.3s; }
+        .btn:hover svg { transform: translateX(4px); }
+        .btn-dark { background: var(--charcoal); color: var(--cream); border: 1px solid var(--charcoal); }
+        .btn-dark:hover { background: var(--charcoal-2); }
+        .btn-gold { border: 1px solid var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--white); }
+        .btn-outline { border: 1px solid var(--charcoal); color: var(--charcoal); }
+        .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+
+        /* ===== PARTNERSHIP INTRO ===== */
+        #partnership-intro {
+            padding: 96px 64px 72px;
+            background: var(--white);
+            max-width: 860px;
+        }
+
+        /* ===== PARTNER CARDS ===== */
+        #partnership { padding: 0 64px 120px; background: var(--white); }
+        .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .partner-card {
+            border: 1px solid var(--cream-deep); padding: 52px 40px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .partner-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, var(--gold), var(--gold-pale));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+        }
+        .partner-card:hover { border-color: var(--gold-pale); box-shadow: 0 8px 40px rgba(181,146,76,0.08); }
+        .partner-card:hover::after { transform: scaleX(1); }
+        .partner-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: var(--cream-mid); line-height: 1; margin-bottom: 32px; }
+        .partner-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 6px; }
+        .partner-sub { font-size: 9.5px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .partner-body { font-size: 12.5px; font-weight: 300; line-height: 2; color: var(--text-muted); }
+
+        /* ===== GLOBAL MARKETS ===== */
+        #global-markets {
+            padding: 96px 64px;
+            background: var(--charcoal);
+            position: relative; overflow: hidden;
+        }
+        #global-markets::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 80% 30%, rgba(181,146,76,0.1) 0%, transparent 55%);
+        }
+        .global-inner { position: relative; z-index: 1; }
+        .global-header { margin-bottom: 56px; }
+        .global-header .eyebrow { color: var(--gold-light); }
+        .global-header .eyebrow::before { background: var(--gold-light); }
+        .global-header .section-title { color: var(--cream); }
+        .global-header .section-body { color: rgba(247,243,237,0.5); max-width: 520px; }
+        .markets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+        .market-card {
+            padding: 40px 32px; background: rgba(247,243,237,0.04);
+            border: 1px solid rgba(247,243,237,0.08);
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .market-card:hover { background: rgba(247,243,237,0.07); border-color: rgba(181,146,76,0.3); }
+        .market-flag { font-size: 28px; margin-bottom: 16px; }
+        .market-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--cream); margin-bottom: 8px; }
+        .market-detail { font-size: 11px; font-weight: 300; letter-spacing: 0.06em; color: rgba(247,243,237,0.4); line-height: 1.8; }
+
+        /* ===== CTA ===== */
+        #partnership-cta {
+            padding: 96px 64px; background: var(--cream-mid);
+            display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;
+        }
+        .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--charcoal); line-height: 1.2; }
+        .cta-title em { font-style: italic; color: var(--gold); }
+        .cta-desc { font-size: 13px; font-weight: 300; letter-spacing: 0.05em; line-height: 1.9; color: var(--text-muted); max-width: 480px; }
+        .cta-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+        /* ===== FOOTER ===== */
+        footer { background: #1A1510; padding: 80px 64px 40px; }
+        .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 80px; padding-bottom: 56px; border-bottom: 1px solid rgba(247,243,237,0.07); margin-bottom: 32px; }
+        .footer-brand-logo { margin-bottom: 20px; }
+        .footer-brand-logo img { height: 28px; width: auto; filter: brightness(0) invert(0.6); }
+        .footer-tagline { font-size: 11px; font-weight: 300; letter-spacing: 0.06em; line-height: 2; color: rgba(247,243,237,0.3); }
+        .footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 9px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .footer-col p, .footer-col a { font-size: 12px; font-weight: 300; letter-spacing: 0.04em; line-height: 2; color: rgba(247,243,237,0.35); text-decoration: none; display: block; }
+        .footer-col a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-copy { font-size: 11px; font-weight: 300; letter-spacing: 0.04em; color: rgba(247,243,237,0.2); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 11px; font-weight: 300; letter-spacing: 0.06em; color: rgba(247,243,237,0.2); text-decoration: none; transition: color 0.25s; }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1140px) {
+            #nav, #nav.scrolled { padding-left: 40px; padding-right: 40px; }
+        }
+        @media (max-width: 900px) {
+            #partnership-hero { padding: 0 40px 60px; min-height: 50vh; }
+            #partnership-intro { padding: 72px 40px 56px; }
+            #partnership { padding: 0 40px 80px; }
+            .partner-grid { grid-template-columns: 1fr; }
+            #global-markets { padding: 72px 40px; }
+            .markets-grid { grid-template-columns: repeat(2, 1fr); }
+            #partnership-cta { padding: 72px 40px; }
+        }
+        @media (max-width: 640px) {
+            #nav, #nav.scrolled { padding: 20px 24px; }
+            .nav-links, .nav-lang { display: none; }
+            .nav-hamburger { display: flex; }
+            #partnership-hero { padding: 0 24px 52px; }
+            #partnership-intro { padding: 60px 24px 48px; }
+            #partnership { padding: 0 24px 72px; }
+            #global-markets { padding: 60px 24px; }
+            .markets-grid { grid-template-columns: 1fr 1fr; }
+            #partnership-cta { padding: 60px 24px; }
+            .cta-btns { flex-direction: column; align-items: center; }
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .footer-cols { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="brand-story.html" onclick="closeMobileMenu()">Brand Story</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="product.html" onclick="closeMobileMenu()">Product</a>
+    <a href="partnership.html" class="active" onclick="closeMobileMenu()">Partnership</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="LOMIERE LOGO.png" alt="LOMIERE"></a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brand-story.html">Brand Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="partnership.html" class="active">Partnership</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="partnership-hero">
+    <div class="hero-deco-word" aria-hidden="true">PARTNERSHIP</div>
+    <div class="hero-content">
+        <p class="hero-eyebrow reveal">Global Partnership</p>
+        <h1 class="hero-title reveal">
+            <span class="ko">함께 성장하는<br><em>글로벌 파트너십</em></span>
+            <span class="en">Growing Together<br>Through <em>Global Partnership</em></span>
+        </h1>
+        <p class="hero-subtitle reveal">
+            <span class="ko">HOYBIO는 글로벌 파트너와 함께 LOMIERE의 가치를 전 세계에 전달합니다. 귀사의 비즈니스에 최적화된 맞춤형 파트너십을 제안합니다.</span>
+            <span class="en">HOYBIO delivers the value of LOMIERE to the world alongside global partners. We offer tailored partnership solutions optimized for your business.</span>
+        </p>
+    </div>
+</section>
+
+<!-- INTRO -->
+<div id="partnership-intro">
+    <p class="eyebrow reveal">Why LOMIERE</p>
+    <h2 class="section-title reveal">
+        <span class="ko">K-뷰티의 가치를<br><em>함께 전하세요</em></span>
+        <span class="en">Bring the Value of<br><em>K-Beauty Together</em></span>
+    </h2>
+    <p class="section-body reveal">
+        <span class="ko">OEM/ODM부터 브랜드 라이선스까지, HOYBIO는 귀사의 비즈니스 단계에 맞는 최적의 파트너십 모델을 제공합니다. GMP 인증 시설에서 생산된 LOMIERE의 검증된 포뮬러를 기반으로 글로벌 시장에서 경쟁력을 갖추세요.</span>
+        <span class="en">From OEM/ODM to brand licensing, HOYBIO provides the optimal partnership model for your stage of business. Build global market competitiveness on the foundation of LOMIERE's validated formula, produced in a GMP-certified facility.</span>
+    </p>
+</div>
+
+<!-- PARTNERSHIP CARDS -->
+<section id="partnership">
+    <div class="partner-grid">
+        <div class="partner-card reveal">
+            <div class="partner-num">01</div>
+            <h3 class="partner-title">OEM / ODM</h3>
+            <p class="partner-sub">Private Manufacturing</p>
+            <p class="partner-body">
+                <span class="ko">자사 브랜드로 LOMIERE 포뮬러를 활용하세요. GMP 인증 시설에서 생산되는 고품질 제품을 귀사의 브랜드로 공급해 드립니다. 최소 발주 수량부터 유연하게 협의 가능합니다.</span>
+                <span class="en">Leverage the LOMIERE formula under your own brand. We supply high-quality products manufactured in GMP-certified facilities under your label. Minimum order quantities are flexible and negotiable.</span>
+            </p>
+        </div>
+        <div class="partner-card reveal">
+            <div class="partner-num">02</div>
+            <h3 class="partner-title">Global Distribution</h3>
+            <p class="partner-sub">Exclusive Partnership</p>
+            <p class="partner-body">
+                <span class="ko">아시아, 중동, 유럽 시장을 위한 독점 유통 파트너십을 체결하세요. 전문적인 마케팅 지원과 함께 글로벌 네트워크를 확장하고 현지 시장에 성공적으로 진출합니다.</span>
+                <span class="en">Establish exclusive distribution partnerships for Asia, Middle East, and European markets. Expand your global network with professional marketing support and successfully enter local markets.</span>
+            </p>
+        </div>
+        <div class="partner-card reveal">
+            <div class="partner-num">03</div>
+            <h3 class="partner-title">Private Label</h3>
+            <p class="partner-sub">Brand Building</p>
+            <p class="partner-body">
+                <span class="ko">LOMIERE의 검증된 포뮬러를 기반으로 귀사만의 프리미엄 스킨케어 라인을 구축하세요. 패키지 디자인부터 브랜딩까지 원스톱으로 지원합니다.</span>
+                <span class="en">Build your own premium skincare line based on LOMIERE's validated formula. We provide one-stop support from package design to complete branding.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- GLOBAL MARKETS -->
+<section id="global-markets">
+    <div class="global-inner">
+        <div class="global-header">
+            <p class="eyebrow reveal">Global Presence</p>
+            <h2 class="section-title reveal">
+                <span class="ko">글로벌 시장으로<br><em>확장하세요</em></span>
+                <span class="en">Expand to<br><em>Global Markets</em></span>
+            </h2>
+            <p class="section-body reveal">
+                <span class="ko">HOYBIO는 미국, 캐나다, 호주, EU를 비롯한 글로벌 시장에서 LOMIERE를 공급하고 있습니다.</span>
+                <span class="en">HOYBIO supplies LOMIERE across global markets including the US, Canada, Australia, and the EU.</span>
+            </p>
+        </div>
+        <div class="markets-grid">
+            <div class="market-card reveal">
+                <div class="market-flag">🇺🇸</div>
+                <p class="market-name">United States</p>
+                <p class="market-detail">Medical Aesthetics<br>Professional Distribution</p>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-flag">🇨🇦</div>
+                <p class="market-name">Canada</p>
+                <p class="market-detail">Aesthetic Clinics<br>Dermatology Centers</p>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-flag">🇦🇺</div>
+                <p class="market-name">Australia</p>
+                <p class="market-detail">Premium Wellness<br>Aesthetic Centers</p>
+            </div>
+            <div class="market-card reveal">
+                <div class="market-flag">🇪🇺</div>
+                <p class="market-name">European Union</p>
+                <p class="market-detail">Medical Devices<br>Aesthetic Distribution</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="partnership-cta">
+    <p class="eyebrow-center reveal">Start Today</p>
+    <h2 class="cta-title reveal">
+        <span class="ko">파트너십 문의를<br><em>시작해보세요</em></span>
+        <span class="en">Begin Your<br><em>Partnership Journey</em></span>
+    </h2>
+    <p class="cta-desc reveal">
+        <span class="ko">귀사의 비즈니스 목표와 규모에 맞는 최적의 파트너십 모델을 함께 설계하겠습니다.</span>
+        <span class="en">We'll design the optimal partnership model together, tailored to your business goals and scale.</span>
+    </p>
+    <div class="cta-btns reveal">
+        <a href="contact.html" class="btn btn-dark">
+            <span class="ko">파트너십 문의하기</span><span class="en">Inquire About Partnership</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="product.html" class="btn btn-outline">
+            <span class="ko">제품 살펴보기</span><span class="en">View Product</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-brand-logo"><img src="HOYBIO LOGO.png" alt="HOYBIO"></div>
+            <p class="footer-tagline">LOMIERE by HOYBIO<br>Premium Skin Booster<br>TXA · PDRN · HA Complex</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="brand-story.html">Brand Story</a>
+                <a href="about.html">About HOY BIO</a>
+                <a href="product.html">Product</a>
+                <a href="partnership.html">Partnership</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: info@holypathglobal.com</p>
+                <p>&nbsp;</p>
+                <p>B2B / OEM / ODM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p>주식회사 호이바이오</p>
+                <p>HOYBIO Co., Ltd.</p>
+                <p>&nbsp;</p>
+                <p>대한민국 | Republic of Korea</p>
+                <p>Made in Korea</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved. LOMIERE is a trademark of HOYBIO.</p>
+        <div class="footer-links">
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function applyLang(lang) {
+        document.documentElement.dataset.lang = lang;
+        localStorage.setItem('lomiere-lang', lang);
+        const btn = document.getElementById('langToggle');
+        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+    }
+    function toggleLang() { applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko'); }
+    (function() { const s = localStorage.getItem('lomiere-lang'); if (s) applyLang(s); })();
+
+    function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click', closeMobileMenu);
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

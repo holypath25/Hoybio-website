@@ -490,301 +490,6 @@
             color: var(--charcoal-2);
         }
 
-        /* ===== TECHNOLOGY ===== */
-        #technology {
-            padding: 120px 64px;
-            background: var(--cream);
-        }
-
-        .tech-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 80px;
-        }
-        .eyebrow-center {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-        .eyebrow-center::before,
-        .eyebrow-center::after {
-            content: '';
-            width: 36px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid var(--cream-deep);
-        }
-        .tech-card {
-            padding: 64px 48px;
-            border-right: 1px solid var(--cream-deep);
-            transition: background 0.35s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .tech-card:last-child { border-right: none; }
-        .tech-card:hover { background: var(--white); }
-
-        .tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--gold), var(--gold-pale));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        .tech-card:hover::before { transform: scaleX(1); }
-
-        .tech-index {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 80px;
-            font-weight: 300;
-            line-height: 1;
-            color: var(--cream-deep);
-            margin-bottom: 36px;
-            transition: color 0.35s;
-        }
-        .tech-card:hover .tech-index { color: var(--gold-pale); }
-
-        .tech-abbr {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-        .tech-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            font-weight: 400;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        .tech-name-ko {
-            font-size: 11px;
-            font-weight: 300;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-        .tech-body {
-            font-size: 12.5px;
-            font-weight: 300;
-            letter-spacing: 0.04em;
-            line-height: 2;
-            color: var(--text-muted);
-        }
-
-        /* ===== PRODUCT DETAIL ===== */
-        #product {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--charcoal);
-        }
-
-        .product-visual {
-            position: relative;
-            min-height: 720px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--charcoal-2);
-        }
-        .product-visual::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(181,146,76,0.12) 0%, transparent 65%);
-        }
-        .product-visual img {
-            position: relative;
-            z-index: 1;
-            width: 62%;
-            max-width: 340px;
-            object-fit: contain;
-        }
-
-        .product-content {
-            padding: 100px 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .product-content .eyebrow { color: var(--gold-light); }
-        .product-content .eyebrow::before { background: var(--gold-light); }
-        .product-content .section-title { color: var(--cream); }
-        .product-content .section-body { color: rgba(247,243,237,0.6); }
-
-        .product-divider {
-            width: 48px;
-            height: 1px;
-            background: var(--gold);
-            margin: 36px 0;
-        }
-
-        .spec-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-bottom: 48px;
-        }
-        .spec-row {
-            display: flex;
-            align-items: baseline;
-            gap: 20px;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(247,243,237,0.08);
-        }
-        .spec-row:first-child { border-top: 1px solid rgba(247,243,237,0.08); }
-        .spec-key {
-            font-size: 9.5px;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            min-width: 88px;
-        }
-        .spec-val {
-            font-size: 12.5px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            color: rgba(247,243,237,0.75);
-        }
-
-        /* ===== BEFORE/AFTER INDICATORS ===== */
-        #effects {
-            padding: 100px 64px;
-            background: var(--cream-mid);
-        }
-        .effects-header {
-            text-align: center;
-            max-width: 520px;
-            margin: 0 auto 72px;
-        }
-        .effects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-        }
-        .effect-card {
-            background: var(--cream);
-            padding: 48px 36px;
-            text-align: center;
-            transition: background 0.3s;
-        }
-        .effect-card:hover { background: var(--white); }
-        .effect-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 28px;
-            border: 1px solid var(--gold-pale);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .effect-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--gold);
-            fill: none;
-            stroke-width: 1.3;
-        }
-        .effect-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 400;
-            color: var(--charcoal);
-            margin-bottom: 12px;
-        }
-        .effect-body {
-            font-size: 11.5px;
-            font-weight: 300;
-            line-height: 1.9;
-            color: var(--text-muted);
-        }
-
-        /* ===== PARTNERSHIP ===== */
-        #partnership {
-            padding: 120px 64px;
-            background: var(--white);
-        }
-        .partnership-header {
-            max-width: 560px;
-            margin-bottom: 72px;
-        }
-        .partner-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-        .partner-card {
-            border: 1px solid var(--cream-deep);
-            padding: 52px 40px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .partner-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--gold), var(--gold-pale));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        .partner-card:hover { border-color: var(--gold-pale); box-shadow: 0 8px 40px rgba(181,146,76,0.08); }
-        .partner-card:hover::after { transform: scaleX(1); }
-
-        .partner-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 56px;
-            font-weight: 300;
-            color: var(--cream-mid);
-            line-height: 1;
-            margin-bottom: 32px;
-        }
-        .partner-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            font-weight: 400;
-            color: var(--charcoal);
-            margin-bottom: 6px;
-        }
-        .partner-sub {
-            font-size: 9.5px;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        .partner-body {
-            font-size: 12.5px;
-            font-weight: 300;
-            line-height: 2;
-            color: var(--text-muted);
-        }
-
-
         /* ===== FOOTER ===== */
         footer {
             background: #1A1510;
@@ -879,21 +584,11 @@
             .story-img-col { min-height: 380px; }
             .story-text-col { padding: 60px 40px; }
 
-            #product { grid-template-columns: 1fr; }
-            .product-visual { min-height: 420px; }
-            .product-content { padding: 60px 40px; }
-
-            .tech-grid { grid-template-columns: 1fr; }
-            .tech-card { border-right: none; border-bottom: 1px solid var(--cream-deep); }
-            .tech-card:last-child { border-bottom: none; }
-
-            .partner-grid { grid-template-columns: 1fr; }
-            .effects-grid { grid-template-columns: repeat(2, 1fr); }
-
-            .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-
             .footer-top { grid-template-columns: 1fr; gap: 40px; }
             .footer-cols { grid-template-columns: 1fr 1fr; }
+
+            #explore { grid-template-columns: 1fr; }
+            .explore-card { min-height: 360px; padding: 52px 40px; }
         }
 
         @media (max-width: 640px) {
@@ -901,15 +596,12 @@
             .nav-links, .nav-lang { display: none; }
             .nav-hamburger { display: flex; }
 
-            section, #technology, #effects, #partnership { padding: 72px 24px; }
-            #contact-banner { padding: 72px 24px; }
             footer { padding: 60px 24px 32px; }
 
             .hero-video-content { padding: 108px 24px 72px; max-width: 100%; }
             .hero-scroll-hint { left: 24px; }
             .hero-mute-btn { right: 24px; bottom: 44px; }
             .story-text-col { padding: 52px 24px; }
-            .product-content { padding: 52px 24px; }
 
             .hero-complex { flex-direction: column; }
             .complex-tag + .complex-tag { border-left: 1px solid rgba(247,243,237,0.22); border-top: none; }
@@ -919,12 +611,11 @@
             .stat-box:nth-child(even) { padding-left: 24px; }
             .stat-box:nth-child(odd) { padding-right: 24px; }
 
-            .effects-grid { grid-template-columns: 1fr; }
             .footer-cols { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-            .contact-deco { font-size: 60px; }
-            .form-row-2 { grid-template-columns: 1fr; }
-            .form-submit { width: 100%; justify-content: center; }
+
+            #explore { grid-template-columns: 1fr; }
+            .explore-card { min-height: 300px; padding: 48px 24px; }
         }
     </style>
 </head>
@@ -935,9 +626,8 @@
     <button class="mobile-close" id="mobileClose" aria-label="메뉴 닫기">✕</button>
     <a href="brand-story.html">Brand Story</a>
     <a href="about.html">About</a>
-    <a href="#technology" onclick="closeMobileMenu()">Technology</a>
-    <a href="#product" onclick="closeMobileMenu()">Product</a>
-    <a href="#partnership" onclick="closeMobileMenu()">Partnership</a>
+    <a href="product.html" onclick="closeMobileMenu()">Product</a>
+    <a href="partnership.html" onclick="closeMobileMenu()">Partnership</a>
     <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -949,9 +639,8 @@
     <ul class="nav-links">
         <li><a href="brand-story.html">Brand Story</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#technology">Technology</a></li>
-        <li><a href="#product">Product</a></li>
-        <li><a href="#partnership">Partnership</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -984,7 +673,7 @@
             <div class="complex-tag">PDRN</div>
             <div class="complex-tag">HA</div>
         </div>
-        <a href="#product" class="btn btn-white-outline reveal">
+        <a href="product.html" class="btn btn-white-outline reveal">
             <span class="ko">LOMIERE 알아보기</span>
             <span class="en">Discover LOMIERE</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1073,212 +762,40 @@
     </div>
 </section>
 
-<!-- ======================== TECHNOLOGY ======================== -->
-<section id="technology">
-    <div class="tech-header reveal">
-        <p class="eyebrow-center">Core Technology</p>
-        <h2 class="section-title">Triple Complex<br><em>Formula</em></h2>
-        <p class="section-body">
-            <span class="ko">세 가지 핵심 성분이 조화를 이루어 피부의 근본적인 변화를 이끌어냅니다.</span>
-            <span class="en">Three core ingredients work in harmony to drive fundamental transformation within the skin.</span>
-        </p>
-    </div>
-
-    <div class="tech-grid">
-        <div class="tech-card reveal">
-            <div class="tech-index">01</div>
-            <p class="tech-abbr">TXA</p>
-            <h3 class="tech-name">Tranexamic Acid</h3>
-            <p class="tech-name-ko ko">트라넥삼산</p>
-            <p class="tech-body">
-                <span class="ko">멜라닌 생성 경로를 차단하여 기미, 잡티, 칙칙한 피부톤을 효과적으로 개선합니다. 항염 효과와 함께 피부 결을 고르게 정돈하여 투명하고 밝은 피부를 만들어냅니다.</span>
-                <span class="en">Inhibits the melanin production pathway to effectively improve dark spots, blemishes, and uneven skin tone. Combined with anti-inflammatory action, it evens skin texture for a transparent, luminous complexion.</span>
-            </p>
+<!-- ======================== EXPLORE ======================== -->
+<section id="explore" style="display:grid;grid-template-columns:1fr 1fr;background:var(--white);">
+    <a href="product.html" class="explore-card" style="display:flex;flex-direction:column;justify-content:flex-end;padding:72px 64px;min-height:480px;position:relative;overflow:hidden;text-decoration:none;background:var(--charcoal-2);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(181,146,76,0.15) 0%,transparent 60%);"></div>
+        <img src="lomiere-vial.png" alt="Product" style="position:absolute;right:0;top:50%;transform:translateY(-50%);height:72%;width:auto;object-fit:contain;opacity:0.35;">
+        <div style="position:relative;z-index:1;">
+            <p style="font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Product</p>
+            <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:20px;">
+                <span class="ko">LOMIERE<br><em>스킨 부스터 바이알</em></span>
+                <span class="en">LOMIERE<br><em>Skin Booster Vial</em></span>
+            </h2>
+            <p style="font-size:11px;font-weight:300;letter-spacing:0.06em;color:rgba(247,243,237,0.45);margin-bottom:32px;">TXA · PDRN · HA Complex · 4ml × 4 Vials</p>
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">
+                <span class="ko">자세히 보기</span><span class="en">View Product</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
         </div>
-        <div class="tech-card reveal">
-            <div class="tech-index">02</div>
-            <p class="tech-abbr">PDRN</p>
-            <h3 class="tech-name">Polydeoxyribonucleotide</h3>
-            <p class="tech-name-ko ko">폴리데옥시리보뉴클레오타이드</p>
-            <p class="tech-body">
-                <span class="ko">DNA 단편에서 유래한 생체 재생 성분으로, 세포 활성화와 조직 재생을 촉진합니다. 피부 탄력을 강화하고 손상된 피부 장벽 회복을 도와 건강한 피부를 유지시킵니다.</span>
-                <span class="en">A bioregenerative ingredient derived from DNA fragments that promotes cellular activation and tissue regeneration. It strengthens skin elasticity and supports recovery of the damaged skin barrier for healthier, more resilient skin.</span>
-            </p>
+    </a>
+    <a href="partnership.html" class="explore-card" style="display:flex;flex-direction:column;justify-content:flex-end;padding:72px 64px;min-height:480px;position:relative;overflow:hidden;text-decoration:none;background:var(--cream);">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(181,146,76,0.08) 0%,transparent 55%);"></div>
+        <p style="position:absolute;top:48px;right:48px;font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:var(--cream-deep);line-height:1;pointer-events:none;user-select:none;">B2B</p>
+        <div style="position:relative;z-index:1;">
+            <p style="font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Partnership</p>
+            <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--charcoal);line-height:1.15;margin-bottom:20px;">
+                <span class="ko">글로벌<br><em>파트너십</em></span>
+                <span class="en">Global<br><em>Partnership</em></span>
+            </h2>
+            <p style="font-size:11px;font-weight:300;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:32px;">OEM · ODM · Distribution · Private Label</p>
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">
+                <span class="ko">파트너십 보기</span><span class="en">View Partnership</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
         </div>
-        <div class="tech-card reveal">
-            <div class="tech-index">03</div>
-            <p class="tech-abbr">HA</p>
-            <h3 class="tech-name">Hyaluronic Acid</h3>
-            <p class="tech-name-ko ko">히알루론산</p>
-            <p class="tech-body">
-                <span class="ko">자체 중량의 1,000배에 달하는 수분을 결합하는 강력한 보습 성분입니다. 피부 진피층까지 수분을 충전하여 풍부한 탄력과 생기 있는 광채 피부를 완성합니다.</span>
-                <span class="en">A powerful moisturizing ingredient that binds up to 1,000 times its own weight in water. It replenishes moisture deep into the dermis for abundant elasticity and a radiant, vibrant glow.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ======================== PRODUCT ======================== -->
-<section id="product">
-    <div class="product-visual">
-        <img src="lomiere-vial.png" alt="LOMIERE Vial — TXA PDRN HA, 4ml">
-    </div>
-    <div class="product-content">
-        <p class="eyebrow reveal">Product</p>
-        <h2 class="section-title reveal">LOMIERE<br>Skin Booster Vial</h2>
-        <p class="section-body reveal">
-            <span class="ko">의료 기관 및 전문 에스테틱 센터를 위한 프리미엄 스킨 부스터 바이알. 최적의 농도로 배합된 TXA·PDRN·HA 복합체가 즉각적이고 지속적인 피부 개선 효과를 제공합니다.</span>
-            <span class="en">A premium skin booster vial for medical institutions and professional aesthetic centers. The TXA·PDRN·HA complex, formulated at optimal concentrations, delivers immediate and lasting skin improvement.</span>
-        </p>
-        <div class="product-divider reveal"></div>
-        <div class="spec-list reveal">
-            <div class="spec-row">
-                <span class="spec-key">Volume</span>
-                <span class="spec-val">4ml / 0.14 fl.oz. × 4 Vials</span>
-            </div>
-            <div class="spec-row">
-                <span class="spec-key">Formula</span>
-                <span class="spec-val">TXA · PDRN · HA Complex</span>
-            </div>
-            <div class="spec-row">
-                <span class="spec-key">Usage</span>
-                <span class="spec-val">Professional Medical / Aesthetic Use</span>
-            </div>
-            <div class="spec-row">
-                <span class="spec-key">Storage</span>
-                <span class="spec-val">상온 보관 / Store at Room Temperature</span>
-            </div>
-            <div class="spec-row">
-                <span class="spec-key">Origin</span>
-                <span class="spec-val">Made in Korea</span>
-            </div>
-            <div class="spec-row">
-                <span class="spec-key">Cert.</span>
-                <span class="spec-val">GMP Certified Facility</span>
-            </div>
-        </div>
-        <a href="contact.html" class="btn btn-gold reveal">
-            <span class="ko">제품 문의하기</span>
-            <span class="en">Inquire Now</span>
-            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-    </div>
-</section>
-
-<!-- ======================== EFFECTS ======================== -->
-<section id="effects">
-    <div class="effects-header reveal">
-        <p class="eyebrow-center">Key Benefits</p>
-        <h2 class="section-title">
-            <span class="ko">피부가 경험하는<br><em>4가지 변화</em></span>
-            <span class="en">4 Transformations<br>Your Skin <em>Will Experience</em></span>
-        </h2>
-    </div>
-
-    <div class="effects-grid">
-        <div class="effect-card reveal">
-            <div class="effect-icon">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-            </div>
-            <h3 class="effect-title"><span class="ko">미백 &amp; 광채</span><span class="en">Brightening &amp; Radiance</span></h3>
-            <p class="effect-body">
-                <span class="ko">TXA 성분이 멜라닌 생성을 억제하여 피부톤을 균일하게 정돈하고 자연스러운 광채를 부여합니다.</span>
-                <span class="en">TXA inhibits melanin production to even skin tone and reveal a naturally luminous complexion.</span>
-            </p>
-        </div>
-        <div class="effect-card reveal">
-            <div class="effect-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-            </div>
-            <h3 class="effect-title"><span class="ko">피부 재생</span><span class="en">Skin Renewal</span></h3>
-            <p class="effect-body">
-                <span class="ko">PDRN이 세포 활성화를 촉진하여 손상된 피부 조직을 복구하고 탄력 있는 피부로 재생합니다.</span>
-                <span class="en">PDRN promotes cellular activation to repair damaged skin tissue and renew elasticity.</span>
-            </p>
-        </div>
-        <div class="effect-card reveal">
-            <div class="effect-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                </svg>
-            </div>
-            <h3 class="effect-title"><span class="ko">집중 보습</span><span class="en">Deep Hydration</span></h3>
-            <p class="effect-body">
-                <span class="ko">HA가 진피층까지 수분을 충전하여 건조하고 처진 피부에 생기와 볼륨감을 되돌려줍니다.</span>
-                <span class="en">HA replenishes moisture deep into the dermis, restoring vitality and volume to dry, sagging skin.</span>
-            </p>
-        </div>
-        <div class="effect-card reveal">
-            <div class="effect-icon">
-                <svg viewBox="0 0 24 24">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                    <polyline points="17 6 23 6 23 12"/>
-                </svg>
-            </div>
-            <h3 class="effect-title"><span class="ko">피부 탄력</span><span class="en">Skin Elasticity</span></h3>
-            <p class="effect-body">
-                <span class="ko">세 성분의 시너지로 콜라겐 합성을 지원하여 피부 탄력과 밀도를 높이고 주름을 완화합니다.</span>
-                <span class="en">The synergy of three ingredients supports collagen synthesis, improving skin firmness, density, and reducing fine lines.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ======================== PARTNERSHIP ======================== -->
-<section id="partnership">
-    <div class="partnership-header">
-        <p class="eyebrow reveal">Partnership</p>
-        <h2 class="section-title reveal">
-            <span class="ko">함께 성장하는<br><em>비즈니스 파트너십</em></span>
-            <span class="en">A Business Partnership<br>That <em>Grows Together</em></span>
-        </h2>
-        <p class="section-body reveal">
-            <span class="ko">HOYBIO는 글로벌 파트너와 함께 LOMIERE의 가치를 전 세계에 전달합니다. OEM/ODM부터 브랜드 라이선스까지, 귀사의 비즈니스에 최적화된 맞춤형 파트너십을 제안합니다.</span>
-            <span class="en">HOYBIO delivers the value of LOMIERE to the world alongside global partners. From OEM/ODM to brand licensing, we offer tailored partnership solutions optimized for your business.</span>
-        </p>
-    </div>
-
-    <div class="partner-grid">
-        <div class="partner-card reveal">
-            <div class="partner-num">01</div>
-            <h3 class="partner-title">OEM / ODM</h3>
-            <p class="partner-sub">Private Manufacturing</p>
-            <p class="partner-body">
-                <span class="ko">자사 브랜드로 LOMIERE 포뮬러를 활용하세요. GMP 인증 시설에서 생산되는 고품질 제품을 귀사의 브랜드로 공급해 드립니다. 최소 발주 수량부터 유연하게 협의 가능합니다.</span>
-                <span class="en">Leverage the LOMIERE formula under your own brand. We supply high-quality products manufactured in GMP-certified facilities under your label. Minimum order quantities are flexible and negotiable.</span>
-            </p>
-        </div>
-        <div class="partner-card reveal">
-            <div class="partner-num">02</div>
-            <h3 class="partner-title">Global Distribution</h3>
-            <p class="partner-sub">Exclusive Partnership</p>
-            <p class="partner-body">
-                <span class="ko">아시아, 중동, 유럽 시장을 위한 독점 유통 파트너십을 체결하세요. 전문적인 마케팅 지원과 함께 글로벌 네트워크를 확장하고 현지 시장에 성공적으로 진출합니다.</span>
-                <span class="en">Establish exclusive distribution partnerships for Asia, Middle East, and European markets. Expand your global network with professional marketing support and successfully enter local markets.</span>
-            </p>
-        </div>
-        <div class="partner-card reveal">
-            <div class="partner-num">03</div>
-            <h3 class="partner-title">Private Label</h3>
-            <p class="partner-sub">Brand Building</p>
-            <p class="partner-body">
-                <span class="ko">LOMIERE의 검증된 포뮬러를 기반으로 귀사만의 프리미엄 스킨케어 라인을 구축하세요. 패키지 디자인부터 브랜딩까지 원스톱으로 지원합니다.</span>
-                <span class="en">Build your own premium skincare line based on LOMIERE's validated formula. We provide one-stop support from package design to complete branding.</span>
-            </p>
-        </div>
-    </div>
+    </a>
 </section>
 
 <!-- ======================== FOOTER ======================== -->
@@ -1298,10 +815,8 @@
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <a href="#brand-story">Brand Story</a>
-                <a href="#technology">Technology</a>
-                <a href="#product">Product</a>
-                <a href="#effects">Key Benefits</a>
-                <a href="#partnership">Partnership</a>
+                <a href="product.html">Product</a>
+                <a href="partnership.html">Partnership</a>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product — LOMIERE Skin Booster Vial</title>
+    <meta name="description" content="LOMIERE Skin Booster Vial — TXA·PDRN·HA 트리플 복합 성분. 4ml × 4 Vials. GMP Certified. Made in Korea.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream:      #F7F3ED;
+            --cream-mid:  #EDE8DF;
+            --cream-deep: #E4DDD2;
+            --charcoal:   #252018;
+            --charcoal-2: #3A342A;
+            --gold:       #B5924C;
+            --gold-light: #D4AF6F;
+            --gold-pale:  #E8D5A8;
+            --white:      #FFFFFF;
+            --text-muted: #6B6055;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+        img { display: block; max-width: 100%; }
+        html[data-lang="ko"] .en { display: none !important; }
+        html[data-lang="en"] .ko { display: none !important; }
+        .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== NAV ===== */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 28px 64px;
+            display: flex; align-items: center; justify-content: space-between;
+            transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+        }
+        #nav.scrolled {
+            background: rgba(247,243,237,0.96);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 18px 64px;
+            box-shadow: 0 1px 0 rgba(37,32,24,0.08);
+        }
+        .nav-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); transition: filter 0.4s; }
+        #nav.scrolled .nav-logo img { filter: none; }
+        .nav-links { display: flex; gap: 44px; list-style: none; }
+        .nav-links a {
+            font-size: 10.5px; font-weight: 400; letter-spacing: 0.18em;
+            text-transform: uppercase; text-decoration: none;
+            color: rgba(247,243,237,0.75); transition: color 0.25s;
+        }
+        #nav.scrolled .nav-links a { color: var(--charcoal); }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        #nav.scrolled .nav-links a:hover, #nav.scrolled .nav-links a.active { color: var(--gold); }
+        .nav-right { display: flex; align-items: center; gap: 24px; }
+        .nav-lang {
+            font-size: 10.5px; font-weight: 400; letter-spacing: 0.14em;
+            color: rgba(247,243,237,0.5); cursor: pointer; transition: color 0.25s;
+            background: none; border: none; font-family: inherit;
+        }
+        #nav.scrolled .nav-lang { color: var(--text-muted); }
+        .nav-lang:hover { color: var(--gold); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { width: 22px; height: 1px; background: var(--cream); transition: background 0.4s; }
+        #nav.scrolled .nav-hamburger span { background: var(--charcoal); }
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: var(--cream);
+            z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300;
+            text-decoration: none; color: var(--charcoal); letter-spacing: 0.1em;
+        }
+        .mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
+        .mobile-close { position: absolute; top: 28px; right: 28px; font-size: 28px; cursor: pointer; color: var(--charcoal); background: none; border: none; line-height: 1; }
+
+        /* ===== HERO ===== */
+        #product-hero {
+            min-height: 60vh;
+            background: linear-gradient(160deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+            position: relative; display: flex; align-items: flex-end;
+            padding: 0 64px 72px; overflow: hidden;
+        }
+        #product-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 75% 30%, rgba(181,146,76,0.12) 0%, transparent 60%);
+        }
+        .hero-deco-word {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(80px, 14vw, 200px);
+            font-weight: 300; letter-spacing: 0.12em;
+            color: rgba(247,243,237,0.03); white-space: nowrap;
+            pointer-events: none; user-select: none;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 1100px; width: 100%; }
+        .hero-eyebrow {
+            font-size: 9px; font-weight: 600; letter-spacing: 0.38em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 14px;
+        }
+        .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 6vw, 88px); font-weight: 300;
+            color: var(--cream); line-height: 1.05; letter-spacing: 0.02em;
+        }
+        .hero-title em { font-style: italic; color: var(--gold-light); }
+        .hero-subtitle {
+            margin-top: 24px; font-size: 13px; font-weight: 300;
+            letter-spacing: 0.06em; line-height: 1.85;
+            color: rgba(247,243,237,0.45); max-width: 480px;
+        }
+
+        /* ===== SHARED TYPOGRAPHY ===== */
+        .eyebrow {
+            font-size: 9.5px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .eyebrow-center {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase;
+            color: var(--gold); display: flex; align-items: center; justify-content: center;
+            gap: 14px; margin-bottom: 24px;
+        }
+        .eyebrow-center::before, .eyebrow-center::after { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3vw, 52px);
+            font-weight: 300; line-height: 1.15; letter-spacing: 0.02em;
+            color: var(--charcoal); margin-bottom: 28px;
+        }
+        .section-title em { font-style: italic; color: var(--gold); }
+        .section-body { font-size: 13px; font-weight: 300; letter-spacing: 0.04em; line-height: 2.2; color: var(--text-muted); }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 16px 36px; font-family: 'Montserrat', sans-serif;
+            font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+            text-decoration: none; cursor: pointer; transition: all 0.3s;
+        }
+        .btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; transition: transform 0.3s; }
+        .btn:hover svg { transform: translateX(4px); }
+        .btn-gold { border: 1px solid var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--white); }
+        .btn-dark { background: var(--charcoal); color: var(--cream); border: 1px solid var(--charcoal); }
+        .btn-dark:hover { background: var(--charcoal-2); }
+        .btn-outline { border: 1px solid var(--charcoal); color: var(--charcoal); }
+        .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+
+        /* ===== TECHNOLOGY ===== */
+        #technology { padding: 120px 64px; background: var(--cream); }
+        .tech-header { text-align: center; max-width: 600px; margin: 0 auto 80px; }
+        .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--cream-deep); }
+        .tech-card {
+            padding: 64px 48px; border-right: 1px solid var(--cream-deep);
+            transition: background 0.35s; position: relative; overflow: hidden;
+        }
+        .tech-card:last-child { border-right: none; }
+        .tech-card:hover { background: var(--white); }
+        .tech-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, var(--gold), var(--gold-pale));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+        }
+        .tech-card:hover::before { transform: scaleX(1); }
+        .tech-index { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; line-height: 1; color: var(--cream-deep); margin-bottom: 36px; transition: color 0.35s; }
+        .tech-card:hover .tech-index { color: var(--gold-pale); }
+        .tech-abbr { font-size: 10px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+        .tech-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; line-height: 1.3; }
+        .tech-name-ko { font-size: 11px; font-weight: 300; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 24px; }
+        .tech-body { font-size: 12.5px; font-weight: 300; letter-spacing: 0.04em; line-height: 2; color: var(--text-muted); }
+
+        /* ===== PRODUCT DETAIL ===== */
+        #product { display: grid; grid-template-columns: 1fr 1fr; background: var(--charcoal); }
+        .product-visual {
+            position: relative; min-height: 720px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; background: var(--charcoal-2);
+        }
+        .product-visual::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181,146,76,0.12) 0%, transparent 65%);
+        }
+        .product-visual img { position: relative; z-index: 1; width: 62%; max-width: 340px; object-fit: contain; }
+        .product-content { padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
+        .product-content .eyebrow { color: var(--gold-light); }
+        .product-content .eyebrow::before { background: var(--gold-light); }
+        .product-content .section-title { color: var(--cream); }
+        .product-content .section-body { color: rgba(247,243,237,0.6); }
+        .product-divider { width: 48px; height: 1px; background: var(--gold); margin: 36px 0; }
+        .spec-list { display: flex; flex-direction: column; margin-bottom: 48px; }
+        .spec-row {
+            display: flex; align-items: baseline; gap: 20px;
+            padding: 18px 0; border-bottom: 1px solid rgba(247,243,237,0.08);
+        }
+        .spec-row:first-child { border-top: 1px solid rgba(247,243,237,0.08); }
+        .spec-key { font-size: 9.5px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); min-width: 88px; }
+        .spec-val { font-size: 12.5px; font-weight: 300; letter-spacing: 0.05em; color: rgba(247,243,237,0.75); }
+
+        /* ===== EFFECTS ===== */
+        #effects { padding: 100px 64px; background: var(--cream-mid); }
+        .effects-header { text-align: center; max-width: 520px; margin: 0 auto 72px; }
+        .effects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+        .effect-card { background: var(--cream); padding: 48px 36px; text-align: center; transition: background 0.3s; }
+        .effect-card:hover { background: var(--white); }
+        .effect-icon { width: 56px; height: 56px; margin: 0 auto 28px; border: 1px solid var(--gold-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .effect-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.3; }
+        .effect-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; }
+        .effect-body { font-size: 11.5px; font-weight: 300; line-height: 1.9; color: var(--text-muted); }
+
+        /* ===== CTA ===== */
+        #product-cta {
+            padding: 96px 64px; background: var(--white);
+            display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;
+        }
+        .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--charcoal); line-height: 1.2; }
+        .cta-title em { font-style: italic; color: var(--gold); }
+        .cta-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+        /* ===== FOOTER ===== */
+        footer { background: #1A1510; padding: 80px 64px 40px; }
+        .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 80px; padding-bottom: 56px; border-bottom: 1px solid rgba(247,243,237,0.07); margin-bottom: 32px; }
+        .footer-brand-logo { margin-bottom: 20px; }
+        .footer-brand-logo img { height: 28px; width: auto; filter: brightness(0) invert(0.6); }
+        .footer-tagline { font-size: 11px; font-weight: 300; letter-spacing: 0.06em; line-height: 2; color: rgba(247,243,237,0.3); }
+        .footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 9px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .footer-col p, .footer-col a { font-size: 12px; font-weight: 300; letter-spacing: 0.04em; line-height: 2; color: rgba(247,243,237,0.35); text-decoration: none; display: block; }
+        .footer-col a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-copy { font-size: 11px; font-weight: 300; letter-spacing: 0.04em; color: rgba(247,243,237,0.2); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 11px; font-weight: 300; letter-spacing: 0.06em; color: rgba(247,243,237,0.2); text-decoration: none; transition: color 0.25s; }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1140px) {
+            #nav, #nav.scrolled { padding-left: 40px; padding-right: 40px; }
+            .product-content { padding: 80px 48px; }
+            .tech-card { padding: 48px 36px; }
+        }
+        @media (max-width: 900px) {
+            #product-hero { padding: 0 40px 60px; min-height: 50vh; }
+            #technology { padding: 80px 40px; }
+            #effects { padding: 80px 40px; }
+            #product-cta { padding: 72px 40px; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .tech-card { border-right: none; border-bottom: 1px solid var(--cream-deep); }
+            .tech-card:last-child { border-bottom: none; }
+            #product { grid-template-columns: 1fr; }
+            .product-visual { min-height: 420px; }
+            .product-content { padding: 60px 40px; }
+            .effects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            #nav, #nav.scrolled { padding: 20px 24px; }
+            .nav-links, .nav-lang { display: none; }
+            .nav-hamburger { display: flex; }
+            #product-hero { padding: 0 24px 52px; }
+            #technology, #effects { padding: 60px 24px; }
+            .product-content { padding: 52px 24px; }
+            #product-cta { padding: 60px 24px; }
+            .effects-grid { grid-template-columns: 1fr; }
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .footer-cols { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+            .cta-btns { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="brand-story.html" onclick="closeMobileMenu()">Brand Story</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="product.html" class="active" onclick="closeMobileMenu()">Product</a>
+    <a href="partnership.html" onclick="closeMobileMenu()">Partnership</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="LOMIERE LOGO.png" alt="LOMIERE"></a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brand-story.html">Brand Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html" class="active">Product</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="product-hero">
+    <div class="hero-deco-word" aria-hidden="true">PRODUCT</div>
+    <div class="hero-content">
+        <p class="hero-eyebrow reveal">LOMIERE Skin Booster</p>
+        <h1 class="hero-title reveal">
+            <span class="ko">과학이 만든<br><em>빛의 성분</em></span>
+            <span class="en">The Science<br>of <em>Luminous Skin</em></span>
+        </h1>
+        <p class="hero-subtitle reveal">
+            <span class="ko">TXA · PDRN · HA — 임상적으로 검증된 세 가지 핵심 성분이 시너지를 이루어 피부의 근본적인 변화를 이끌어냅니다.</span>
+            <span class="en">TXA · PDRN · HA — three clinically validated ingredients working in synergy to drive fundamental skin transformation.</span>
+        </p>
+    </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section id="technology">
+    <div class="tech-header reveal">
+        <p class="eyebrow-center">Core Technology</p>
+        <h2 class="section-title">Triple Complex<br><em>Formula</em></h2>
+        <p class="section-body">
+            <span class="ko">세 가지 핵심 성분이 조화를 이루어 피부의 근본적인 변화를 이끌어냅니다.</span>
+            <span class="en">Three core ingredients work in harmony to drive fundamental transformation within the skin.</span>
+        </p>
+    </div>
+    <div class="tech-grid">
+        <div class="tech-card reveal">
+            <div class="tech-index">01</div>
+            <p class="tech-abbr">TXA</p>
+            <h3 class="tech-name">Tranexamic Acid</h3>
+            <p class="tech-name-ko ko">트라넥삼산</p>
+            <p class="tech-body">
+                <span class="ko">멜라닌 생성 경로를 차단하여 기미, 잡티, 칙칙한 피부톤을 효과적으로 개선합니다. 항염 효과와 함께 피부 결을 고르게 정돈하여 투명하고 밝은 피부를 만들어냅니다.</span>
+                <span class="en">Inhibits the melanin production pathway to effectively improve dark spots, blemishes, and uneven skin tone. Combined with anti-inflammatory action, it evens skin texture for a transparent, luminous complexion.</span>
+            </p>
+        </div>
+        <div class="tech-card reveal">
+            <div class="tech-index">02</div>
+            <p class="tech-abbr">PDRN</p>
+            <h3 class="tech-name">Polydeoxyribonucleotide</h3>
+            <p class="tech-name-ko ko">폴리데옥시리보뉴클레오타이드</p>
+            <p class="tech-body">
+                <span class="ko">DNA 단편에서 유래한 생체 재생 성분으로, 세포 활성화와 조직 재생을 촉진합니다. 피부 탄력을 강화하고 손상된 피부 장벽 회복을 도와 건강한 피부를 유지시킵니다.</span>
+                <span class="en">A bioregenerative ingredient derived from DNA fragments that promotes cellular activation and tissue regeneration. It strengthens skin elasticity and supports recovery of the damaged skin barrier for healthier, more resilient skin.</span>
+            </p>
+        </div>
+        <div class="tech-card reveal">
+            <div class="tech-index">03</div>
+            <p class="tech-abbr">HA</p>
+            <h3 class="tech-name">Hyaluronic Acid</h3>
+            <p class="tech-name-ko ko">히알루론산</p>
+            <p class="tech-body">
+                <span class="ko">자체 중량의 1,000배에 달하는 수분을 결합하는 강력한 보습 성분입니다. 피부 진피층까지 수분을 충전하여 풍부한 탄력과 생기 있는 광채 피부를 완성합니다.</span>
+                <span class="en">A powerful moisturizing ingredient that binds up to 1,000 times its own weight in water. It replenishes moisture deep into the dermis for abundant elasticity and a radiant, vibrant glow.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT DETAIL -->
+<section id="product">
+    <div class="product-visual">
+        <img src="lomiere-vial.png" alt="LOMIERE Vial — TXA PDRN HA, 4ml">
+    </div>
+    <div class="product-content">
+        <p class="eyebrow reveal">Product</p>
+        <h2 class="section-title reveal">LOMIERE<br>Skin Booster Vial</h2>
+        <p class="section-body reveal">
+            <span class="ko">의료 기관 및 전문 에스테틱 센터를 위한 프리미엄 스킨 부스터 바이알. 최적의 농도로 배합된 TXA·PDRN·HA 복합체가 즉각적이고 지속적인 피부 개선 효과를 제공합니다.</span>
+            <span class="en">A premium skin booster vial for medical institutions and professional aesthetic centers. The TXA·PDRN·HA complex, formulated at optimal concentrations, delivers immediate and lasting skin improvement.</span>
+        </p>
+        <div class="product-divider reveal"></div>
+        <div class="spec-list reveal">
+            <div class="spec-row"><span class="spec-key">Volume</span><span class="spec-val">4ml / 0.14 fl.oz. × 4 Vials</span></div>
+            <div class="spec-row"><span class="spec-key">Formula</span><span class="spec-val">TXA · PDRN · HA Complex</span></div>
+            <div class="spec-row"><span class="spec-key">Usage</span><span class="spec-val">Professional Medical / Aesthetic Use</span></div>
+            <div class="spec-row"><span class="spec-key">Storage</span><span class="spec-val">상온 보관 / Store at Room Temperature</span></div>
+            <div class="spec-row"><span class="spec-key">Origin</span><span class="spec-val">Made in Korea</span></div>
+            <div class="spec-row"><span class="spec-key">Cert.</span><span class="spec-val">GMP Certified Facility</span></div>
+        </div>
+        <a href="contact.html" class="btn btn-gold reveal">
+            <span class="ko">제품 문의하기</span>
+            <span class="en">Inquire Now</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- EFFECTS -->
+<section id="effects">
+    <div class="effects-header reveal">
+        <p class="eyebrow-center">Key Benefits</p>
+        <h2 class="section-title">
+            <span class="ko">피부가 경험하는<br><em>4가지 변화</em></span>
+            <span class="en">4 Transformations<br>Your Skin <em>Will Experience</em></span>
+        </h2>
+    </div>
+    <div class="effects-grid">
+        <div class="effect-card reveal">
+            <div class="effect-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+            <h3 class="effect-title"><span class="ko">미백 &amp; 광채</span><span class="en">Brightening &amp; Radiance</span></h3>
+            <p class="effect-body"><span class="ko">TXA 성분이 멜라닌 생성을 억제하여 피부톤을 균일하게 정돈하고 자연스러운 광채를 부여합니다.</span><span class="en">TXA inhibits melanin production to even skin tone and reveal a naturally luminous complexion.</span></p>
+        </div>
+        <div class="effect-card reveal">
+            <div class="effect-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="effect-title"><span class="ko">피부 재생</span><span class="en">Skin Renewal</span></h3>
+            <p class="effect-body"><span class="ko">PDRN이 세포 활성화를 촉진하여 손상된 피부 조직을 복구하고 탄력 있는 피부로 재생합니다.</span><span class="en">PDRN promotes cellular activation to repair damaged skin tissue and renew elasticity.</span></p>
+        </div>
+        <div class="effect-card reveal">
+            <div class="effect-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="effect-title"><span class="ko">집중 보습</span><span class="en">Deep Hydration</span></h3>
+            <p class="effect-body"><span class="ko">HA가 진피층까지 수분을 충전하여 건조하고 처진 피부에 생기와 볼륨감을 되돌려줍니다.</span><span class="en">HA replenishes moisture deep into the dermis, restoring vitality and volume to dry, sagging skin.</span></p>
+        </div>
+        <div class="effect-card reveal">
+            <div class="effect-icon">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3 class="effect-title"><span class="ko">피부 탄력</span><span class="en">Skin Elasticity</span></h3>
+            <p class="effect-body"><span class="ko">세 성분의 시너지로 콜라겐 합성을 지원하여 피부 탄력과 밀도를 높이고 주름을 완화합니다.</span><span class="en">The synergy of three ingredients supports collagen synthesis, improving skin firmness, density, and reducing fine lines.</span></p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="product-cta">
+    <p class="eyebrow-center reveal">Next Step</p>
+    <h2 class="cta-title reveal">
+        <span class="ko">파트너십 또는 제품 문의를<br>시작해보세요</span>
+        <span class="en">Start a <em>Partnership</em><br>or Product Inquiry</span>
+    </h2>
+    <div class="cta-btns reveal">
+        <a href="contact.html" class="btn btn-dark">
+            <span class="ko">문의하기</span><span class="en">Contact Us</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="partnership.html" class="btn btn-outline">
+            <span class="ko">파트너십 보기</span><span class="en">View Partnership</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-brand-logo"><img src="HOYBIO LOGO.png" alt="HOYBIO"></div>
+            <p class="footer-tagline">LOMIERE by HOYBIO<br>Premium Skin Booster<br>TXA · PDRN · HA Complex</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="brand-story.html">Brand Story</a>
+                <a href="about.html">About HOY BIO</a>
+                <a href="product.html">Product</a>
+                <a href="partnership.html">Partnership</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: info@holypathglobal.com</p>
+                <p>&nbsp;</p>
+                <p>B2B / OEM / ODM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p>주식회사 호이바이오</p>
+                <p>HOYBIO Co., Ltd.</p>
+                <p>&nbsp;</p>
+                <p>대한민국 | Republic of Korea</p>
+                <p>Made in Korea</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved. LOMIERE is a trademark of HOYBIO.</p>
+        <div class="footer-links">
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function applyLang(lang) {
+        document.documentElement.dataset.lang = lang;
+        localStorage.setItem('lomiere-lang', lang);
+        const btn = document.getElementById('langToggle');
+        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+    }
+    function toggleLang() { applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko'); }
+    (function() { const s = localStorage.getItem('lomiere-lang'); if (s) applyLang(s); })();
+
+    function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click', closeMobileMenu);
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

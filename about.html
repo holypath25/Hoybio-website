@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — HOY BIO Co., Ltd.</title>
+    <meta name="description" content="HOY BIO는 대한민국 청주(오송)에 본사를 둔 B2B 전문 화장품 제조·수출 기업입니다. K-Beauty & Aesthetics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream:      #F7F3ED;
+            --cream-mid:  #EDE8DF;
+            --cream-deep: #E4DDD2;
+            --charcoal:   #252018;
+            --charcoal-2: #3A342A;
+            --gold:       #B5924C;
+            --gold-light: #D4AF6F;
+            --gold-pale:  #E8D5A8;
+            --white:      #FFFFFF;
+            --text-muted: #6B6055;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+        img { display: block; max-width: 100%; }
+
+        html[data-lang="ko"] .en { display: none !important; }
+        html[data-lang="en"] .ko { display: none !important; }
+
+        .reveal {
+            opacity: 0; transform: translateY(32px);
+            transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== NAV ===== */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 28px 64px;
+            display: flex; align-items: center; justify-content: space-between;
+            transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+        }
+        #nav.scrolled {
+            background: rgba(37,32,24,0.95);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 18px 64px;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+        }
+        #nav.light {
+            background: rgba(247,243,237,0.96);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(37,32,24,0.08);
+        }
+        .nav-logo img { height: 30px; filter: brightness(0) invert(1); transition: filter 0.4s; }
+        #nav.light .nav-logo img { filter: none; }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a {
+            font-size: 10.5px; font-weight: 400; letter-spacing: 0.18em;
+            text-transform: uppercase; text-decoration: none;
+            color: rgba(247,243,237,0.8); transition: color 0.25s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+        #nav.light .nav-links a { color: var(--charcoal); }
+        #nav.light .nav-links a:hover, #nav.light .nav-links a.active { color: var(--gold); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-lang {
+            font-size: 10.5px; font-weight: 400; letter-spacing: 0.14em;
+            color: rgba(247,243,237,0.6); cursor: pointer; background: none; border: none;
+            font-family: inherit; transition: color 0.25s;
+        }
+        .nav-lang:hover { color: var(--gold-light); }
+        #nav.light .nav-lang { color: var(--text-muted); }
+        #nav.light .nav-lang:hover { color: var(--gold); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { width: 22px; height: 1px; background: rgba(247,243,237,0.8); transition: all 0.3s; }
+        #nav.light .nav-hamburger span { background: var(--charcoal); }
+
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: var(--charcoal);
+            z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300;
+            text-decoration: none; color: var(--cream); letter-spacing: 0.1em;
+        }
+        .mobile-menu a:hover { color: var(--gold-light); }
+        .mobile-close {
+            position: absolute; top: 28px; right: 28px; font-size: 26px;
+            cursor: pointer; color: var(--cream); background: none; border: none;
+        }
+
+        /* ===== HERO ===== */
+        #about-hero {
+            min-height: 100vh;
+            background: var(--charcoal);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 140px 64px 80px;
+            position: relative; overflow: hidden;
+        }
+        #about-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 55%, rgba(181,146,76,0.16) 0%, transparent 60%);
+        }
+        .hero-bg-word {
+            position: absolute; font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(80px, 16vw, 220px); font-weight: 300;
+            color: rgba(247,243,237,0.03); letter-spacing: 0.1em;
+            pointer-events: none; user-select: none; white-space: nowrap;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .hero-inner { position: relative; z-index: 1; }
+        .hero-eyebrow {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.5em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            margin-bottom: 48px;
+        }
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: ''; width: 48px; height: 1px; background: var(--gold);
+        }
+        .hero-logo { height: 80px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; margin: 0 auto 48px; }
+        .hero-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(14px, 1.8vw, 20px); font-weight: 300; font-style: italic;
+            letter-spacing: 0.12em; color: rgba(247,243,237,0.55); line-height: 1.8;
+        }
+        .hero-location-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 48px;
+            padding: 12px 24px;
+            border: 1px solid rgba(181,146,76,0.35);
+            font-size: 10px; font-weight: 400; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold-light);
+        }
+        .hero-location-badge::before {
+            content: '●'; font-size: 6px; color: var(--gold); animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        .scroll-hint {
+            position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1;
+        }
+        .scroll-hint span { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247,243,237,0.28); }
+        .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(181,146,76,0.6), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+        @keyframes scrollPulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+
+        /* ===== BRAND IDENTITY STRIP ===== */
+        #brand-strip {
+            background: var(--cream);
+            padding: 64px;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid var(--cream-deep);
+        }
+        #brand-strip img { height: 64px; width: auto; }
+
+        /* ===== OVERVIEW ===== */
+        #overview {
+            background: var(--white);
+            padding: 100px 64px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 80px;
+            align-items: start;
+        }
+        .overview-eyebrow {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+        }
+        .overview-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .overview-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 3vw, 48px); font-weight: 300; line-height: 1.15;
+            letter-spacing: 0.02em; color: var(--charcoal); margin-bottom: 32px;
+        }
+        .overview-title em { font-style: italic; color: var(--gold); }
+        .overview-body {
+            font-size: 13.5px; font-weight: 300; letter-spacing: 0.04em;
+            line-height: 2.2; color: var(--text-muted);
+        }
+        .overview-body p + p { margin-top: 20px; }
+        .flagship-label {
+            display: inline-flex; align-items: center; gap: 12px;
+            margin-top: 40px; padding: 16px 24px;
+            border-left: 2px solid var(--gold);
+            background: var(--cream);
+        }
+        .flagship-label span {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--text-muted);
+        }
+        .flagship-label strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--charcoal);
+            letter-spacing: 0.06em;
+        }
+
+        /* Stats sidebar */
+        .stats-sidebar { position: sticky; top: 120px; }
+        .stat-card {
+            border: 1px solid var(--cream-deep);
+            margin-bottom: -1px;
+            padding: 28px 32px;
+            transition: background 0.3s;
+        }
+        .stat-card:hover { background: var(--cream); }
+        .stat-card-label {
+            font-size: 9px; font-weight: 600; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+        }
+        .stat-card-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--charcoal); line-height: 1.3;
+        }
+        .stat-card-sub {
+            font-size: 11px; font-weight: 300; color: var(--text-muted);
+            margin-top: 4px; letter-spacing: 0.04em;
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-strip { background: var(--charcoal); padding: 18px 0; overflow: hidden; white-space: nowrap; }
+        .marquee-inner { display: inline-flex; animation: marquee 32s linear infinite; }
+        .marquee-item {
+            display: inline-flex; align-items: center; gap: 32px; padding: 0 32px;
+            font-size: 10px; font-weight: 400; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold-pale);
+        }
+        .marquee-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+        @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+        /* ===== MEANING OF HOY ===== */
+        #meaning {
+            background: var(--charcoal-2);
+            padding: 120px 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #meaning::before {
+            content: '"';
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 400px; font-weight: 300; line-height: 1;
+            color: rgba(247,243,237,0.025);
+            top: -60px; left: 50%; transform: translateX(-50%);
+            pointer-events: none; user-select: none;
+        }
+        .meaning-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+        .meaning-eyebrow {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.45em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; justify-content: center; gap: 16px;
+            margin-bottom: 48px;
+        }
+        .meaning-eyebrow::before, .meaning-eyebrow::after { content: ''; width: 48px; height: 1px; background: var(--gold); }
+        .meaning-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(24px, 3vw, 40px); font-weight: 300; font-style: italic;
+            line-height: 1.6; letter-spacing: 0.02em;
+            color: var(--cream); margin-bottom: 40px;
+        }
+        .meaning-quote em { font-style: normal; color: var(--gold-light); }
+        .meaning-body {
+            font-size: 13px; font-weight: 300; letter-spacing: 0.05em;
+            line-height: 2.1; color: rgba(247,243,237,0.55);
+        }
+        .meaning-divider {
+            width: 1px; height: 56px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 48px auto;
+        }
+        .meaning-values-preview {
+            display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+        }
+        .mvp-item {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.25em;
+            text-transform: uppercase; color: rgba(247,243,237,0.35);
+            padding: 8px 20px; border-right: 1px solid rgba(247,243,237,0.1);
+        }
+        .mvp-item:last-child { border-right: none; }
+
+        /* ===== MISSION ===== */
+        #mission {
+            background: var(--cream);
+            padding: 120px 64px;
+        }
+        .mission-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .mission-text-col {}
+        .mission-eyebrow {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+        }
+        .mission-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .mission-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 3.2vw, 50px); font-weight: 300; line-height: 1.2;
+            letter-spacing: 0.02em; color: var(--charcoal); margin-bottom: 32px;
+        }
+        .mission-title em { font-style: italic; color: var(--gold); }
+        .mission-body { font-size: 13px; font-weight: 300; line-height: 2.2; color: var(--text-muted); }
+        .mission-body p + p { margin-top: 20px; }
+        .mission-visual-col {
+            background: var(--charcoal);
+            padding: 64px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-visual-col::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(181,146,76,0.15) 0%, transparent 65%);
+        }
+        .mission-statement {
+            position: relative; z-index: 1;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(20px, 2.2vw, 28px); font-weight: 300; font-style: italic;
+            line-height: 1.7; color: var(--cream); letter-spacing: 0.02em;
+        }
+        .mission-statement em { font-style: normal; color: var(--gold-light); }
+        .mission-attr {
+            position: relative; z-index: 1;
+            margin-top: 36px; padding-top: 28px;
+            border-top: 1px solid rgba(247,243,237,0.12);
+            font-size: 10px; font-weight: 500; letter-spacing: 0.25em;
+            text-transform: uppercase; color: rgba(247,243,237,0.35);
+        }
+
+        /* ===== OUR STORY ===== */
+        #story {
+            background: var(--white);
+            padding: 120px 64px;
+        }
+        .story-header { text-align: center; max-width: 600px; margin: 0 auto 80px; }
+        .section-eyebrow-c {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.45em; text-transform: uppercase;
+            color: var(--gold); display: flex; align-items: center; justify-content: center;
+            gap: 16px; margin-bottom: 24px;
+        }
+        .section-eyebrow-c::before, .section-eyebrow-c::after { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .section-title-c {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 3vw, 48px); font-weight: 300; line-height: 1.15;
+            letter-spacing: 0.02em; color: var(--charcoal);
+        }
+        .section-title-c em { font-style: italic; color: var(--gold); }
+
+        .story-timeline { position: relative; }
+        .timeline-track {
+            position: absolute;
+            top: 23px; left: calc(16.67% - 1px); right: calc(16.67% - 1px);
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-pale) 20%, var(--gold) 50%, var(--gold-pale) 80%, transparent);
+        }
+        .story-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+        .story-phase { padding: 0 40px 0; text-align: center; }
+        .phase-marker {
+            width: 48px; height: 48px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400;
+            color: var(--gold); margin: 0 auto 28px;
+            background: var(--white); position: relative; z-index: 1;
+            transition: background 0.3s, color 0.3s;
+        }
+        .story-phase:hover .phase-marker { background: var(--gold); color: var(--white); }
+        .phase-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--charcoal);
+            margin-bottom: 6px; line-height: 1.3;
+        }
+        .phase-sub {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+        }
+        .phase-divider { width: 24px; height: 1px; background: var(--gold-pale); margin: 0 auto 20px; }
+        .phase-body { font-size: 12.5px; font-weight: 300; line-height: 2; color: var(--text-muted); text-align: left; }
+
+        /* ===== VALUES ===== */
+        #values {
+            background: var(--cream-mid);
+            padding: 120px 64px;
+        }
+        .values-header { margin-bottom: 64px; }
+        .values-eyebrow {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+        }
+        .values-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .values-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 3vw, 48px); font-weight: 300; line-height: 1.15;
+            color: var(--charcoal);
+        }
+        .values-title em { font-style: italic; color: var(--gold); }
+
+        .values-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cream-deep); }
+        .values-row + .values-row { margin-top: 1px; }
+        .values-row-2 { grid-template-columns: repeat(2, 1fr); max-width: 66.7%; }
+
+        .value-card {
+            background: var(--cream);
+            padding: 52px 44px;
+            transition: background 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .value-card:hover { background: var(--white); }
+        .value-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, var(--gold), var(--gold-pale));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+        }
+        .value-card:hover::before { transform: scaleX(1); }
+        .value-icon {
+            width: 44px; height: 44px; margin-bottom: 28px;
+        }
+        .value-icon svg { width: 100%; height: 100%; stroke: var(--gold); fill: none; stroke-width: 1.2; }
+        .value-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--charcoal); margin-bottom: 6px;
+        }
+        .value-name-ko { display: block; font-size: 11px; font-weight: 300; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; }
+        .value-body { font-size: 12.5px; font-weight: 300; line-height: 2; color: var(--text-muted); }
+
+        /* ===== GLOBAL PRESENCE ===== */
+        #global {
+            background: var(--charcoal);
+            padding: 100px 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .global-left {}
+        .global-eyebrow {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.4em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+        }
+        .global-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .global-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 2.8vw, 44px); font-weight: 300; line-height: 1.2;
+            color: var(--cream); margin-bottom: 28px;
+        }
+        .global-title em { font-style: italic; color: var(--gold-light); }
+        .global-body { font-size: 13px; font-weight: 300; line-height: 2.1; color: rgba(247,243,237,0.55); }
+
+        .location-block {
+            margin-top: 44px; padding: 32px 36px;
+            border: 1px solid rgba(181,146,76,0.3);
+            background: rgba(181,146,76,0.06);
+        }
+        .location-label {
+            font-size: 9px; font-weight: 600; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+        }
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px; font-weight: 400; color: var(--cream); margin-bottom: 6px;
+        }
+        .location-sub { font-size: 11.5px; font-weight: 300; color: rgba(247,243,237,0.45); line-height: 1.8; }
+
+        .global-right {}
+        .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .market-card {
+            border: 1px solid rgba(247,243,237,0.08);
+            padding: 32px 28px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .market-card:hover { border-color: rgba(181,146,76,0.4); background: rgba(181,146,76,0.05); }
+        .market-region {
+            font-size: 9px; font-weight: 600; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+        }
+        .market-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 300; color: var(--cream); margin-bottom: 8px;
+        }
+        .market-detail { font-size: 11px; font-weight: 300; color: rgba(247,243,237,0.35); letter-spacing: 0.04em; }
+
+        /* ===== CTA ===== */
+        #about-cta {
+            background: var(--cream);
+            padding: 100px 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .cta-text-col {}
+        .cta-eyebrow {
+            font-size: 9.5px; font-weight: 500; letter-spacing: 0.4em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+        }
+        .cta-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 3vw, 44px); font-weight: 300; line-height: 1.2;
+            color: var(--charcoal); margin-bottom: 20px;
+        }
+        .cta-title em { font-style: italic; color: var(--gold); }
+        .cta-body { font-size: 13px; font-weight: 300; line-height: 2.1; color: var(--text-muted); margin-bottom: 40px; }
+        .cta-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .cta-image-col {
+            position: relative; overflow: hidden;
+            background: var(--cream-mid);
+            display: flex; align-items: center; justify-content: center;
+            padding: 60px;
+            min-height: 360px;
+        }
+        .cta-image-col::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181,146,76,0.1) 0%, transparent 65%);
+        }
+        .cta-image-col img { position: relative; z-index: 1; width: 80%; max-width: 320px; object-fit: contain; }
+
+        /* ===== BTN ===== */
+        .btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 15px 38px; font-family: 'Montserrat', sans-serif;
+            font-size: 10px; font-weight: 500; letter-spacing: 0.28em;
+            text-transform: uppercase; text-decoration: none; transition: all 0.3s;
+        }
+        .btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; transition: transform 0.3s; }
+        .btn:hover svg { transform: translateX(4px); }
+        .btn-dark { background: var(--charcoal); color: var(--cream); border: 1px solid var(--charcoal); }
+        .btn-dark:hover { background: var(--gold); border-color: var(--gold); }
+        .btn-outline { border: 1px solid var(--charcoal); color: var(--charcoal); }
+        .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+        .btn-gold { border: 1px solid var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--white); }
+
+        /* ===== FOOTER ===== */
+        footer { background: #1A1510; padding: 72px 64px 36px; }
+        .footer-top { display: grid; grid-template-columns: 220px 1fr; gap: 72px; padding-bottom: 52px; border-bottom: 1px solid rgba(247,243,237,0.08); margin-bottom: 36px; }
+        .footer-brand-logo img { height: 30px; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: 20px; }
+        .footer-tagline { font-size: 11px; font-weight: 300; line-height: 2; color: rgba(247,243,237,0.28); }
+        .footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 9px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; }
+        .footer-col p, .footer-col a { font-size: 11.5px; font-weight: 300; line-height: 2; color: rgba(247,243,237,0.4); text-decoration: none; display: block; }
+        .footer-col a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-copy { font-size: 10.5px; font-weight: 300; color: rgba(247,243,237,0.22); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 10.5px; color: rgba(247,243,237,0.28); text-decoration: none; }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            #nav, #nav.scrolled, #nav.light { padding-left: 40px; padding-right: 40px; }
+            #overview { grid-template-columns: 1fr; }
+            .stats-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; }
+            .stat-card { margin-bottom: 0; }
+            #mission .mission-inner { grid-template-columns: 1fr; }
+            #global { grid-template-columns: 1fr; }
+            #about-cta { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .footer-cols { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 860px) {
+            .story-phases { grid-template-columns: 1fr; }
+            .timeline-track { display: none; }
+            .story-phase { padding: 0 0 48px; text-align: left; }
+            .phase-marker { margin: 0 0 24px; }
+            .values-row { grid-template-columns: 1fr; }
+            .values-row-2 { max-width: 100%; grid-template-columns: 1fr; }
+            .market-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            #nav, #nav.scrolled, #nav.light { padding: 20px 24px; }
+            .nav-links, .nav-lang { display: none; }
+            .nav-hamburger { display: flex; }
+            #about-hero, #brand-strip, #overview, #meaning, #mission, #story, #values, #global, #about-cta { padding-left: 24px; padding-right: 24px; }
+            #about-hero { padding-top: 100px; padding-bottom: 72px; }
+            .hero-logo { height: 56px; }
+            .stats-sidebar { grid-template-columns: 1fr; }
+            footer { padding: 52px 24px 28px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-cols { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="index.html">Home</a>
+    <a href="brand-story.html">Brand Story</a>
+    <a href="about.html" class="active">About</a>
+    <a href="index.html#product">Product</a>
+    <a href="index.html#partnership">Partnership</a>
+    <a href="index.html#contact-banner">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="LOMIERE LOGO.png" alt="LOMIERE"></a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brand-story.html">Brand Story</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#product">Product</a></li>
+        <li><a href="index.html#partnership">Partnership</a></li>
+        <li><a href="index.html#contact-banner">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section id="about-hero">
+    <div class="hero-bg-word" aria-hidden="true">HOY BIO</div>
+    <div class="hero-inner">
+        <p class="hero-eyebrow">
+            <span class="ko">회사 소개</span>
+            <span class="en">About the Company</span>
+        </p>
+        <img class="hero-logo" src="HOYBIO LOGO.png" alt="HOY BIO">
+        <p class="hero-headline">
+            <span class="ko">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; 청주(오송), 대한민국</span>
+            <span class="en">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; Cheongju (Osong), South Korea</span>
+        </p>
+        <div class="hero-location-badge">
+            <span class="ko">오송 바이오헬스 산업단지</span>
+            <span class="en">Osong Bio-Health Industrial Cluster</span>
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <span class="ko">아래로</span><span class="en">Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- BRAND IDENTITY STRIP -->
+<div id="brand-strip">
+    <img src="HOYBIO INFO LOGO.png" alt="HOY BIO | K-Beauty &amp; Aesthetics — Cheongju, Korea" class="reveal">
+</div>
+
+<!-- ======================== COMPANY OVERVIEW ======================== -->
+<section id="overview">
+    <div class="overview-text-col">
+        <p class="overview-eyebrow reveal">
+            <span class="ko">HOY BIO Co., Ltd.</span>
+            <span class="en">HOY BIO Co., Ltd.</span>
+        </p>
+        <h1 class="overview-title reveal">
+            <span class="ko">전문가를 위한<br><em>K-뷰티 솔루션</em></span>
+            <span class="en">K-Beauty Solutions<br>Built for <em>Professionals</em></span>
+        </h1>
+        <div class="overview-body reveal">
+            <p>
+                <span class="ko">HOY BIO Co., Ltd.는 대한민국 충청북도 청주(오송)에 본사를 둔 화장품 제조 및 수출 기업입니다. 국내 최대 화장품·바이오헬스 산업 클러스터 중 하나인 오송에 위치하며, B2B 에스테틱에 특화하여 전 세계 메디컬 스파와 에스테틱 전문가를 위한 스킨 부스터 포뮬레이션을 개발·수출합니다.</span>
+                <span class="en">HOY BIO Co., Ltd. is a Korean cosmetics manufacturer and exporter based in Cheongju (Osong), South Korea — one of the country's most concentrated cosmetics and bio-health industrial clusters. Founded with a singular focus on B2B aesthetics, HOY BIO develops and exports skin booster formulations designed specifically for medical spas and aesthetic professionals worldwide.</span>
+            </p>
+            <p>
+                <span class="ko">GMP 인증 생산 파트너와의 협력을 통해, 한국의 정밀 포뮬레이션 기술과 연구 기반의 글로벌 원료를 결합하여 국제 클리닉 및 메디컬 스파의 까다로운 기준을 충족하는 제품을 만들어냅니다.</span>
+                <span class="en">Working with GMP-certified manufacturing partners, HOY BIO combines Korea's precision formulation expertise with globally sourced, research-backed active ingredients to create products that meet the standards of discerning international clinics and medical spas.</span>
+            </p>
+        </div>
+        <div class="flagship-label reveal">
+            <div>
+                <span class="ko" style="font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;">플래그십 라인</span>
+                <span class="en" style="font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;">Flagship Line</span>
+                <strong>LOMIERE</strong>
+            </div>
+            <div style="padding-left:24px;margin-left:24px;border-left:1px solid var(--cream-deep);">
+                <span style="font-size:11px;font-weight:300;color:var(--text-muted);line-height:1.8;display:block;">
+                    <span class="ko">임상 수준의 포뮬레이션,<br>럭셔리의 품격으로</span>
+                    <span class="en">Clinical-grade formulation<br>presented with luxury refinement</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Sidebar -->
+    <div class="stats-sidebar reveal">
+        <div class="stat-card">
+            <div class="stat-card-label"><span class="ko">본사 위치</span><span class="en">Headquarters</span></div>
+            <div class="stat-card-value">
+                <span class="ko">청주 (오송)</span>
+                <span class="en">Cheongju (Osong)</span>
+            </div>
+            <div class="stat-card-sub">
+                <span class="ko">충청북도, 대한민국</span>
+                <span class="en">Chungcheongbuk-do, South Korea</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-label"><span class="ko">사업 분야</span><span class="en">Business Focus</span></div>
+            <div class="stat-card-value">B2B Exclusive</div>
+            <div class="stat-card-sub">
+                <span class="ko">메디컬 스파 · 에스테틱 전문</span>
+                <span class="en">Medical Spas &amp; Aesthetic Clinics</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-label"><span class="ko">생산 기준</span><span class="en">Manufacturing</span></div>
+            <div class="stat-card-value">GMP Certified</div>
+            <div class="stat-card-sub">
+                <span class="ko">국제 품질 인증 파트너십</span>
+                <span class="en">International Quality-Certified Partners</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-label"><span class="ko">주요 수출 시장</span><span class="en">Target Markets</span></div>
+            <div class="stat-card-value">US · CA · AU · EU</div>
+            <div class="stat-card-sub">
+                <span class="ko">글로벌 B2B 수출</span>
+                <span class="en">Global B2B Export</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+        <span class="marquee-item">HOY BIO<span class="marquee-dot"></span></span>
+        <span class="marquee-item">K-Beauty &amp; Aesthetics<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cheongju (Osong), Korea<span class="marquee-dot"></span></span>
+        <span class="marquee-item">GMP Certified<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Exclusive<span class="marquee-dot"></span></span>
+        <span class="marquee-item">LOMIERE<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Professional Grade<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Made in Korea<span class="marquee-dot"></span></span>
+        <span class="marquee-item">HOY BIO<span class="marquee-dot"></span></span>
+        <span class="marquee-item">K-Beauty &amp; Aesthetics<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cheongju (Osong), Korea<span class="marquee-dot"></span></span>
+        <span class="marquee-item">GMP Certified<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Exclusive<span class="marquee-dot"></span></span>
+        <span class="marquee-item">LOMIERE<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Professional Grade<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Made in Korea<span class="marquee-dot"></span></span>
+    </div>
+</div>
+
+<!-- ======================== THE MEANING OF HOY ======================== -->
+<section id="meaning">
+    <div class="meaning-inner">
+        <p class="meaning-eyebrow reveal">
+            <span class="ko">HOY의 의미</span>
+            <span class="en">The Meaning Behind HOY</span>
+        </p>
+        <blockquote class="meaning-quote reveal">
+            <span class="ko">HOY라는 이름은 창립자에게 개인적인 신념을 담고 있습니다 —<br>이 회사의 모든 결정을 이끄는 가치들을 조용히 상기시켜주는 이름:<br><em>성실함, 겸손함,</em> 그리고 이윤을 넘어서는 더 큰 무언가에 대한 헌신.</span>
+            <span class="en">The name HOY carries a personal conviction for our founder —<br>a quiet reminder of the values guiding every decision behind this company:<br><em>integrity, humility,</em> and a commitment to something greater than profit alone.</span>
+        </blockquote>
+        <div class="meaning-divider"></div>
+        <p class="meaning-body reveal">
+            <span class="ko">이 신념이 우리가 포뮬레이션하고, 제조하고, 전 세계 클리닉과 파트너십을 맺는 방식을 형성합니다 — 배려, 일관성, 그리고 목적을 가지고.</span>
+            <span class="en">It is this conviction that shapes how we formulate, how we manufacture, and how we partner with clinics around the world — with care, consistency, and purpose.</span>
+        </p>
+        <div class="meaning-values-preview reveal">
+            <span class="mvp-item"><span class="ko">성실함</span><span class="en">Integrity</span></span>
+            <span class="mvp-item"><span class="ko">겸손함</span><span class="en">Humility</span></span>
+            <span class="mvp-item"><span class="ko">일관성</span><span class="en">Consistency</span></span>
+            <span class="mvp-item"><span class="ko">목적</span><span class="en">Purpose</span></span>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== OUR MISSION ======================== -->
+<section id="mission">
+    <div class="mission-inner">
+        <div class="mission-text-col">
+            <p class="mission-eyebrow reveal">
+                <span class="ko">우리의 사명</span>
+                <span class="en">Our Mission</span>
+            </p>
+            <h2 class="mission-title reveal">
+                <span class="ko">한국의 포뮬레이션 우수성을<br><em>전 세계에 전달합니다</em></span>
+                <span class="en">Delivering Korean Formulation<br><em>Excellence to the World</em></span>
+            </h2>
+            <div class="mission-body reveal">
+                <p>
+                    <span class="ko">전 세계 메디컬 스파와 에스테틱 전문가에게 한국의 포뮬레이션 우수성을 전달합니다 — 첨단 성분 과학과 전문 구매자가 요구하는 신뢰와 신뢰성을 연결합니다.</span>
+                    <span class="en">To deliver Korean formulation excellence to medical spas and aesthetic professionals around the world — bridging advanced ingredient science with the trust and reliability that professional buyers demand.</span>
+                </p>
+                <p>
+                    <span class="ko">우리는 K-뷰티를 글로벌 기준으로 만든 동일한 수준의 포뮬레이션 정밀도, 원료 소싱, 품질 관리에 한국 외부의 실무자들이 직접 접근할 수 있도록 존재합니다 — 타협 없이, 과포화된 소비자 시장의 소음 없이.</span>
+                    <span class="en">We exist to give practitioners outside Korea direct access to the same level of formulation precision, ingredient sourcing, and quality control that has made K-beauty a global benchmark — without compromise, and without the noise of an oversaturated consumer market.</span>
+                </p>
+            </div>
+        </div>
+        <div class="mission-visual-col reveal">
+            <p class="mission-statement">
+                <span class="ko">"소매 선반이 아닌, <em>전문가</em>를 위해 만들어진 한국 화장품 브랜드."</span>
+                <span class="en">"A Korean cosmetics brand made <em>exclusively for professionals,</em> not retail shelves."</span>
+            </p>
+            <p class="mission-attr">
+                <span class="ko">HOY BIO 핵심 철학</span>
+                <span class="en">HOY BIO Core Philosophy</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== OUR STORY ======================== -->
+<section id="story">
+    <div class="story-header reveal">
+        <p class="section-eyebrow-c">
+            <span class="ko">우리의 이야기</span>
+            <span class="en">Our Story</span>
+        </p>
+        <h2 class="section-title-c">
+            <span class="ko">관찰에서 시작된<br><em>브랜드의 여정</em></span>
+            <span class="en">A Brand Built from<br>a <em>Simple Observation</em></span>
+        </h2>
+    </div>
+
+    <div class="story-timeline">
+        <div class="timeline-track"></div>
+        <div class="story-phases">
+            <div class="story-phase reveal">
+                <div class="phase-marker">01</div>
+                <h3 class="phase-heading">
+                    <span class="ko">관찰</span>
+                    <span class="en">The Observation</span>
+                </h3>
+                <p class="phase-sub">
+                    <span class="ko">문제의 발견</span>
+                    <span class="en">Identifying the Problem</span>
+                </p>
+                <div class="phase-divider"></div>
+                <p class="phase-body">
+                    <span class="ko">전 세계 수백만 명이 색소 침착으로 고민하고 있지만, 근본 원인을 진정으로 해결하는 전문가급 솔루션은 거의 없었습니다. HOY BIO는 이 단순한 관찰에서 출발했습니다.</span>
+                    <span class="en">HOY BIO was founded on a simple observation: pigmentation concerns affect millions worldwide, yet very few professional-grade solutions truly addressed the root cause.</span>
+                </p>
+            </div>
+            <div class="story-phase reveal">
+                <div class="phase-marker">02</div>
+                <h3 class="phase-heading">
+                    <span class="ko">연구</span>
+                    <span class="en">The Research</span>
+                </h3>
+                <p class="phase-sub">
+                    <span class="ko">성분의 과학</span>
+                    <span class="en">The Science of Ingredients</span>
+                </p>
+                <div class="phase-divider"></div>
+                <p class="phase-body">
+                    <span class="ko">트라넥삼산 연구에서 시작하여, PDRN과 히알루론산을 결합한 완전한 스킨 부스터 복합체로 진화했습니다. 수년간의 포뮬레이션 연구가 LOMIERE의 TXA·PDRN·HA 트리플 복합체를 탄생시켰습니다.</span>
+                    <span class="en">Beginning with Tranexamic Acid research and evolving into a complete skin booster complex with PDRN and Hyaluronic Acid. Years of formulation research gave birth to LOMIERE's TXA·PDRN·HA triple complex.</span>
+                </p>
+            </div>
+            <div class="story-phase reveal">
+                <div class="phase-marker">03</div>
+                <h3 class="phase-heading">
+                    <span class="ko">사명</span>
+                    <span class="en">The Mission</span>
+                </h3>
+                <p class="phase-sub">
+                    <span class="ko">전문가만을 위한 브랜드</span>
+                    <span class="en">Built for Professionals Only</span>
+                </p>
+                <div class="phase-divider"></div>
+                <p class="phase-body">
+                    <span class="ko">소매 선반이 아닌 전문가를 위해 만들어진 한국 화장품 브랜드 구축. HOY BIO는 미국, 캐나다, 호주, EU 전역의 메디컬 스파에 전문가용 스킨 부스터를 공급하는 기업으로 성장했습니다.</span>
+                    <span class="en">Building a Korean cosmetics brand made exclusively for professionals, not retail shelves. HOY BIO has grown into a company delivering professional-grade skin boosters to medical spas across the US, Canada, Australia, and the EU.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== OUR VALUES ======================== -->
+<section id="values">
+    <div class="values-header reveal">
+        <p class="values-eyebrow">
+            <span class="ko">우리의 가치</span>
+            <span class="en">Our Values</span>
+        </p>
+        <h2 class="values-title">
+            <span class="ko">모든 결정의 기반이 되는<br><em>다섯 가지 원칙</em></span>
+            <span class="en">Five Principles That Guide<br><em>Every Decision We Make</em></span>
+        </h2>
+    </div>
+
+    <!-- Row 1: 3 cards -->
+    <div class="values-row">
+        <div class="value-card reveal">
+            <div class="value-icon">
+                <svg viewBox="0 0 48 48">
+                    <path d="M20 6h8v8l4 4v8h-4l-4 4v6h-8v-6l-4-4h-4v-8l4-4V6z"/>
+                    <circle cx="24" cy="22" r="4"/>
+                    <line x1="24" y1="2" x2="24" y2="6"/>
+                    <line x1="24" y1="38" x2="24" y2="42"/>
+                </svg>
+            </div>
+            <h3 class="value-name">Clinical Integrity</h3>
+            <span class="value-name-ko ko">임상적 성실성</span>
+            <p class="value-body">
+                <span class="ko">모든 포뮬레이션은 과학에서 시작합니다. 트렌드보다 연구로 검증된 목적 있는 활성 성분을 우선시합니다 — 전문가와 그 고객은 신뢰할 수 있는 포뮬레이션을 받아야 하기 때문입니다.</span>
+                <span class="en">Every formulation begins with the science. We prioritize well-researched, purposeful active ingredients over trends — because professional buyers and their clients deserve formulations they can trust.</span>
+            </p>
+        </div>
+        <div class="value-card reveal">
+            <div class="value-icon">
+                <svg viewBox="0 0 48 48">
+                    <rect x="8" y="14" width="32" height="26" rx="2"/>
+                    <path d="M16 14V10a8 8 0 0 1 16 0v4"/>
+                    <line x1="24" y1="24" x2="24" y2="30"/>
+                    <circle cx="24" cy="22" r="2" fill="currentColor" stroke="none" style="fill:var(--gold)"/>
+                </svg>
+            </div>
+            <h3 class="value-name">Crafted for Professionals</h3>
+            <span class="value-name-ko ko">전문가를 위한 제품</span>
+            <p class="value-body">
+                <span class="ko">우리 제품은 대량 소매용으로 설계되지 않았습니다. 메디컬 스파와 에스테틱 클리닉의 기준, 기대, 워크플로우를 위해 특별히 만들어졌습니다.</span>
+                <span class="en">Our products are not designed for mass retail. They are built specifically for the standards, expectations, and workflows of medical spas and aesthetic clinics.</span>
+            </p>
+        </div>
+        <div class="value-card reveal">
+            <div class="value-icon">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="18"/>
+                    <circle cx="24" cy="24" r="8"/>
+                    <circle cx="24" cy="24" r="2" fill="var(--gold)" stroke="none"/>
+                    <line x1="24" y1="6" x2="24" y2="16"/>
+                    <line x1="24" y1="32" x2="24" y2="42"/>
+                    <line x1="6" y1="24" x2="16" y2="24"/>
+                    <line x1="32" y1="24" x2="42" y2="24"/>
+                </svg>
+            </div>
+            <h3 class="value-name">Korean Precision</h3>
+            <span class="value-name-ko ko">한국의 정밀함</span>
+            <p class="value-body">
+                <span class="ko">화장품 포뮬레이션과 제조에서 한국의 세계적 강점을 활용하며, 모든 배치의 일관성과 품질을 보장하기 위해 GMP 인증 파트너와만 협력합니다.</span>
+                <span class="en">We draw on Korea's globally recognized strength in cosmetic formulation and manufacturing, working exclusively with GMP-certified production partners to ensure consistency and quality at every batch.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Row 2: 2 cards centered -->
+    <div class="values-row values-row-2">
+        <div class="value-card reveal">
+            <div class="value-icon">
+                <svg viewBox="0 0 48 48">
+                    <polygon points="24,6 44,38 4,38"/>
+                    <line x1="24" y1="18" x2="24" y2="28"/>
+                    <circle cx="24" cy="32" r="1.5" fill="var(--gold)" stroke="none"/>
+                </svg>
+            </div>
+            <h3 class="value-name">Refined Simplicity</h3>
+            <span class="value-name-ko ko">정제된 단순함</span>
+            <p class="value-body">
+                <span class="ko">효과적인 포뮬레이션은 복잡할 필요가 없습니다. LOMIERE의 복합체는 의도적으로 집중적이며, 각 성분은 명확한 목적을 위해 포함되었습니다.</span>
+                <span class="en">We believe effective formulations don't need to be complicated. LOMIERE's complex is intentionally focused — each ingredient included for a clear, defined purpose.</span>
+            </p>
+        </div>
+        <div class="value-card reveal">
+            <div class="value-icon">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="16"/>
+                    <line x1="8" y1="24" x2="40" y2="24"/>
+                    <path d="M24 8 C18 14, 18 34, 24 40"/>
+                    <path d="M24 8 C30 14, 30 34, 24 40"/>
+                    <circle cx="8" cy="24" r="2" fill="var(--gold)" stroke="none"/>
+                    <circle cx="40" cy="24" r="2" fill="var(--gold)" stroke="none"/>
+                </svg>
+            </div>
+            <h3 class="value-name">Global Partnership</h3>
+            <span class="value-name-ko ko">글로벌 파트너십</span>
+            <p class="value-body">
+                <span class="ko">B2B 파트너를 단순한 구매자가 아닌 협력자로 봅니다. 목표는 메디컬 스파가 트리트먼트 메뉴를 구성할 수 있는 포뮬레이션, 교육, 신뢰성을 제공하는 것입니다.</span>
+                <span class="en">We see our B2B partners as collaborators, not just buyers. Our goal is to support medical spas with formulations, education, and reliability they can build their treatment menus around.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== GLOBAL PRESENCE ======================== -->
+<section id="global">
+    <div class="global-left reveal">
+        <p class="global-eyebrow">
+            <span class="ko">제조 거점</span>
+            <span class="en">Manufacturing Hub</span>
+        </p>
+        <h2 class="global-title">
+            <span class="ko">대한민국의 심장에서<br><em>세계로</em></span>
+            <span class="en">From the Heart<br>of Korea, <em>to the World</em></span>
+        </h2>
+        <p class="global-body">
+            <span class="ko">오송은 대한민국의 화장품·바이오헬스 산업이 가장 집중된 지역 중 하나입니다. 이 클러스터 내에서 HOY BIO는 최고 수준의 제조 파트너, 원료 공급망, 연구 인프라에 접근할 수 있습니다.</span>
+            <span class="en">Osong is one of Korea's most concentrated cosmetics and bio-health industrial clusters. Within this cluster, HOY BIO has access to world-class manufacturing partners, ingredient supply chains, and research infrastructure.</span>
+        </p>
+        <div class="location-block">
+            <p class="location-label">
+                <span class="ko">본사 위치</span>
+                <span class="en">Headquarters</span>
+            </p>
+            <p class="location-name">
+                <span class="ko">청주 (오송), 충청북도</span>
+                <span class="en">Cheongju (Osong), South Korea</span>
+            </p>
+            <p class="location-sub">
+                <span class="ko">오송 바이오헬스 산업단지<br>K-뷰티 &amp; 에스테틱 전문</span>
+                <span class="en">Osong Bio-Health Industrial Cluster<br>K-Beauty &amp; Aesthetics Specialist</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="global-right reveal">
+        <p style="font-size:9.5px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;">
+            <span class="ko">주요 수출 시장</span>
+            <span class="en">Target Export Markets</span>
+        </p>
+        <div class="market-grid">
+            <div class="market-card">
+                <p class="market-region">Americas</p>
+                <p class="market-name">United States</p>
+                <p class="market-detail">Medical Spas · Aesthetic Clinics</p>
+            </div>
+            <div class="market-card">
+                <p class="market-region">Americas</p>
+                <p class="market-name">Canada</p>
+                <p class="market-detail">Medical Spas · Aesthetic Clinics</p>
+            </div>
+            <div class="market-card">
+                <p class="market-region">Asia-Pacific</p>
+                <p class="market-name">Australia</p>
+                <p class="market-detail">Medical Spas · Aesthetic Clinics</p>
+            </div>
+            <div class="market-card">
+                <p class="market-region">Europe</p>
+                <p class="market-name">European Union</p>
+                <p class="market-detail">Medical Spas · Aesthetic Clinics</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section id="about-cta">
+    <div class="cta-text-col">
+        <p class="cta-eyebrow reveal">
+            <span class="ko">제품 알아보기</span>
+            <span class="en">Discover Our Product</span>
+        </p>
+        <h2 class="cta-title reveal">
+            <span class="ko">HOY BIO의 철학이<br>담긴 제품, <em>LOMIERE</em></span>
+            <span class="en">The Product That Carries<br>HOY BIO's Philosophy, <em>LOMIERE</em></span>
+        </h2>
+        <p class="cta-body reveal">
+            <span class="ko">임상 수준의 포뮬레이션을 럭셔리의 품격으로. TXA·PDRN·HA 트리플 복합 스킨 부스터 바이알로 HOY BIO의 가치를 직접 경험해보세요.</span>
+            <span class="en">Clinical-grade formulation presented with luxury refinement. Experience HOY BIO's values firsthand through the TXA·PDRN·HA triple complex skin booster vial.</span>
+        </p>
+        <div class="cta-btns reveal">
+            <a href="index.html#product" class="btn btn-dark">
+                <span class="ko">LOMIERE 제품 보기</span>
+                <span class="en">View LOMIERE</span>
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="brand-story.html" class="btn btn-outline">
+                <span class="ko">브랜드 스토리</span>
+                <span class="en">Brand Story</span>
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </div>
+    <div class="cta-image-col">
+        <img src="LOMIERE BOX CUT.png" alt="LOMIERE" class="reveal">
+    </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-brand-logo"><img src="HOYBIO LOGO.png" alt="HOYBIO"></div>
+            <p class="footer-tagline">LOMIERE by HOYBIO<br>Premium Skin Booster<br>TXA · PDRN · HA Complex</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="brand-story.html">Brand Story</a>
+                <a href="about.html">About HOY BIO</a>
+                <a href="index.html#product">Product</a>
+                <a href="index.html#partnership">Partnership</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: info@holypathglobal.com</p>
+                <p>&nbsp;</p>
+                <p class="ko">제품 및 파트너십 문의</p>
+                <p class="en">Product &amp; Partnership Inquiries</p>
+                <p>B2B / OEM / ODM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p class="ko">주식회사 호이바이오</p>
+                <p class="en">HOY BIO Co., Ltd.</p>
+                <p class="ko">청주(오송), 충청북도</p>
+                <p class="en">Cheongju (Osong), South Korea</p>
+                <p>Made in Korea</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2025 HOY BIO Co., Ltd. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+        </div>
+    </div>
+</footer>
+
+<!-- ======================== SCRIPTS ======================== -->
+<script>
+    // Language
+    function applyLang(lang) {
+        document.documentElement.dataset.lang = lang;
+        localStorage.setItem('lomiere-lang', lang);
+        const btn = document.getElementById('langToggle');
+        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+    }
+    function toggleLang() {
+        applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko');
+    }
+    (function () {
+        const saved = localStorage.getItem('lomiere-lang');
+        if (saved) applyLang(saved);
+    })();
+
+    // Nav scroll — hero is dark, then switch to light nav
+    const nav = document.getElementById('nav');
+    const hero = document.getElementById('about-hero');
+    function updateNav() {
+        const heroH = hero.offsetHeight;
+        if (window.scrollY > heroH - 80) {
+            nav.classList.remove('scrolled');
+            nav.classList.add('light');
+            nav.querySelector('.nav-logo img').style.filter = 'none';
+        } else if (window.scrollY > 60) {
+            nav.classList.add('scrolled');
+            nav.classList.remove('light');
+            nav.querySelector('.nav-logo img').style.filter = 'brightness(0) invert(1)';
+        } else {
+            nav.classList.remove('scrolled', 'light');
+            nav.querySelector('.nav-logo img').style.filter = 'brightness(0) invert(1)';
+        }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    // Reveal
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'));
+        const idx = siblings.indexOf(el);
+        el.style.transitionDelay = (idx * 100) + 'ms';
+        obs.observe(el);
+    });
+
+    // Story phases stagger
+    document.querySelectorAll('.story-phase').forEach((el, i) => {
+        el.style.transitionDelay = (i * 150) + 'ms';
+    });
+
+    // Values cards stagger
+    document.querySelectorAll('.value-card').forEach((el, i) => {
+        el.style.transitionDelay = (i * 100) + 'ms';
+    });
+
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobileClose').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>

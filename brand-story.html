@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Story — LOMIERE by HOYBIO</title>
+    <meta name="description" content="LOMIERE의 탄생 이야기 — 색소 침착에 대한 진정한 해답을 찾기 위한 여정. TXA · PDRN · HA COMPLEX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== TOKENS ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream:      #F7F3ED;
+            --cream-mid:  #EDE8DF;
+            --cream-deep: #E4DDD2;
+            --charcoal:   #252018;
+            --charcoal-2: #3A342A;
+            --gold:       #B5924C;
+            --gold-light: #D4AF6F;
+            --gold-pale:  #E8D5A8;
+            --white:      #FFFFFF;
+            --text-muted: #6B6055;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+        img { display: block; max-width: 100%; }
+
+        /* ===== LANGUAGE SWITCH ===== */
+        html[data-lang="ko"] .en { display: none !important; }
+        html[data-lang="en"] .ko { display: none !important; }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.9s cubic-bezier(.22,.61,.36,1),
+                        transform 0.9s cubic-bezier(.22,.61,.36,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== NAVIGATION ===== */
+        #nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 28px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+        }
+        #nav.scrolled {
+            background: rgba(37,32,24,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 18px 64px;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+        }
+        #nav.light-nav {
+            background: rgba(247, 243, 237, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(37,32,24,0.08);
+        }
+        #nav.light-nav .nav-links a,
+        #nav.light-nav .nav-lang { color: var(--charcoal); }
+        #nav.light-nav .nav-hamburger span { background: var(--charcoal); }
+
+        .nav-logo img { height: 30px; width: auto; filter: brightness(0) invert(1); transition: filter 0.4s; }
+        #nav.light-nav .nav-logo img { filter: none; }
+        #nav.scrolled .nav-logo img { filter: brightness(0) invert(1); }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 10.5px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: rgba(247,243,237,0.8);
+            transition: color 0.25s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--gold-light); }
+        #nav.light-nav .nav-links a { color: var(--charcoal); }
+        #nav.light-nav .nav-links a:hover { color: var(--gold); }
+
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-lang {
+            font-size: 10.5px;
+            font-weight: 400;
+            letter-spacing: 0.14em;
+            color: rgba(247,243,237,0.6);
+            cursor: pointer;
+            transition: color 0.25s;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+        }
+        .nav-lang:hover { color: var(--gold-light); }
+        #nav.light-nav .nav-lang { color: var(--text-muted); }
+        #nav.light-nav .nav-lang:hover { color: var(--gold); }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .nav-hamburger span {
+            width: 22px;
+            height: 1px;
+            background: rgba(247,243,237,0.8);
+            transition: all 0.3s;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--charcoal);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 300;
+            text-decoration: none;
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+        .mobile-menu a:hover { color: var(--gold-light); }
+        .mobile-close {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--cream);
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        /* ===== HERO ===== */
+        #story-hero {
+            min-height: 100vh;
+            background: var(--charcoal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 64px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        #story-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(181,146,76,0.14) 0%, transparent 60%);
+        }
+
+        /* decorative background text */
+        .hero-bg-text {
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(100px, 18vw, 260px);
+            font-weight: 300;
+            color: rgba(247,243,237,0.03);
+            letter-spacing: 0.06em;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-inner { position: relative; z-index: 1; max-width: 860px; }
+
+        .hero-page-label {
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .hero-page-label::before,
+        .hero-page-label::after {
+            content: '';
+            width: 48px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5.5vw, 76px);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.12;
+            color: var(--cream);
+            letter-spacing: 0.02em;
+            margin-bottom: 48px;
+        }
+        .hero-pull-quote em {
+            font-style: normal;
+            color: var(--gold-light);
+        }
+
+        .hero-ingredient-line {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: rgba(247,243,237,0.4);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 48px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 1;
+        }
+        .scroll-hint span {
+            font-size: 9px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(247,243,237,0.3);
+        }
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            background: linear-gradient(to bottom, rgba(181,146,76,0.6), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(0.6); transform-origin: top; }
+        }
+
+        /* ===== OPENING STATEMENT ===== */
+        #opening {
+            background: var(--white);
+            padding: 100px 64px;
+            text-align: center;
+        }
+        .opening-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(22px, 2.8vw, 36px);
+            font-weight: 300;
+            line-height: 1.75;
+            letter-spacing: 0.02em;
+            color: var(--charcoal);
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .opening-text strong {
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        /* ===== CHAPTER BASE ===== */
+        .chapter {
+            padding: 100px 64px;
+        }
+        .chapter-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .chapter-left {
+            position: sticky;
+            top: 120px;
+        }
+        .chapter-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 100px;
+            font-weight: 300;
+            line-height: 1;
+            color: var(--cream-deep);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .chapter-label {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .chapter-vline {
+            width: 1px;
+            height: 64px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin-top: 20px;
+        }
+
+        .chapter-right {}
+        .chapter-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 3.2vw, 48px);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--charcoal);
+            margin-bottom: 36px;
+            letter-spacing: 0.02em;
+        }
+        .chapter-headline em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        .chapter-body {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            line-height: 2.2;
+            color: var(--text-muted);
+        }
+        .chapter-body p + p { margin-top: 24px; }
+        .chapter-body strong {
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* Question callout */
+        .question-block {
+            margin: 48px 0;
+            padding: 40px 48px;
+            border-left: 2px solid var(--gold);
+            background: var(--cream);
+        }
+        .question-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(20px, 2.2vw, 28px);
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--charcoal);
+        }
+        .question-answer {
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* ===== IMAGE BREAK ===== */
+        .image-break {
+            position: relative;
+            background: var(--cream-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 64px;
+            overflow: hidden;
+        }
+        .image-break::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181,146,76,0.1) 0%, transparent 65%);
+        }
+        .image-break img {
+            position: relative;
+            z-index: 1;
+            height: 420px;
+            width: auto;
+            object-fit: contain;
+        }
+        .image-break-label {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        /* ===== FORMULA VISUALIZATION ===== */
+        .formula-section {
+            background: var(--white);
+            padding: 80px 64px;
+        }
+        .formula-label {
+            text-align: center;
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        .formula-label::before, .formula-label::after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: var(--gold-pale);
+        }
+        .formula-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: stretch;
+            border: 1px solid var(--cream-deep);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .formula-col {
+            padding: 48px 40px;
+            text-align: center;
+        }
+        .formula-plus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: var(--cream-deep);
+            border-left: 1px solid var(--cream-deep);
+            border-right: 1px solid var(--cream-deep);
+        }
+        .formula-abbr {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .formula-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .formula-name-ko {
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            margin-bottom: 24px;
+        }
+        .formula-divider {
+            width: 32px;
+            height: 1px;
+            background: var(--gold-pale);
+            margin: 0 auto 20px;
+        }
+        .formula-action {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+        .formula-action strong {
+            display: block;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        /* ===== DARK CHAPTER (Chapter 3: The Name) ===== */
+        #chapter-name {
+            background: var(--charcoal);
+            padding: 100px 64px;
+        }
+        #chapter-name .chapter-number { color: rgba(247,243,237,0.06); }
+        #chapter-name .chapter-label { color: var(--gold-light); }
+        #chapter-name .chapter-vline { background: linear-gradient(to bottom, var(--gold-light), transparent); }
+        #chapter-name .chapter-headline { color: var(--cream); }
+        #chapter-name .chapter-body { color: rgba(247,243,237,0.6); }
+        #chapter-name .chapter-body strong { color: var(--cream); }
+        #chapter-name .chapter-body p + p { margin-top: 24px; }
+
+        /* Closing statement */
+        .closing-statement {
+            margin-top: 56px;
+            padding-top: 56px;
+            border-top: 1px solid rgba(247,243,237,0.1);
+        }
+        .closing-statement p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(24px, 2.8vw, 38px);
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--cream);
+            letter-spacing: 0.02em;
+        }
+        .closing-statement em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        /* ===== CTA SECTION ===== */
+        #story-cta {
+            background: var(--cream-mid);
+            padding: 96px 64px;
+            text-align: center;
+        }
+        .cta-eyebrow {
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+        .cta-eyebrow::before, .cta-eyebrow::after {
+            content: '';
+            width: 48px;
+            height: 1px;
+            background: var(--gold-pale);
+        }
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 3.5vw, 52px);
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .cta-body {
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 2;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 48px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 38px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn svg {
+            width: 14px; height: 14px;
+            stroke: currentColor; fill: none; stroke-width: 1.5;
+            transition: transform 0.3s;
+        }
+        .btn:hover svg { transform: translateX(4px); }
+        .btn-dark {
+            background: var(--charcoal);
+            color: var(--cream);
+            border: 1px solid var(--charcoal);
+        }
+        .btn-dark:hover { background: var(--gold); border-color: var(--gold); }
+        .btn-outline {
+            border: 1px solid var(--charcoal);
+            color: var(--charcoal);
+        }
+        .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1A1510;
+            padding: 72px 64px 36px;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 72px;
+            padding-bottom: 52px;
+            border-bottom: 1px solid rgba(247,243,237,0.08);
+            margin-bottom: 36px;
+        }
+        .footer-brand-logo img {
+            height: 30px;
+            filter: brightness(0) invert(1);
+            opacity: 0.65;
+            margin-bottom: 20px;
+        }
+        .footer-tagline {
+            font-size: 11px;
+            font-weight: 300;
+            line-height: 2;
+            color: rgba(247,243,237,0.28);
+            letter-spacing: 0.05em;
+        }
+        .footer-cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .footer-col h4 {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 11.5px;
+            font-weight: 300;
+            line-height: 2;
+            color: rgba(247,243,237,0.4);
+            text-decoration: none;
+            display: block;
+        }
+        .footer-col a:hover { color: var(--gold-light); }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-copy {
+            font-size: 10.5px;
+            font-weight: 300;
+            color: rgba(247,243,237,0.22);
+        }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a {
+            font-size: 10.5px;
+            color: rgba(247,243,237,0.28);
+            text-decoration: none;
+        }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            #nav, #nav.scrolled, #nav.light-nav { padding-left: 40px; padding-right: 40px; }
+            .chapter { padding: 80px 40px; }
+            .chapter-inner { grid-template-columns: 140px 1fr; gap: 40px; }
+            .chapter-number { font-size: 72px; }
+            .formula-grid { grid-template-columns: 1fr; }
+            .formula-plus { display: none; }
+            .formula-col { border-bottom: 1px solid var(--cream-deep); }
+            .formula-col:last-child { border-bottom: none; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .footer-cols { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            #nav, #nav.scrolled, #nav.light-nav { padding: 20px 24px; }
+            .nav-links, .nav-lang { display: none; }
+            .nav-hamburger { display: flex; }
+
+            #story-hero { padding: 100px 24px 72px; }
+            #opening, .chapter, .formula-section, #chapter-name, #story-cta { padding: 64px 24px; }
+            .image-break { padding: 60px 24px; }
+            .image-break img { height: 280px; }
+            .chapter-inner { grid-template-columns: 1fr; gap: 24px; }
+            .chapter-left { position: static; }
+            .chapter-number { font-size: 56px; }
+            .question-block { padding: 28px 28px; }
+            footer { padding: 56px 24px 28px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-cols { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="index.html">Home</a>
+    <a href="brand-story.html" class="active">Brand Story</a>
+    <a href="about.html">About</a>
+    <a href="index.html#technology">Technology</a>
+    <a href="index.html#product">Product</a>
+    <a href="index.html#partnership">Partnership</a>
+    <a href="index.html#contact-banner">Contact</a>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+    <div class="nav-logo">
+        <a href="index.html"><img src="LOMIERE LOGO.png" alt="LOMIERE"></a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brand-story.html" class="active">Brand Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#technology">Technology</a></li>
+        <li><a href="index.html#product">Product</a></li>
+        <li><a href="index.html#partnership">Partnership</a></li>
+        <li><a href="index.html#contact-banner">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section id="story-hero">
+    <div class="hero-bg-text" aria-hidden="true">LOMIERE</div>
+    <div class="hero-inner">
+        <p class="hero-page-label">Brand Story</p>
+        <h1 class="hero-pull-quote">
+            <span class="ko">피그멘테이션에는<br><em>진정한 해답</em>이<br>필요했습니다.</span>
+            <span class="en">Pigmentation<br>deserved a<br><em>real answer.</em></span>
+        </h1>
+        <p class="hero-ingredient-line">TXA &nbsp;·&nbsp; PDRN &nbsp;·&nbsp; HA &nbsp;COMPLEX</p>
+    </div>
+    <div class="scroll-hint">
+        <span class="ko">스크롤</span>
+        <span class="en">Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ======================== OPENING STATEMENT ======================== -->
+<section id="opening">
+    <p class="opening-text reveal">
+        <span class="ko">
+            너무 오랫동안, 기미와 완고한 색소 침착은 사람들이 <strong>감추는 법을 배워야 했던</strong> 무언가였습니다.<br>
+            파운데이션 아래 가리고, 필터로 덮고, 피부의 영구적인 일부로 받아들이는 것.<br>
+            수많은 세럼이 브라이트닝을 약속했지만, 표면 아래에서 <strong>실제로 무슨 일이 일어나고 있는지</strong>를 제대로 다루는 제품은 거의 없었습니다.
+        </span>
+        <span class="en">
+            For too long, melasma and stubborn pigmentation were something people simply <strong>learned to cover</strong> —<br>
+            concealed under makeup, masked by filters, accepted as a permanent part of the skin.<br>
+            Countless serums promised brightening, yet few addressed <strong>what was actually happening beneath the surface.</strong>
+        </span>
+    </p>
+</section>
+
+<!-- ======================== CHAPTER 01: THE DISCOVERY ======================== -->
+<section class="chapter" style="background: var(--cream);">
+    <div class="chapter-inner">
+        <div class="chapter-left reveal">
+            <div class="chapter-number">01</div>
+            <div class="chapter-label ko">발견</div>
+            <div class="chapter-label en">The Discovery</div>
+            <div class="chapter-vline"></div>
+        </div>
+        <div class="chapter-right">
+            <h2 class="chapter-headline reveal">
+                <span class="ko">트라넥삼산,<br>피부의 <em>새로운 가능성</em></span>
+                <span class="en">Tranexamic Acid,<br>A <em>New Possibility</em> for Skin</span>
+            </h2>
+            <div class="chapter-body reveal">
+                <p>
+                    <span class="ko">변화는 트라넥삼산을 면밀히 살펴보면서 시작되었습니다. 임상 및 제약 연구에서 완고한 색소 침착을 해결하는 역할로 오랫동안 인정받아온 트라넥삼산은, 일광 유발 및 호르몬성 색소 침착의 근본 원인인 과잉 멜라닌 생성을 촉발하는 <strong>플라스민 활성을 억제</strong>하는 방식으로 작용합니다.</span>
+                    <span class="en">That changed when we looked closely at <strong>Tranexamic Acid</strong>. Long recognized in clinical and pharmaceutical research for its role in addressing stubborn pigmentation, Tranexamic Acid works by calming the <strong>plasmin activity</strong> that triggers excess melanin production — the very mechanism behind sun-induced and hormonal pigmentation.</span>
+                </p>
+            </div>
+
+            <div class="question-block reveal">
+                <p class="question-text">
+                    <span class="ko">"경구 복용에만 의존하는 대신, 이 검증된 성분을 피부 속으로 직접 전달할 수 있다면 어떨까?"</span>
+                    <span class="en">"What if this well-studied ingredient could be delivered directly into the skin, rather than relying on oral intake alone?"</span>
+                </p>
+                <p class="question-answer">
+                    <span class="ko">— 이 질문이 LOMIERE의 탄생 배경이 되었습니다.</span>
+                    <span class="en">— That question became the foundation of LOMIERE.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="image-break">
+    <img src="LOMIERE PRODCUT CUT.png" alt="LOMIERE Vial — TXA PDRN HA" class="reveal">
+    <div class="image-break-label">TXA · PDRN · HA COMPLEX &nbsp;|&nbsp; 4ml</div>
+</div>
+
+<!-- ======================== CHAPTER 02: THE FORMULA ======================== -->
+<section class="chapter" style="background: var(--white);">
+    <div class="chapter-inner">
+        <div class="chapter-left reveal">
+            <div class="chapter-number">02</div>
+            <div class="chapter-label ko">포뮬러</div>
+            <div class="chapter-label en">The Formula</div>
+            <div class="chapter-vline"></div>
+        </div>
+        <div class="chapter-right">
+            <h2 class="chapter-headline reveal">
+                <span class="ko">광채를 위한 복합체:<br><em>PDRN과 HA</em></span>
+                <span class="en">A Complex Built<br>for <em>Radiance: PDRN and HA</em></span>
+            </h2>
+            <div class="chapter-body reveal">
+                <p>
+                    <span class="ko">트라넥삼산만으로는 완전한 해답이 될 수 없었습니다. 색소 침착을 진정시키는 것은 방정식의 절반에 불과합니다 — 피부는 또한 회복하고, 재생하며, 내면에서부터 빛나야 합니다.</span>
+                    <span class="en">Tranexamic Acid alone wasn't the full answer. Calming pigmentation is only half the equation — skin also needs to recover, renew, and glow from within.</span>
+                </p>
+                <p>
+                    <span class="ko">연어에서 유래한 <strong>PDRN(폴리데옥시리보뉴클레오타이드)</strong>은 피부 재생을 지원하고 피부 장벽을 강화하는 것으로 글로벌 에스테틱 시장에서 널리 인정받고 있습니다. 깊은 보습과 가시적인 볼륨감을 위한 <strong>히알루론산</strong>과 결합하여, LOMIERE는 단순한 브라이트닝 포뮬러를 넘어 재생 중심의 광채를 위한 완전한 솔루션이 되었습니다.</span>
+                    <span class="en">Salmon-derived <strong>PDRN (Polydeoxyribonucleotide)</strong> is widely valued across global aesthetic markets for supporting skin renewal and strengthening the skin barrier. Paired with <strong>Hyaluronic Acid</strong> for deep hydration and visible plumpness, LOMIERE became more than a brightening formula — it became a complete solution centered on renewal-driven radiance.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORMULA VISUALIZATION -->
+<div class="formula-section">
+    <p class="formula-label ko">트리플 복합 포뮬러</p>
+    <p class="formula-label en">Triple Complex Formula</p>
+    <div class="formula-grid reveal">
+        <div class="formula-col">
+            <p class="formula-abbr">TXA</p>
+            <h3 class="formula-name">Tranexamic Acid</h3>
+            <p class="formula-name-ko ko">트라넥삼산</p>
+            <p class="formula-name-ko en">&nbsp;</p>
+            <div class="formula-divider"></div>
+            <div class="formula-action">
+                <strong class="ko">색소 침착 진정</strong>
+                <strong class="en">Calms Pigmentation</strong>
+                <span class="ko">플라스민 억제를 통한<br>멜라닌 생성 차단</span>
+                <span class="en">Inhibits plasmin to block<br>excess melanin production</span>
+            </div>
+        </div>
+        <div class="formula-plus">×</div>
+        <div class="formula-col">
+            <p class="formula-abbr">PDRN</p>
+            <h3 class="formula-name">Polydeoxyribonucleotide</h3>
+            <p class="formula-name-ko ko">폴리데옥시리보뉴클레오타이드</p>
+            <p class="formula-name-ko en">&nbsp;</p>
+            <div class="formula-divider"></div>
+            <div class="formula-action">
+                <strong class="ko">피부 재생 지원</strong>
+                <strong class="en">Supports Skin Renewal</strong>
+                <span class="ko">세포 활성화 및<br>피부 장벽 강화</span>
+                <span class="en">Activates cells &<br>strengthens skin barrier</span>
+            </div>
+        </div>
+        <div class="formula-plus">×</div>
+        <div class="formula-col">
+            <p class="formula-abbr">HA</p>
+            <h3 class="formula-name">Hyaluronic Acid</h3>
+            <p class="formula-name-ko ko">히알루론산</p>
+            <p class="formula-name-ko en">&nbsp;</p>
+            <div class="formula-divider"></div>
+            <div class="formula-action">
+                <strong class="ko">수분 & 광채 회복</strong>
+                <strong class="en">Restores Hydration & Glow</strong>
+                <span class="ko">진피층 깊은 보습으로<br>빛나는 볼륨 피부</span>
+                <span class="en">Deep dermal hydration<br>for plump, glowing skin</span>
+            </div>
+        </div>
+    </div>
+    <!-- Formula summary statement -->
+    <p class="reveal" style="text-align:center; margin-top: 56px; font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 2vw, 26px); font-weight: 300; line-height: 1.7; color: var(--charcoal); max-width: 780px; margin-left: auto; margin-right: auto;">
+        <span class="ko">
+            색소 침착을 진정시키는 트라넥삼산. 피부 재생을 지원하는 PDRN. 수분과 광채를 회복시키는 히알루론산.<br>
+            이것은 임의적인 배합이 아닙니다 — <em style="color:var(--gold);">피부의 실질적인 변화를 원하는 이들을 위해 우리가 만들 수 있는 가장 신중한 포뮬레이션입니다.</em>
+        </span>
+        <span class="en">
+            Tranexamic Acid to calm visible pigmentation. PDRN to support skin renewal. Hyaluronic Acid to restore hydration and glow.<br>
+            This is not an arbitrary blend — <em style="color:var(--gold);">it is the most considered formulation we could create for those seeking real change in their skin.</em>
+        </span>
+    </p>
+</div>
+
+<!-- ======================== CHAPTER 03: THE NAME ======================== -->
+<section class="chapter" id="chapter-name">
+    <div class="chapter-inner">
+        <div class="chapter-left reveal">
+            <div class="chapter-number">03</div>
+            <div class="chapter-label ko">이름의 기원</div>
+            <div class="chapter-label en">The Name</div>
+            <div class="chapter-vline"></div>
+        </div>
+        <div class="chapter-right">
+            <h2 class="chapter-headline reveal">
+                <span class="ko">LOMIERE:<br><em>빛에서 탄생한 이름</em></span>
+                <span class="en">LOMIERE:<br><em>A Name Rooted in Light</em></span>
+            </h2>
+            <div class="chapter-body reveal">
+                <p>
+                    <span class="ko">'빛'을 의미하는 프랑스어 <strong>lumière</strong>에서 영감을 받은 LOMIERE는 단 하나의 목적으로 탄생했습니다: 피부를 가리는 것이 아니라, 이미 그 안에 있는 광채를 드러내는 것을 돕기 위해.</span>
+                    <span class="en">Inspired by the French word <strong>lumière</strong>, meaning light, LOMIERE was created with a singular purpose: not to mask the skin, but to help reveal the radiance already within it.</span>
+                </p>
+                <p>
+                    <span class="ko">한국의 정밀 포뮬레이션 전문성과 확립된 연구로 뒷받침된 성분들을 기반으로 구축된 LOMIERE는, 전 세계 메디컬 스파와 에스테틱 전문가들이 신뢰하고 자신 있게 추천할 수 있는 스킨 부스터로 설계되었습니다.</span>
+                    <span class="en">Built on Korea's precision formulation expertise and ingredients backed by established research, LOMIERE is designed to be a skin booster that medical spas and aesthetic professionals worldwide can trust and confidently recommend.</span>
+                </p>
+            </div>
+
+            <div class="closing-statement reveal">
+                <p>
+                    <span class="ko">색소 침착은 더 이상 <em>숨겨야 할 것</em>이 아닙니다.<br>LOMIERE와 함께, 그것은 눈에 보이는 변화의 <em>출발점</em>이 됩니다.</span>
+                    <span class="en">Pigmentation is no longer something <em>to hide.</em><br>With LOMIERE, it becomes the starting point for <em>visible transformation.</em></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section id="story-cta">
+    <p class="cta-eyebrow">
+        <span class="ko">제품 알아보기</span>
+        <span class="en">Discover the Product</span>
+    </p>
+    <h2 class="cta-title reveal">
+        <span class="ko">LOMIERE를 경험해 보세요</span>
+        <span class="en">Experience LOMIERE</span>
+    </h2>
+    <p class="cta-body reveal">
+        <span class="ko">스킨 부스터 바이알 — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span>
+        <span class="en">Skin Booster Vial — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span>
+    </p>
+    <div class="cta-buttons reveal">
+        <a href="index.html#product" class="btn btn-dark">
+            <span class="ko">제품 보기</span>
+            <span class="en">View Product</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="index.html#contact-banner" class="btn btn-outline">
+            <span class="ko">파트너십 문의</span>
+            <span class="en">Partnership Inquiry</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-brand-logo">
+                <img src="HOYBIO LOGO.png" alt="HOYBIO">
+            </div>
+            <p class="footer-tagline">LOMIERE by HOYBIO<br>Premium Skin Booster<br>TXA · PDRN · HA Complex</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="brand-story.html">Brand Story</a>
+                <a href="index.html#technology">Technology</a>
+                <a href="index.html#product">Product</a>
+                <a href="index.html#partnership">Partnership</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: info@holypathglobal.com</p>
+                <p>&nbsp;</p>
+                <p class="ko">제품 및 파트너십 문의</p>
+                <p class="en">Product & Partnership Inquiries</p>
+                <p>B2B / OEM / ODM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <p class="ko">주식회사 호이바이오</p>
+                <p class="en">HOYBIO Co., Ltd.</p>
+                <p>Republic of Korea</p>
+                <p>Made in Korea</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">
+                <span class="ko">개인정보처리방침</span>
+                <span class="en">Privacy Policy</span>
+            </a>
+            <a href="#">
+                <span class="ko">이용약관</span>
+                <span class="en">Terms</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- ======================== SCRIPTS ======================== -->
+<script>
+    // ── Language toggle ──
+    function applyLang(lang) {
+        document.documentElement.dataset.lang = lang;
+        localStorage.setItem('lomiere-lang', lang);
+        const btn = document.getElementById('langToggle');
+        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+    }
+    function toggleLang() {
+        const current = document.documentElement.dataset.lang || 'ko';
+        applyLang(current === 'ko' ? 'en' : 'ko');
+    }
+    // Restore saved language on load
+    (function() {
+        const saved = localStorage.getItem('lomiere-lang');
+        if (saved) applyLang(saved);
+    })();
+
+    // ── Nav scroll ──
+    const nav = document.getElementById('nav');
+    function updateNav() {
+        // Hero is dark; once past hero switch to light nav
+        const heroBottom = document.getElementById('story-hero').offsetHeight;
+        if (window.scrollY > heroBottom - 80) {
+            nav.classList.remove('scrolled');
+            nav.classList.add('light-nav');
+        } else if (window.scrollY > 60) {
+            nav.classList.add('scrolled');
+            nav.classList.remove('light-nav');
+        } else {
+            nav.classList.remove('scrolled', 'light-nav');
+        }
+        // Keep logo visible
+        const logo = nav.querySelector('.nav-logo img');
+        if (nav.classList.contains('light-nav')) {
+            logo.style.filter = 'none';
+        } else {
+            logo.style.filter = 'brightness(0) invert(1)';
+        }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    // ── Reveal on scroll ──
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ── Mobile menu ──
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobileClose').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>

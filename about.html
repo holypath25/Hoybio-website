@@ -54,7 +54,7 @@
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 1px 0 rgba(37,32,24,0.08);
         }
-        .nav-logo img { height: 30px; filter: brightness(0) invert(1); transition: filter 0.4s; }
+        .nav-logo img { height: 30px; filter: invert(1); transition: filter 0.4s; }
         #nav.light .nav-logo img { filter: none; }
         .nav-links { display: flex; gap: 36px; list-style: none; }
         .nav-links a {
@@ -631,7 +631,6 @@
             <span class="ko">회사 소개</span>
             <span class="en">About the Company</span>
         </p>
-        <img class="hero-logo" src="HOYBIO LOGO.png" alt="HOY BIO">
         <p class="hero-headline">
             <span class="ko">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; 청주(오송), 대한민국</span>
             <span class="en">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; Cheongju (Osong), South Korea</span>
@@ -1151,10 +1150,10 @@
         } else if (window.scrollY > 60) {
             nav.classList.add('scrolled');
             nav.classList.remove('light');
-            nav.querySelector('.nav-logo img').style.filter = 'brightness(0) invert(1)';
+            nav.querySelector('.nav-logo img').style.filter = 'invert(1)';
         } else {
             nav.classList.remove('scrolled', 'light');
-            nav.querySelector('.nav-logo img').style.filter = 'brightness(0) invert(1)';
+            nav.querySelector('.nav-logo img').style.filter = 'invert(1)';
         }
     }
     window.addEventListener('scroll', updateNav, { passive: true });

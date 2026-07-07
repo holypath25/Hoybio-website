@@ -27,8 +27,9 @@
         body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
         img { display: block; max-width: 100%; }
 
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
 
         .reveal {
             opacity: 0; transform: translateY(32px);
@@ -618,7 +619,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO</button>
         <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
 </nav>
@@ -629,19 +630,19 @@
     <div class="hero-inner">
         <p class="hero-eyebrow">
             <span class="ko">회사 소개</span>
-            <span class="en">About the Company</span>
+            <span class="en">About the Company</span><span class="ja">会社紹介</span>
         </p>
         <p class="hero-headline">
             <span class="ko">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; 청주(오송), 대한민국</span>
-            <span class="en">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; Cheongju (Osong), South Korea</span>
+            <span class="en">K-Beauty &amp; Aesthetics &nbsp;|&nbsp; Cheongju (Osong), South Korea</span><span class="ja">K-ビューティー＆エステティクス　|　清州（オソン）, 大韓民国</span>
         </p>
         <div class="hero-location-badge">
             <span class="ko">오송 바이오헬스 산업단지</span>
-            <span class="en">Osong Bio-Health Industrial Cluster</span>
+            <span class="en">Osong Bio-Health Industrial Cluster</span><span class="ja">オソンバイオヘルス産業団地</span>
         </div>
     </div>
     <div class="scroll-hint">
-        <span class="ko">아래로</span><span class="en">Scroll</span>
+        <span class="ko">아래로</span><span class="en">Scroll</span><span class="ja">スクロール</span>
         <div class="scroll-line"></div>
     </div>
 </section>
@@ -656,32 +657,33 @@
     <div class="overview-text-col">
         <p class="overview-eyebrow reveal">
             <span class="ko">HOY BIO Co., Ltd.</span>
-            <span class="en">HOY BIO Co., Ltd.</span>
+            <span class="en">HOY BIO Co., Ltd.</span><span class="ja">HOY BIO Co., Ltd.</span>
         </p>
         <h1 class="overview-title reveal">
             <span class="ko">전문가를 위한<br><em>K-뷰티 솔루션</em></span>
-            <span class="en">K-Beauty Solutions<br>Built for <em>Professionals</em></span>
+            <span class="en">K-Beauty Solutions<br>Built for <em>Professionals</em></span><span class="ja">プロフェッショナルのための<br><em>K-ビューティーソリューション</em></span>
         </h1>
         <div class="overview-body reveal">
             <p>
                 <span class="ko">HOY BIO Co., Ltd.는 대한민국 충청북도 청주(오송)에 본사를 둔 화장품 제조 및 수출 기업입니다. 국내 최대 화장품·바이오헬스 산업 클러스터 중 하나인 오송에 위치하며, B2B 에스테틱에 특화하여 전 세계 메디컬 스파와 에스테틱 전문가를 위한 스킨 부스터 포뮬레이션을 개발·수출합니다.</span>
-                <span class="en">HOY BIO Co., Ltd. is a Korean cosmetics manufacturer and exporter based in Cheongju (Osong), South Korea — one of the country's most concentrated cosmetics and bio-health industrial clusters. Founded with a singular focus on B2B aesthetics, HOY BIO develops and exports skin booster formulations designed specifically for medical spas and aesthetic professionals worldwide.</span>
+                <span class="en">HOY BIO Co., Ltd. is a Korean cosmetics manufacturer and exporter based in Cheongju (Osong), South Korea — one of the country's most concentrated cosmetics and bio-health industrial clusters. Founded with a singular focus on B2B aesthetics, HOY BIO develops and exports skin booster formulations designed specifically for medical spas and aesthetic professionals worldwide.</span><span class="ja">HOY BIO Co., Ltd.は大韓民国忠清北道清州（オソン）に本社を置く化粧品製造・輸出企業です。韓国でも有数の化粧品・バイオヘルス産業クラスターに位置し、B2Bエステティクスに特化して、世界中のメディカルスパとエステティクスプロフェッショナル向けのスキンブースターフォーミュラを開発・輸出しています。</span>
             </p>
             <p>
                 <span class="ko">GMP 인증 생산 파트너와의 협력을 통해, 한국의 정밀 포뮬레이션 기술과 연구 기반의 글로벌 원료를 결합하여 국제 클리닉 및 메디컬 스파의 까다로운 기준을 충족하는 제품을 만들어냅니다.</span>
-                <span class="en">Working with GMP-certified manufacturing partners, HOY BIO combines Korea's precision formulation expertise with globally sourced, research-backed active ingredients to create products that meet the standards of discerning international clinics and medical spas.</span>
+                <span class="en">Working with GMP-certified manufacturing partners, HOY BIO combines Korea's precision formulation expertise with globally sourced, research-backed active ingredients to create products that meet the standards of discerning international clinics and medical spas.</span><span class="ja">GMP認定製造パートナーとの協力のもと、韓国の精密フォーミュラ技術と研究に裏付けられたグローバル原料を組み合わせ、国際的なクリニックやメディカルスパの厳格な基準を満たす製品を生み出しています。</span>
             </p>
         </div>
         <div class="flagship-label reveal">
             <div>
                 <span class="ko" style="font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;">플래그십 라인</span>
                 <span class="en" style="font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;">Flagship Line</span>
+                <span class="ja" style="font-size:9.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;">フラッグシップライン</span>
                 <strong>LOMIERE</strong>
             </div>
             <div style="padding-left:24px;margin-left:24px;border-left:1px solid var(--cream-deep);">
                 <span style="font-size:11px;font-weight:300;color:var(--text-muted);line-height:1.8;display:block;">
                     <span class="ko">임상 수준의 포뮬레이션,<br>럭셔리의 품격으로</span>
-                    <span class="en">Clinical-grade formulation<br>presented with luxury refinement</span>
+                    <span class="en">Clinical-grade formulation<br>presented with luxury refinement</span><span class="ja">臨床グレードのフォーミュラを<br>ラグジュアリーの品格で</span>
                 </span>
             </div>
         </div>
@@ -690,38 +692,38 @@
     <!-- Stats Sidebar -->
     <div class="stats-sidebar reveal">
         <div class="stat-card">
-            <div class="stat-card-label"><span class="ko">본사 위치</span><span class="en">Headquarters</span></div>
+            <div class="stat-card-label"><span class="ko">본사 위치</span><span class="en">Headquarters</span><span class="ja">本社所在地</span></div>
             <div class="stat-card-value">
                 <span class="ko">청주 (오송)</span>
-                <span class="en">Cheongju (Osong)</span>
+                <span class="en">Cheongju (Osong)</span><span class="ja">清州（オソン）</span>
             </div>
             <div class="stat-card-sub">
                 <span class="ko">충청북도, 대한민국</span>
-                <span class="en">Chungcheongbuk-do, South Korea</span>
+                <span class="en">Chungcheongbuk-do, South Korea</span><span class="ja">忠清北道、大韓民国</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-card-label"><span class="ko">사업 분야</span><span class="en">Business Focus</span></div>
+            <div class="stat-card-label"><span class="ko">사업 분야</span><span class="en">Business Focus</span><span class="ja">事業分野</span></div>
             <div class="stat-card-value">B2B Exclusive</div>
             <div class="stat-card-sub">
                 <span class="ko">메디컬 스파 · 에스테틱 전문</span>
-                <span class="en">Medical Spas &amp; Aesthetic Clinics</span>
+                <span class="en">Medical Spas &amp; Aesthetic Clinics</span><span class="ja">メディカルスパ・エステティクス専門</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-card-label"><span class="ko">생산 기준</span><span class="en">Manufacturing</span></div>
+            <div class="stat-card-label"><span class="ko">생산 기준</span><span class="en">Manufacturing</span><span class="ja">生産基準</span></div>
             <div class="stat-card-value">GMP Certified</div>
             <div class="stat-card-sub">
                 <span class="ko">국제 품질 인증 파트너십</span>
-                <span class="en">International Quality-Certified Partners</span>
+                <span class="en">International Quality-Certified Partners</span><span class="ja">国際品質認定パートナー</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-card-label"><span class="ko">주요 수출 시장</span><span class="en">Target Markets</span></div>
+            <div class="stat-card-label"><span class="ko">주요 수출 시장</span><span class="en">Target Markets</span><span class="ja">主要輸出市場</span></div>
             <div class="stat-card-value">US · CA · AU · EU</div>
             <div class="stat-card-sub">
                 <span class="ko">글로벌 B2B 수출</span>
-                <span class="en">Global B2B Export</span>
+                <span class="en">Global B2B Export</span><span class="ja">グローバルB2B輸出</span>
             </div>
         </div>
     </div>
@@ -754,22 +756,22 @@
     <div class="meaning-inner">
         <p class="meaning-eyebrow reveal">
             <span class="ko">HOY의 의미</span>
-            <span class="en">The Meaning Behind HOY</span>
+            <span class="en">The Meaning Behind HOY</span><span class="ja">HOYの意味</span>
         </p>
         <blockquote class="meaning-quote reveal">
             <span class="ko">HOY라는 이름은 창립자에게 개인적인 신념을 담고 있습니다 —<br>이 회사의 모든 결정을 이끄는 가치들을 조용히 상기시켜주는 이름:<br><em>성실함, 겸손함,</em> 그리고 이윤을 넘어서는 더 큰 무언가에 대한 헌신.</span>
-            <span class="en">The name HOY carries a personal conviction for our founder —<br>a quiet reminder of the values guiding every decision behind this company:<br><em>integrity, humility,</em> and a commitment to something greater than profit alone.</span>
+            <span class="en">The name HOY carries a personal conviction for our founder —<br>a quiet reminder of the values guiding every decision behind this company:<br><em>integrity, humility,</em> and a commitment to something greater than profit alone.</span><span class="ja">HOYという名前は、創業者にとって個人的な信念を込めたものです —<br>この会社のすべての決断を導く価値観を静かに思い起こさせる名前：<br><em>誠実さ、謙虚さ、</em>そして利益を超えた何か大きなものへの献身。</span>
         </blockquote>
         <div class="meaning-divider"></div>
         <p class="meaning-body reveal">
             <span class="ko">이 신념이 우리가 포뮬레이션하고, 제조하고, 전 세계 클리닉과 파트너십을 맺는 방식을 형성합니다 — 배려, 일관성, 그리고 목적을 가지고.</span>
-            <span class="en">It is this conviction that shapes how we formulate, how we manufacture, and how we partner with clinics around the world — with care, consistency, and purpose.</span>
+            <span class="en">It is this conviction that shapes how we formulate, how we manufacture, and how we partner with clinics around the world — with care, consistency, and purpose.</span><span class="ja">この信念が、私たちがフォーミュラを作り、製造し、世界中のクリニックとパートナーシップを築く方法を形づくっています — 思いやり、一貫性、そして目的をもって。</span>
         </p>
         <div class="meaning-values-preview reveal">
-            <span class="mvp-item"><span class="ko">성실함</span><span class="en">Integrity</span></span>
-            <span class="mvp-item"><span class="ko">겸손함</span><span class="en">Humility</span></span>
-            <span class="mvp-item"><span class="ko">일관성</span><span class="en">Consistency</span></span>
-            <span class="mvp-item"><span class="ko">목적</span><span class="en">Purpose</span></span>
+            <span class="mvp-item"><span class="ko">성실함</span><span class="en">Integrity</span><span class="ja">誠実さ</span></span>
+            <span class="mvp-item"><span class="ko">겸손함</span><span class="en">Humility</span><span class="ja">謙虚さ</span></span>
+            <span class="mvp-item"><span class="ko">일관성</span><span class="en">Consistency</span><span class="ja">一貫性</span></span>
+            <span class="mvp-item"><span class="ko">목적</span><span class="en">Purpose</span><span class="ja">目的</span></span>
         </div>
     </div>
 </section>
@@ -780,31 +782,31 @@
         <div class="mission-text-col">
             <p class="mission-eyebrow reveal">
                 <span class="ko">우리의 사명</span>
-                <span class="en">Our Mission</span>
+                <span class="en">Our Mission</span><span class="ja">私たちのミッション</span>
             </p>
             <h2 class="mission-title reveal">
                 <span class="ko">한국의 포뮬레이션 우수성을<br><em>전 세계에 전달합니다</em></span>
-                <span class="en">Delivering Korean Formulation<br><em>Excellence to the World</em></span>
+                <span class="en">Delivering Korean Formulation<br><em>Excellence to the World</em></span><span class="ja">韓国のフォーミュラ卓越性を<br><em>世界へ届ける</em></span>
             </h2>
             <div class="mission-body reveal">
                 <p>
                     <span class="ko">전 세계 메디컬 스파와 에스테틱 전문가에게 한국의 포뮬레이션 우수성을 전달합니다 — 첨단 성분 과학과 전문 구매자가 요구하는 신뢰와 신뢰성을 연결합니다.</span>
-                    <span class="en">To deliver Korean formulation excellence to medical spas and aesthetic professionals around the world — bridging advanced ingredient science with the trust and reliability that professional buyers demand.</span>
+                    <span class="en">To deliver Korean formulation excellence to medical spas and aesthetic professionals around the world — bridging advanced ingredient science with the trust and reliability that professional buyers demand.</span><span class="ja">世界中のメディカルスパとエステティクスプロフェッショナルに韓国のフォーミュラ卓越性を届けます — 先進的な成分科学と、プロフェッショナルバイヤーが求める信頼性を橋渡しします。</span>
                 </p>
                 <p>
                     <span class="ko">우리는 K-뷰티를 글로벌 기준으로 만든 동일한 수준의 포뮬레이션 정밀도, 원료 소싱, 품질 관리에 한국 외부의 실무자들이 직접 접근할 수 있도록 존재합니다 — 타협 없이, 과포화된 소비자 시장의 소음 없이.</span>
-                    <span class="en">We exist to give practitioners outside Korea direct access to the same level of formulation precision, ingredient sourcing, and quality control that has made K-beauty a global benchmark — without compromise, and without the noise of an oversaturated consumer market.</span>
+                    <span class="en">We exist to give practitioners outside Korea direct access to the same level of formulation precision, ingredient sourcing, and quality control that has made K-beauty a global benchmark — without compromise, and without the noise of an oversaturated consumer market.</span><span class="ja">私たちは、K-ビューティーをグローバルスタンダードにした同水準のフォーミュラ精度、原料調達、品質管理に、韓国国外の実務者が直接アクセスできるよう存在します — 妥協なく、飽和した消費者市場のノイズなしに。</span>
                 </p>
             </div>
         </div>
         <div class="mission-visual-col reveal">
             <p class="mission-statement">
                 <span class="ko">"소매 선반이 아닌, <em>전문가</em>를 위해 만들어진 한국 화장품 브랜드."</span>
-                <span class="en">"A Korean cosmetics brand made <em>exclusively for professionals,</em> not retail shelves."</span>
+                <span class="en">"A Korean cosmetics brand made <em>exclusively for professionals,</em> not retail shelves."</span><span class="ja">"小売棚ではなく、<em>プロフェッショナル専用</em>に作られた韓国化粧品ブランド。"</span>
             </p>
             <p class="mission-attr">
                 <span class="ko">HOY BIO 핵심 철학</span>
-                <span class="en">HOY BIO Core Philosophy</span>
+                <span class="en">HOY BIO Core Philosophy</span><span class="ja">HOY BIOの核心哲学</span>
             </p>
         </div>
     </div>
@@ -815,11 +817,11 @@
     <div class="story-header reveal">
         <p class="section-eyebrow-c">
             <span class="ko">우리의 이야기</span>
-            <span class="en">Our Story</span>
+            <span class="en">Our Story</span><span class="ja">私たちのストーリー</span>
         </p>
         <h2 class="section-title-c">
             <span class="ko">관찰에서 시작된<br><em>브랜드의 여정</em></span>
-            <span class="en">A Brand Built from<br>a <em>Simple Observation</em></span>
+            <span class="en">A Brand Built from<br>a <em>Simple Observation</em></span><span class="ja">観察から始まった<br><em>ブランドの旅</em></span>
         </h2>
     </div>
 
@@ -830,48 +832,48 @@
                 <div class="phase-marker">01</div>
                 <h3 class="phase-heading">
                     <span class="ko">관찰</span>
-                    <span class="en">The Observation</span>
+                    <span class="en">The Observation</span><span class="ja">観察</span>
                 </h3>
                 <p class="phase-sub">
                     <span class="ko">문제의 발견</span>
-                    <span class="en">Identifying the Problem</span>
+                    <span class="en">Identifying the Problem</span><span class="ja">問題の発見</span>
                 </p>
                 <div class="phase-divider"></div>
                 <p class="phase-body">
                     <span class="ko">전 세계 수백만 명이 색소 침착으로 고민하고 있지만, 근본 원인을 진정으로 해결하는 전문가급 솔루션은 거의 없었습니다. HOY BIO는 이 단순한 관찰에서 출발했습니다.</span>
-                    <span class="en">HOY BIO was founded on a simple observation: pigmentation concerns affect millions worldwide, yet very few professional-grade solutions truly addressed the root cause.</span>
+                    <span class="en">HOY BIO was founded on a simple observation: pigmentation concerns affect millions worldwide, yet very few professional-grade solutions truly addressed the root cause.</span><span class="ja">HOY BIOは、ひとつの観察から生まれました：色素沈着の悩みは世界中の何百万人もの人々に影響しているにもかかわらず、根本原因に真に対処するプロフェッショナル向けソリューションはほとんどありませんでした。</span>
                 </p>
             </div>
             <div class="story-phase reveal">
                 <div class="phase-marker">02</div>
                 <h3 class="phase-heading">
                     <span class="ko">연구</span>
-                    <span class="en">The Research</span>
+                    <span class="en">The Research</span><span class="ja">研究</span>
                 </h3>
                 <p class="phase-sub">
                     <span class="ko">성분의 과학</span>
-                    <span class="en">The Science of Ingredients</span>
+                    <span class="en">The Science of Ingredients</span><span class="ja">成分の科学</span>
                 </p>
                 <div class="phase-divider"></div>
                 <p class="phase-body">
                     <span class="ko">트라넥삼산 연구에서 시작하여, PDRN과 히알루론산을 결합한 완전한 스킨 부스터 복합체로 진화했습니다. 수년간의 포뮬레이션 연구가 LOMIERE의 TXA·PDRN·HA 트리플 복합체를 탄생시켰습니다.</span>
-                    <span class="en">Beginning with Tranexamic Acid research and evolving into a complete skin booster complex with PDRN and Hyaluronic Acid. Years of formulation research gave birth to LOMIERE's TXA·PDRN·HA triple complex.</span>
+                    <span class="en">Beginning with Tranexamic Acid research and evolving into a complete skin booster complex with PDRN and Hyaluronic Acid. Years of formulation research gave birth to LOMIERE's TXA·PDRN·HA triple complex.</span><span class="ja">トラネキサム酸の研究から始まり、PDRNとヒアルロン酸を組み合わせた完全なスキンブースター複合体へと進化しました。数年間のフォーミュラ研究が、LOMIEREのTXA・PDRN・HAトリプル複合体を生み出しました。</span>
                 </p>
             </div>
             <div class="story-phase reveal">
                 <div class="phase-marker">03</div>
                 <h3 class="phase-heading">
                     <span class="ko">사명</span>
-                    <span class="en">The Mission</span>
+                    <span class="en">The Mission</span><span class="ja">ミッション</span>
                 </h3>
                 <p class="phase-sub">
                     <span class="ko">전문가만을 위한 브랜드</span>
-                    <span class="en">Built for Professionals Only</span>
+                    <span class="en">Built for Professionals Only</span><span class="ja">プロフェッショナル専用に構築</span>
                 </p>
                 <div class="phase-divider"></div>
                 <p class="phase-body">
                     <span class="ko">소매 선반이 아닌 전문가를 위해 만들어진 한국 화장품 브랜드 구축. HOY BIO는 미국, 캐나다, 호주, EU 전역의 메디컬 스파에 전문가용 스킨 부스터를 공급하는 기업으로 성장했습니다.</span>
-                    <span class="en">Building a Korean cosmetics brand made exclusively for professionals, not retail shelves. HOY BIO has grown into a company delivering professional-grade skin boosters to medical spas across the US, Canada, Australia, and the EU.</span>
+                    <span class="en">Building a Korean cosmetics brand made exclusively for professionals, not retail shelves. HOY BIO has grown into a company delivering professional-grade skin boosters to medical spas across the US, Canada, Australia, and the EU.</span><span class="ja">小売棚ではなくプロフェッショナルのために作られた韓国化粧品ブランドの構築。HOY BIOは米国、カナダ、オーストラリア、EU全域のメディカルスパへプロフェッショナル向けスキンブースターを供給する企業に成長しました。</span>
                 </p>
             </div>
         </div>
@@ -883,11 +885,11 @@
     <div class="values-header reveal">
         <p class="values-eyebrow">
             <span class="ko">우리의 가치</span>
-            <span class="en">Our Values</span>
+            <span class="en">Our Values</span><span class="ja">私たちの価値観</span>
         </p>
         <h2 class="values-title">
             <span class="ko">모든 결정의 기반이 되는<br><em>다섯 가지 원칙</em></span>
-            <span class="en">Five Principles That Guide<br><em>Every Decision We Make</em></span>
+            <span class="en">Five Principles That Guide<br><em>Every Decision We Make</em></span><span class="ja">すべての決断を導く<br><em>5つの原則</em></span>
         </h2>
     </div>
 
@@ -906,7 +908,7 @@
             <span class="value-name-ko ko">임상적 성실성</span>
             <p class="value-body">
                 <span class="ko">모든 포뮬레이션은 과학에서 시작합니다. 트렌드보다 연구로 검증된 목적 있는 활성 성분을 우선시합니다 — 전문가와 그 고객은 신뢰할 수 있는 포뮬레이션을 받아야 하기 때문입니다.</span>
-                <span class="en">Every formulation begins with the science. We prioritize well-researched, purposeful active ingredients over trends — because professional buyers and their clients deserve formulations they can trust.</span>
+                <span class="en">Every formulation begins with the science. We prioritize well-researched, purposeful active ingredients over trends — because professional buyers and their clients deserve formulations they can trust.</span><span class="ja">すべてのフォーミュラは科学から始まります。トレンドよりも研究で検証された目的ある活性成分を優先します — プロフェッショナルバイヤーとそのクライアントは、信頼できるフォーミュラを受け取るべきだからです。</span>
             </p>
         </div>
         <div class="value-card reveal">
@@ -922,7 +924,7 @@
             <span class="value-name-ko ko">전문가를 위한 제품</span>
             <p class="value-body">
                 <span class="ko">우리 제품은 대량 소매용으로 설계되지 않았습니다. 메디컬 스파와 에스테틱 클리닉의 기준, 기대, 워크플로우를 위해 특별히 만들어졌습니다.</span>
-                <span class="en">Our products are not designed for mass retail. They are built specifically for the standards, expectations, and workflows of medical spas and aesthetic clinics.</span>
+                <span class="en">Our products are not designed for mass retail. They are built specifically for the standards, expectations, and workflows of medical spas and aesthetic clinics.</span><span class="ja">当社の製品は大量小売向けに設計されていません。メディカルスパとエステティクスクリニックの基準、期待、ワークフローのために特別に作られています。</span>
             </p>
         </div>
         <div class="value-card reveal">
@@ -941,7 +943,7 @@
             <span class="value-name-ko ko">한국의 정밀함</span>
             <p class="value-body">
                 <span class="ko">화장품 포뮬레이션과 제조에서 한국의 세계적 강점을 활용하며, 모든 배치의 일관성과 품질을 보장하기 위해 GMP 인증 파트너와만 협력합니다.</span>
-                <span class="en">We draw on Korea's globally recognized strength in cosmetic formulation and manufacturing, working exclusively with GMP-certified production partners to ensure consistency and quality at every batch.</span>
+                <span class="en">We draw on Korea's globally recognized strength in cosmetic formulation and manufacturing, working exclusively with GMP-certified production partners to ensure consistency and quality at every batch.</span><span class="ja">化粧品フォーミュラと製造における韓国の世界的強みを活かし、すべてのバッチの一貫性と品質を確保するためにGMP認定生産パートナーとのみ協力します。</span>
             </p>
         </div>
     </div>
@@ -960,7 +962,7 @@
             <span class="value-name-ko ko">정제된 단순함</span>
             <p class="value-body">
                 <span class="ko">효과적인 포뮬레이션은 복잡할 필요가 없습니다. LOMIERE의 복합체는 의도적으로 집중적이며, 각 성분은 명확한 목적을 위해 포함되었습니다.</span>
-                <span class="en">We believe effective formulations don't need to be complicated. LOMIERE's complex is intentionally focused — each ingredient included for a clear, defined purpose.</span>
+                <span class="en">We believe effective formulations don't need to be complicated. LOMIERE's complex is intentionally focused — each ingredient included for a clear, defined purpose.</span><span class="ja">効果的なフォーミュラは複雑である必要はありません。LOMIEREの複合体は意図的に集中的であり、各成分は明確な目的のために配合されています。</span>
             </p>
         </div>
         <div class="value-card reveal">
@@ -978,7 +980,7 @@
             <span class="value-name-ko ko">글로벌 파트너십</span>
             <p class="value-body">
                 <span class="ko">B2B 파트너를 단순한 구매자가 아닌 협력자로 봅니다. 목표는 메디컬 스파가 트리트먼트 메뉴를 구성할 수 있는 포뮬레이션, 교육, 신뢰성을 제공하는 것입니다.</span>
-                <span class="en">We see our B2B partners as collaborators, not just buyers. Our goal is to support medical spas with formulations, education, and reliability they can build their treatment menus around.</span>
+                <span class="en">We see our B2B partners as collaborators, not just buyers. Our goal is to support medical spas with formulations, education, and reliability they can build their treatment menus around.</span><span class="ja">B2Bパートナーを単なる購入者ではなく、協力者として見ています。メディカルスパがトリートメントメニューを構成できるフォーミュラ、教育、信頼性を提供することが私たちの目標です。</span>
             </p>
         </div>
     </div>
@@ -989,28 +991,28 @@
     <div class="global-left reveal">
         <p class="global-eyebrow">
             <span class="ko">제조 거점</span>
-            <span class="en">Manufacturing Hub</span>
+            <span class="en">Manufacturing Hub</span><span class="ja">製造拠点</span>
         </p>
         <h2 class="global-title">
             <span class="ko">대한민국의 심장에서<br><em>세계로</em></span>
-            <span class="en">From the Heart<br>of Korea, <em>to the World</em></span>
+            <span class="en">From the Heart<br>of Korea, <em>to the World</em></span><span class="ja">韓国の中心から<br><em>世界へ</em></span>
         </h2>
         <p class="global-body">
             <span class="ko">오송은 대한민국의 화장품·바이오헬스 산업이 가장 집중된 지역 중 하나입니다. 이 클러스터 내에서 HOY BIO는 최고 수준의 제조 파트너, 원료 공급망, 연구 인프라에 접근할 수 있습니다.</span>
-            <span class="en">Osong is one of Korea's most concentrated cosmetics and bio-health industrial clusters. Within this cluster, HOY BIO has access to world-class manufacturing partners, ingredient supply chains, and research infrastructure.</span>
+            <span class="en">Osong is one of Korea's most concentrated cosmetics and bio-health industrial clusters. Within this cluster, HOY BIO has access to world-class manufacturing partners, ingredient supply chains, and research infrastructure.</span><span class="ja">オソンは韓国でも有数の化粧品・バイオヘルス産業クラスターのひとつです。このクラスター内で、HOY BIOは世界クラスの製造パートナー、原料サプライチェーン、研究インフラへのアクセスを持っています。</span>
         </p>
         <div class="location-block">
             <p class="location-label">
                 <span class="ko">본사 위치</span>
-                <span class="en">Headquarters</span>
+                <span class="en">Headquarters</span><span class="ja">本社所在地</span>
             </p>
             <p class="location-name">
                 <span class="ko">청주 (오송), 충청북도</span>
-                <span class="en">Cheongju (Osong), South Korea</span>
+                <span class="en">Cheongju (Osong), South Korea</span><span class="ja">清州（オソン）、大韓民国</span>
             </p>
             <p class="location-sub">
                 <span class="ko">오송 바이오헬스 산업단지<br>K-뷰티 &amp; 에스테틱 전문</span>
-                <span class="en">Osong Bio-Health Industrial Cluster<br>K-Beauty &amp; Aesthetics Specialist</span>
+                <span class="en">Osong Bio-Health Industrial Cluster<br>K-Beauty &amp; Aesthetics Specialist</span><span class="ja">オソンバイオヘルス産業団地<br>K-ビューティー＆エステティクス専門</span>
             </p>
         </div>
     </div>
@@ -1018,7 +1020,7 @@
     <div class="global-right reveal">
         <p style="font-size:9.5px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;">
             <span class="ko">주요 수출 시장</span>
-            <span class="en">Target Export Markets</span>
+            <span class="en">Target Export Markets</span><span class="ja">主要輸出市場</span>
         </p>
         <div class="market-grid">
             <div class="market-card">
@@ -1050,25 +1052,25 @@
     <div class="cta-text-col">
         <p class="cta-eyebrow reveal">
             <span class="ko">제품 알아보기</span>
-            <span class="en">Discover Our Product</span>
+            <span class="en">Discover Our Product</span><span class="ja">製品を見る</span>
         </p>
         <h2 class="cta-title reveal">
             <span class="ko">HOY BIO의 철학이<br>담긴 제품, <em>LOMIERE</em></span>
-            <span class="en">The Product That Carries<br>HOY BIO's Philosophy, <em>LOMIERE</em></span>
+            <span class="en">The Product That Carries<br>HOY BIO's Philosophy, <em>LOMIERE</em></span><span class="ja">HOY BIOの哲学が宿る製品、<br><em>LOMIERE</em></span>
         </h2>
         <p class="cta-body reveal">
             <span class="ko">임상 수준의 포뮬레이션을 럭셔리의 품격으로. TXA·PDRN·HA 트리플 복합 스킨 부스터 바이알로 HOY BIO의 가치를 직접 경험해보세요.</span>
-            <span class="en">Clinical-grade formulation presented with luxury refinement. Experience HOY BIO's values firsthand through the TXA·PDRN·HA triple complex skin booster vial.</span>
+            <span class="en">Clinical-grade formulation presented with luxury refinement. Experience HOY BIO's values firsthand through the TXA·PDRN·HA triple complex skin booster vial.</span><span class="ja">臨床グレードのフォーミュラをラグジュアリーの品格で。TXA・PDRN・HAトリプル複合スキンブースターバイアルで、HOY BIOの価値を直接体験してください。</span>
         </p>
         <div class="cta-btns reveal">
             <a href="product.html" class="btn btn-dark">
                 <span class="ko">LOMIERE 제품 보기</span>
-                <span class="en">View LOMIERE</span>
+                <span class="en">View LOMIERE</span><span class="ja">LOMIEREを見る</span>
                 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
             <a href="brand-story.html" class="btn btn-outline">
                 <span class="ko">브랜드 스토리</span>
-                <span class="en">Brand Story</span>
+                <span class="en">Brand Story</span><span class="ja">ブランドストーリー</span>
                 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>
@@ -1099,15 +1101,15 @@
                 <p>Email: info@holypathglobal.com</p>
                 <p>&nbsp;</p>
                 <p class="ko">제품 및 파트너십 문의</p>
-                <p class="en">Product &amp; Partnership Inquiries</p>
+                <p class="en">Product &amp; Partnership Inquiries</p><p class="ja">製品・パートナーシップのお問い合わせ</p>
                 <p>B2B / OEM / ODM</p>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <p class="ko">주식회사 호이바이오</p>
-                <p class="en">HOY BIO Co., Ltd.</p>
+                <p class="en">HOY BIO Co., Ltd.</p><p class="ja">HOY BIO Co., Ltd.</p>
                 <p class="ko">청주(오송), 충청북도</p>
-                <p class="en">Cheongju (Osong), South Korea</p>
+                <p class="en">Cheongju (Osong), South Korea</p><p class="ja">清州（オソン）、大韓民国</p>
                 <p>Made in Korea</p>
             </div>
         </div>
@@ -1115,8 +1117,8 @@
     <div class="footer-bottom">
         <p class="footer-copy">© 2025 HOY BIO Co., Ltd. All Rights Reserved.</p>
         <div class="footer-links">
-            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
-            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span><span class="ja">利用規約</span></a>
         </div>
     </div>
 </footer>
@@ -1128,10 +1130,11 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
     }
     function toggleLang() {
-        applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko');
+        const c = document.documentElement.dataset.lang || 'ko';
+        applyLang(c === 'ko' ? 'en' : c === 'en' ? 'ja' : 'ko');
     }
     (function () {
         const saved = localStorage.getItem('lomiere-lang');

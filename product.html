@@ -25,8 +25,9 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
         img { display: block; max-width: 100%; }
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
         .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -298,7 +299,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO</button>
         <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
 </nav>
@@ -310,11 +311,11 @@
         <p class="hero-eyebrow reveal">LOMIERE Skin Booster</p>
         <h1 class="hero-title reveal">
             <span class="ko">과학이 만든<br><em>빛의 성분</em></span>
-            <span class="en">The Science<br>of <em>Luminous Skin</em></span>
+            <span class="en">The Science<br>of <em>Luminous Skin</em></span><span class="ja">輝く肌の<br><em>科学</em></span>
         </h1>
         <p class="hero-subtitle reveal">
             <span class="ko">TXA · PDRN · HA — 임상적으로 검증된 세 가지 핵심 성분이 시너지를 이루어 피부의 근본적인 변화를 이끌어냅니다.</span>
-            <span class="en">TXA · PDRN · HA — three clinically validated ingredients working in synergy to drive fundamental skin transformation.</span>
+            <span class="en">TXA · PDRN · HA — three clinically validated ingredients working in synergy to drive fundamental skin transformation.</span><span class="ja">TXA・PDRN・HA — 臨床的に検証された3つの主要成分が相乗効果を発揮し、肌に根本的な変化をもたらします。</span>
         </p>
     </div>
 </section>
@@ -326,7 +327,7 @@
         <h2 class="section-title">Triple Complex<br><em>Formula</em></h2>
         <p class="section-body">
             <span class="ko">세 가지 핵심 성분이 조화를 이루어 피부의 근본적인 변화를 이끌어냅니다.</span>
-            <span class="en">Three core ingredients work in harmony to drive fundamental transformation within the skin.</span>
+            <span class="en">Three core ingredients work in harmony to drive fundamental transformation within the skin.</span><span class="ja">3つの主要成分が調和を保ちながら、肌に根本的な変化をもたらします。</span>
         </p>
     </div>
     <div class="tech-grid">
@@ -337,7 +338,7 @@
             <p class="tech-name-ko ko">트라넥삼산</p>
             <p class="tech-body">
                 <span class="ko">멜라닌 생성 경로를 차단하여 기미, 잡티, 칙칙한 피부톤을 효과적으로 개선합니다. 항염 효과와 함께 피부 결을 고르게 정돈하여 투명하고 밝은 피부를 만들어냅니다.</span>
-                <span class="en">Inhibits the melanin production pathway to effectively improve dark spots, blemishes, and uneven skin tone. Combined with anti-inflammatory action, it evens skin texture for a transparent, luminous complexion.</span>
+                <span class="en">Inhibits the melanin production pathway to effectively improve dark spots, blemishes, and uneven skin tone. Combined with anti-inflammatory action, it evens skin texture for a transparent, luminous complexion.</span><span class="ja">メラニン生成経路を遮断し、シミ、そばかす、くすんだ肌トーンを効果的に改善します。抗炎症効果とともに肌のきめを均一に整え、透明感あふれる輝きある肌に仕上げます。</span>
             </p>
         </div>
         <div class="tech-card reveal">
@@ -347,7 +348,7 @@
             <p class="tech-name-ko ko">폴리데옥시리보뉴클레오타이드</p>
             <p class="tech-body">
                 <span class="ko">DNA 단편에서 유래한 생체 재생 성분으로, 세포 활성화와 조직 재생을 촉진합니다. 피부 탄력을 강화하고 손상된 피부 장벽 회복을 도와 건강한 피부를 유지시킵니다.</span>
-                <span class="en">A bioregenerative ingredient derived from DNA fragments that promotes cellular activation and tissue regeneration. It strengthens skin elasticity and supports recovery of the damaged skin barrier for healthier, more resilient skin.</span>
+                <span class="en">A bioregenerative ingredient derived from DNA fragments that promotes cellular activation and tissue regeneration. It strengthens skin elasticity and supports recovery of the damaged skin barrier for healthier, more resilient skin.</span><span class="ja">DNA断片に由来する生体再生成分で、細胞の活性化と組織の再生を促進します。肌の弾力を強化し、損傷した肌バリアの回復をサポートして、健康でハリのある肌を維持します。</span>
             </p>
         </div>
         <div class="tech-card reveal">
@@ -357,7 +358,7 @@
             <p class="tech-name-ko ko">히알루론산</p>
             <p class="tech-body">
                 <span class="ko">자체 중량의 1,000배에 달하는 수분을 결합하는 강력한 보습 성분입니다. 피부 진피층까지 수분을 충전하여 풍부한 탄력과 생기 있는 광채 피부를 완성합니다.</span>
-                <span class="en">A powerful moisturizing ingredient that binds up to 1,000 times its own weight in water. It replenishes moisture deep into the dermis for abundant elasticity and a radiant, vibrant glow.</span>
+                <span class="en">A powerful moisturizing ingredient that binds up to 1,000 times its own weight in water. It replenishes moisture deep into the dermis for abundant elasticity and a radiant, vibrant glow.</span><span class="ja">自重の1,000倍もの水分を結合する強力な保湿成分です。肌の真皮層まで水分を充填し、豊かな弾力と生き生きとした輝きある肌を作り上げます。</span>
             </p>
         </div>
     </div>
@@ -373,7 +374,7 @@
         <h2 class="section-title reveal">LOMIERE<br>Skin Booster Vial</h2>
         <p class="section-body reveal">
             <span class="ko">의료 기관 및 전문 에스테틱 센터를 위한 프리미엄 스킨 부스터 바이알. 최적의 농도로 배합된 TXA·PDRN·HA 복합체가 즉각적이고 지속적인 피부 개선 효과를 제공합니다.</span>
-            <span class="en">A premium skin booster vial for medical institutions and professional aesthetic centers. The TXA·PDRN·HA complex, formulated at optimal concentrations, delivers immediate and lasting skin improvement.</span>
+            <span class="en">A premium skin booster vial for medical institutions and professional aesthetic centers. The TXA·PDRN·HA complex, formulated at optimal concentrations, delivers immediate and lasting skin improvement.</span><span class="ja">医療機関および専門エステティックセンター向けのプレミアムスキンブースターバイアル。最適な濃度で配合されたTXA・PDRN・HA複合体が、即効性と持続的な肌改善効果を提供します。</span>
         </p>
         <div class="product-divider reveal"></div>
         <div class="spec-list reveal">
@@ -386,7 +387,7 @@
         </div>
         <a href="contact.html" class="btn btn-gold reveal">
             <span class="ko">제품 문의하기</span>
-            <span class="en">Inquire Now</span>
+            <span class="en">Inquire Now</span><span class="ja">今すぐお問い合わせ</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
     </div>
@@ -398,7 +399,7 @@
         <p class="eyebrow-center">Key Benefits</p>
         <h2 class="section-title">
             <span class="ko">피부가 경험하는<br><em>4가지 변화</em></span>
-            <span class="en">4 Transformations<br>Your Skin <em>Will Experience</em></span>
+            <span class="en">4 Transformations<br>Your Skin <em>Will Experience</em></span><span class="ja">肌が体験する<br><em>4つの変化</em></span>
         </h2>
     </div>
     <div class="effects-grid">
@@ -406,29 +407,29 @@
             <div class="effect-icon">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
             </div>
-            <h3 class="effect-title"><span class="ko">미백 &amp; 광채</span><span class="en">Brightening &amp; Radiance</span></h3>
-            <p class="effect-body"><span class="ko">TXA 성분이 멜라닌 생성을 억제하여 피부톤을 균일하게 정돈하고 자연스러운 광채를 부여합니다.</span><span class="en">TXA inhibits melanin production to even skin tone and reveal a naturally luminous complexion.</span></p>
+            <h3 class="effect-title"><span class="ko">미백 &amp; 광채</span><span class="en">Brightening &amp; Radiance</span><span class="ja">美白＆ラディアンス</span></h3>
+            <p class="effect-body"><span class="ko">TXA 성분이 멜라닌 생성을 억제하여 피부톤을 균일하게 정돈하고 자연스러운 광채를 부여합니다.</span><span class="en">TXA inhibits melanin production to even skin tone and reveal a naturally luminous complexion.</span><span class="ja">TXA成分がメラニン生成を抑制し、肌トーンを均一に整えて自然な輝きを与えます。</span></p>
         </div>
         <div class="effect-card reveal">
             <div class="effect-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h3 class="effect-title"><span class="ko">피부 재생</span><span class="en">Skin Renewal</span></h3>
-            <p class="effect-body"><span class="ko">PDRN이 세포 활성화를 촉진하여 손상된 피부 조직을 복구하고 탄력 있는 피부로 재생합니다.</span><span class="en">PDRN promotes cellular activation to repair damaged skin tissue and renew elasticity.</span></p>
+            <h3 class="effect-title"><span class="ko">피부 재생</span><span class="en">Skin Renewal</span><span class="ja">肌の再生</span></h3>
+            <p class="effect-body"><span class="ko">PDRN이 세포 활성화를 촉진하여 손상된 피부 조직을 복구하고 탄력 있는 피부로 재생합니다.</span><span class="en">PDRN promotes cellular activation to repair damaged skin tissue and renew elasticity.</span><span class="ja">PDRNが細胞の活性化を促進し、損傷した肌組織を修復して弾力ある肌に再生します。</span></p>
         </div>
         <div class="effect-card reveal">
             <div class="effect-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
             </div>
-            <h3 class="effect-title"><span class="ko">집중 보습</span><span class="en">Deep Hydration</span></h3>
-            <p class="effect-body"><span class="ko">HA가 진피층까지 수분을 충전하여 건조하고 처진 피부에 생기와 볼륨감을 되돌려줍니다.</span><span class="en">HA replenishes moisture deep into the dermis, restoring vitality and volume to dry, sagging skin.</span></p>
+            <h3 class="effect-title"><span class="ko">집중 보습</span><span class="en">Deep Hydration</span><span class="ja">集中保湿</span></h3>
+            <p class="effect-body"><span class="ko">HA가 진피층까지 수분을 충전하여 건조하고 처진 피부에 생기와 볼륨감을 되돌려줍니다.</span><span class="en">HA replenishes moisture deep into the dermis, restoring vitality and volume to dry, sagging skin.</span><span class="ja">HAが真皮層まで水分を充填し、乾燥・たるんだ肌に活力とボリューム感を取り戻します。</span></p>
         </div>
         <div class="effect-card reveal">
             <div class="effect-icon">
                 <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
             </div>
-            <h3 class="effect-title"><span class="ko">피부 탄력</span><span class="en">Skin Elasticity</span></h3>
-            <p class="effect-body"><span class="ko">세 성분의 시너지로 콜라겐 합성을 지원하여 피부 탄력과 밀도를 높이고 주름을 완화합니다.</span><span class="en">The synergy of three ingredients supports collagen synthesis, improving skin firmness, density, and reducing fine lines.</span></p>
+            <h3 class="effect-title"><span class="ko">피부 탄력</span><span class="en">Skin Elasticity</span><span class="ja">肌の弾力</span></h3>
+            <p class="effect-body"><span class="ko">세 성분의 시너지로 콜라겐 합성을 지원하여 피부 탄력과 밀도를 높이고 주름을 완화합니다.</span><span class="en">The synergy of three ingredients supports collagen synthesis, improving skin firmness, density, and reducing fine lines.</span><span class="ja">3成分のシナジーによりコラーゲン合成をサポートし、肌の弾力と密度を高め、小じわを和らげます。</span></p>
         </div>
     </div>
 </section>
@@ -438,15 +439,15 @@
     <p class="eyebrow-center reveal">Next Step</p>
     <h2 class="cta-title reveal">
         <span class="ko">파트너십 또는 제품 문의를<br>시작해보세요</span>
-        <span class="en">Start a <em>Partnership</em><br>or Product Inquiry</span>
+        <span class="en">Start a <em>Partnership</em><br>or Product Inquiry</span><span class="ja">パートナーシップまたは<br>製品の<em>お問い合わせを</em></span>
     </h2>
     <div class="cta-btns reveal">
         <a href="contact.html" class="btn btn-dark">
-            <span class="ko">문의하기</span><span class="en">Contact Us</span>
+            <span class="ko">문의하기</span><span class="en">Contact Us</span><span class="ja">お問い合わせ</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="partnership.html" class="btn btn-outline">
-            <span class="ko">파트너십 보기</span><span class="en">View Partnership</span>
+            <span class="ko">파트너십 보기</span><span class="en">View Partnership</span><span class="ja">パートナーシップを見る</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
     </div>
@@ -487,8 +488,8 @@
     <div class="footer-bottom">
         <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved. LOMIERE is a trademark of HOYBIO.</p>
         <div class="footer-links">
-            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
-            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span><span class="ja">利用規約</span></a>
         </div>
     </div>
 </footer>
@@ -498,9 +499,9 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
     }
-    function toggleLang() { applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko'); }
+    function toggleLang() { const c = document.documentElement.dataset.lang || 'ko'; applyLang(c === 'ko' ? 'en' : c === 'en' ? 'ja' : 'ko'); }
     (function() { const s = localStorage.getItem('lomiere-lang'); if (s) applyLang(s); })();
 
     function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }

@@ -34,8 +34,9 @@
         img { display: block; max-width: 100%; }
 
         /* ===== LANGUAGE SWITCH ===== */
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
 
         /* ===== SCROLL REVEAL ===== */
         .reveal {
@@ -747,7 +748,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO</button>
         <div class="nav-hamburger" id="hamburger">
             <span></span><span></span><span></span>
         </div>
@@ -761,13 +762,13 @@
         <p class="hero-page-label">Brand Story</p>
         <h1 class="hero-pull-quote">
             <span class="ko">피그멘테이션에는<br><em>진정한 해답</em>이<br>필요했습니다.</span>
-            <span class="en">Pigmentation<br>deserved a<br><em>real answer.</em></span>
+            <span class="en">Pigmentation<br>deserved a<br><em>real answer.</em></span><span class="ja">色素沈着には<br>真の答えが<br><em>必要でした。</em></span>
         </h1>
         <p class="hero-ingredient-line">TXA &nbsp;·&nbsp; PDRN &nbsp;·&nbsp; HA &nbsp;COMPLEX</p>
     </div>
     <div class="scroll-hint">
         <span class="ko">스크롤</span>
-        <span class="en">Scroll</span>
+        <span class="en">Scroll</span><span class="ja">スクロール</span>
         <div class="scroll-line"></div>
     </div>
 </section>
@@ -785,6 +786,11 @@
             concealed under makeup, masked by filters, accepted as a permanent part of the skin.<br>
             Countless serums promised brightening, yet few addressed <strong>what was actually happening beneath the surface.</strong>
         </span>
+        <span class="ja">
+            あまりにも長い間、肝斑や頑固な色素沈着は、人々がただ<strong>隠すことを学ぶしかないもの</strong>でした —<br>
+            ファンデーションの下に隠し、フィルターで覆い、肌の永久的な一部として受け入れること。<br>
+            数えきれないほどの美容液がブライトニングを約束しましたが、<strong>表面の下で実際に何が起きているのか</strong>を真に解決するものはほとんどありませんでした。
+        </span>
     </p>
 </section>
 
@@ -795,28 +801,29 @@
             <div class="chapter-number">01</div>
             <div class="chapter-label ko">발견</div>
             <div class="chapter-label en">The Discovery</div>
+            <div class="chapter-label ja">発見</div>
             <div class="chapter-vline"></div>
         </div>
         <div class="chapter-right">
             <h2 class="chapter-headline reveal">
                 <span class="ko">트라넥삼산,<br>피부의 <em>새로운 가능성</em></span>
-                <span class="en">Tranexamic Acid,<br>A <em>New Possibility</em> for Skin</span>
+                <span class="en">Tranexamic Acid,<br>A <em>New Possibility</em> for Skin</span><span class="ja">トラネキサム酸、<br>肌への<em>新たな可能性</em></span>
             </h2>
             <div class="chapter-body reveal">
                 <p>
                     <span class="ko">변화는 트라넥삼산을 면밀히 살펴보면서 시작되었습니다. 임상 및 제약 연구에서 완고한 색소 침착을 해결하는 역할로 오랫동안 인정받아온 트라넥삼산은, 일광 유발 및 호르몬성 색소 침착의 근본 원인인 과잉 멜라닌 생성을 촉발하는 <strong>플라스민 활성을 억제</strong>하는 방식으로 작용합니다.</span>
-                    <span class="en">That changed when we looked closely at <strong>Tranexamic Acid</strong>. Long recognized in clinical and pharmaceutical research for its role in addressing stubborn pigmentation, Tranexamic Acid works by calming the <strong>plasmin activity</strong> that triggers excess melanin production — the very mechanism behind sun-induced and hormonal pigmentation.</span>
+                    <span class="en">That changed when we looked closely at <strong>Tranexamic Acid</strong>. Long recognized in clinical and pharmaceutical research for its role in addressing stubborn pigmentation, Tranexamic Acid works by calming the <strong>plasmin activity</strong> that triggers excess melanin production — the very mechanism behind sun-induced and hormonal pigmentation.</span><span class="ja">転機となったのは、<strong>トラネキサム酸</strong>を深く調べ始めたときでした。臨床および製薬研究において、頑固な色素沈着への対処における役割で長年認められてきたトラネキサム酸は、過剰なメラニン生成を引き起こす<strong>プラスミン活性</strong>を抑制することで作用します — 日焼けによる色素沈着やホルモン性色素沈着の根本的なメカニズムです。</span>
                 </p>
             </div>
 
             <div class="question-block reveal">
                 <p class="question-text">
                     <span class="ko">"경구 복용에만 의존하는 대신, 이 검증된 성분을 피부 속으로 직접 전달할 수 있다면 어떨까?"</span>
-                    <span class="en">"What if this well-studied ingredient could be delivered directly into the skin, rather than relying on oral intake alone?"</span>
+                    <span class="en">"What if this well-studied ingredient could be delivered directly into the skin, rather than relying on oral intake alone?"</span><span class="ja">"この研究が進んだ成分を、経口摂取に頼るだけでなく、肌に直接届けることができたなら？"</span>
                 </p>
                 <p class="question-answer">
                     <span class="ko">— 이 질문이 LOMIERE의 탄생 배경이 되었습니다.</span>
-                    <span class="en">— That question became the foundation of LOMIERE.</span>
+                    <span class="en">— That question became the foundation of LOMIERE.</span><span class="ja">— その問いがLOMIEREの誕生背景となりました。</span>
                 </p>
             </div>
         </div>
@@ -836,21 +843,22 @@
             <div class="chapter-number">02</div>
             <div class="chapter-label ko">포뮬러</div>
             <div class="chapter-label en">The Formula</div>
+            <div class="chapter-label ja">フォーミュラ</div>
             <div class="chapter-vline"></div>
         </div>
         <div class="chapter-right">
             <h2 class="chapter-headline reveal">
                 <span class="ko">광채를 위한 복합체:<br><em>PDRN과 HA</em></span>
-                <span class="en">A Complex Built<br>for <em>Radiance: PDRN and HA</em></span>
+                <span class="en">A Complex Built<br>for <em>Radiance: PDRN and HA</em></span><span class="ja">輝きのために構築された<br><em>複合体：PDRNとHA</em></span>
             </h2>
             <div class="chapter-body reveal">
                 <p>
                     <span class="ko">트라넥삼산만으로는 완전한 해답이 될 수 없었습니다. 색소 침착을 진정시키는 것은 방정식의 절반에 불과합니다 — 피부는 또한 회복하고, 재생하며, 내면에서부터 빛나야 합니다.</span>
-                    <span class="en">Tranexamic Acid alone wasn't the full answer. Calming pigmentation is only half the equation — skin also needs to recover, renew, and glow from within.</span>
+                    <span class="en">Tranexamic Acid alone wasn't the full answer. Calming pigmentation is only half the equation — skin also needs to recover, renew, and glow from within.</span><span class="ja">トラネキサム酸だけでは完全な答えにはなりませんでした。色素沈着を鎮めることは方程式の半分に過ぎません — 肌はまた回復し、再生し、内側から輝く必要があります。</span>
                 </p>
                 <p>
                     <span class="ko">연어에서 유래한 <strong>PDRN(폴리데옥시리보뉴클레오타이드)</strong>은 피부 재생을 지원하고 피부 장벽을 강화하는 것으로 글로벌 에스테틱 시장에서 널리 인정받고 있습니다. 깊은 보습과 가시적인 볼륨감을 위한 <strong>히알루론산</strong>과 결합하여, LOMIERE는 단순한 브라이트닝 포뮬러를 넘어 재생 중심의 광채를 위한 완전한 솔루션이 되었습니다.</span>
-                    <span class="en">Salmon-derived <strong>PDRN (Polydeoxyribonucleotide)</strong> is widely valued across global aesthetic markets for supporting skin renewal and strengthening the skin barrier. Paired with <strong>Hyaluronic Acid</strong> for deep hydration and visible plumpness, LOMIERE became more than a brightening formula — it became a complete solution centered on renewal-driven radiance.</span>
+                    <span class="en">Salmon-derived <strong>PDRN (Polydeoxyribonucleotide)</strong> is widely valued across global aesthetic markets for supporting skin renewal and strengthening the skin barrier. Paired with <strong>Hyaluronic Acid</strong> for deep hydration and visible plumpness, LOMIERE became more than a brightening formula — it became a complete solution centered on renewal-driven radiance.</span><span class="ja">サーモン由来の<strong>PDRN（ポリデオキシリボヌクレオチド）</strong>は、肌の再生をサポートし肌バリアを強化することで、グローバルエステティクス市場で広く高く評価されています。深い保湿と目に見えるボリューム感のための<strong>ヒアルロン酸</strong>と組み合わせることで、LOMIEREは単なるブライトニングフォーミュラを超え、再生中心の輝きを目指す完全なソリューションとなりました。</span>
                 </p>
             </div>
         </div>
@@ -861,6 +869,7 @@
 <div class="formula-section">
     <p class="formula-label ko">트리플 복합 포뮬러</p>
     <p class="formula-label en">Triple Complex Formula</p>
+    <p class="formula-label ja">トリプル複合フォーミュラ</p>
     <div class="formula-grid reveal">
         <div class="formula-col">
             <p class="formula-abbr">TXA</p>
@@ -872,7 +881,7 @@
                 <strong class="ko">색소 침착 진정</strong>
                 <strong class="en">Calms Pigmentation</strong>
                 <span class="ko">플라스민 억제를 통한<br>멜라닌 생성 차단</span>
-                <span class="en">Inhibits plasmin to block<br>excess melanin production</span>
+                <span class="en">Inhibits plasmin to block<br>excess melanin production</span><span class="ja">プラスミンを抑制して<br>過剰メラニン生成を遮断</span>
             </div>
         </div>
         <div class="formula-plus">×</div>
@@ -886,7 +895,7 @@
                 <strong class="ko">피부 재생 지원</strong>
                 <strong class="en">Supports Skin Renewal</strong>
                 <span class="ko">세포 활성화 및<br>피부 장벽 강화</span>
-                <span class="en">Activates cells &<br>strengthens skin barrier</span>
+                <span class="en">Activates cells &<br>strengthens skin barrier</span><span class="ja">細胞を活性化し<br>肌バリアを強化</span>
             </div>
         </div>
         <div class="formula-plus">×</div>
@@ -900,7 +909,7 @@
                 <strong class="ko">수분 & 광채 회복</strong>
                 <strong class="en">Restores Hydration & Glow</strong>
                 <span class="ko">진피층 깊은 보습으로<br>빛나는 볼륨 피부</span>
-                <span class="en">Deep dermal hydration<br>for plump, glowing skin</span>
+                <span class="en">Deep dermal hydration<br>for plump, glowing skin</span><span class="ja">真皮層への深い保湿で<br>ハリと輝きのある肌へ</span>
             </div>
         </div>
     </div>
@@ -924,28 +933,29 @@
             <div class="chapter-number">03</div>
             <div class="chapter-label ko">이름의 기원</div>
             <div class="chapter-label en">The Name</div>
+            <div class="chapter-label ja">名前の由来</div>
             <div class="chapter-vline"></div>
         </div>
         <div class="chapter-right">
             <h2 class="chapter-headline reveal">
                 <span class="ko">LOMIERE:<br><em>빛에서 탄생한 이름</em></span>
-                <span class="en">LOMIERE:<br><em>A Name Rooted in Light</em></span>
+                <span class="en">LOMIERE:<br><em>A Name Rooted in Light</em></span><span class="ja">LOMIERE：<br><em>光に根ざした名前</em></span>
             </h2>
             <div class="chapter-body reveal">
                 <p>
                     <span class="ko">'빛'을 의미하는 프랑스어 <strong>lumière</strong>에서 영감을 받은 LOMIERE는 단 하나의 목적으로 탄생했습니다: 피부를 가리는 것이 아니라, 이미 그 안에 있는 광채를 드러내는 것을 돕기 위해.</span>
-                    <span class="en">Inspired by the French word <strong>lumière</strong>, meaning light, LOMIERE was created with a singular purpose: not to mask the skin, but to help reveal the radiance already within it.</span>
+                    <span class="en">Inspired by the French word <strong>lumière</strong>, meaning light, LOMIERE was created with a singular purpose: not to mask the skin, but to help reveal the radiance already within it.</span><span class="ja">「光」を意味するフランス語<strong>lumière</strong>にインスパイアされたLOMIEREは、ただひとつの目的のために生まれました：肌を隠すのではなく、すでに内側にある輝きを引き出すために。</span>
                 </p>
                 <p>
                     <span class="ko">한국의 정밀 포뮬레이션 전문성과 확립된 연구로 뒷받침된 성분들을 기반으로 구축된 LOMIERE는, 전 세계 메디컬 스파와 에스테틱 전문가들이 신뢰하고 자신 있게 추천할 수 있는 스킨 부스터로 설계되었습니다.</span>
-                    <span class="en">Built on Korea's precision formulation expertise and ingredients backed by established research, LOMIERE is designed to be a skin booster that medical spas and aesthetic professionals worldwide can trust and confidently recommend.</span>
+                    <span class="en">Built on Korea's precision formulation expertise and ingredients backed by established research, LOMIERE is designed to be a skin booster that medical spas and aesthetic professionals worldwide can trust and confidently recommend.</span><span class="ja">韓国の精密フォーミュラ専門技術と確立された研究に裏付けられた成分を基盤に構築されたLOMIEREは、世界中のメディカルスパとエステティクスプロフェッショナルが信頼し、自信を持って推奨できるスキンブースターとして設計されています。</span>
                 </p>
             </div>
 
             <div class="closing-statement reveal">
                 <p>
                     <span class="ko">색소 침착은 더 이상 <em>숨겨야 할 것</em>이 아닙니다.<br>LOMIERE와 함께, 그것은 눈에 보이는 변화의 <em>출발점</em>이 됩니다.</span>
-                    <span class="en">Pigmentation is no longer something <em>to hide.</em><br>With LOMIERE, it becomes the starting point for <em>visible transformation.</em></span>
+                    <span class="en">Pigmentation is no longer something <em>to hide.</em><br>With LOMIERE, it becomes the starting point for <em>visible transformation.</em></span><span class="ja">色素沈着はもはや<em>隠すべきもの</em>ではありません。<br>LOMIEREとともに、それは<em>目に見える変化</em>の出発点となります。</span>
                 </p>
             </div>
         </div>
@@ -956,25 +966,25 @@
 <section id="story-cta">
     <p class="cta-eyebrow">
         <span class="ko">제품 알아보기</span>
-        <span class="en">Discover the Product</span>
+        <span class="en">Discover the Product</span><span class="ja">製品を知る</span>
     </p>
     <h2 class="cta-title reveal">
         <span class="ko">LOMIERE를 경험해 보세요</span>
-        <span class="en">Experience LOMIERE</span>
+        <span class="en">Experience LOMIERE</span><span class="ja">LOMIEREを体験</span>
     </h2>
     <p class="cta-body reveal">
         <span class="ko">스킨 부스터 바이알 — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span>
-        <span class="en">Skin Booster Vial — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span>
+        <span class="en">Skin Booster Vial — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span><span class="ja">スキンブースターバイアル — TXA · PDRN · HA COMPLEX<br>4ml × 4 Vials</span>
     </p>
     <div class="cta-buttons reveal">
         <a href="product.html" class="btn btn-dark">
             <span class="ko">제품 보기</span>
-            <span class="en">View Product</span>
+            <span class="en">View Product</span><span class="ja">製品を見る</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="contact.html" class="btn btn-outline">
             <span class="ko">파트너십 문의</span>
-            <span class="en">Partnership Inquiry</span>
+            <span class="en">Partnership Inquiry</span><span class="ja">パートナーシップのお問い合わせ</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
     </div>
@@ -1002,13 +1012,13 @@
                 <p>Email: info@holypathglobal.com</p>
                 <p>&nbsp;</p>
                 <p class="ko">제품 및 파트너십 문의</p>
-                <p class="en">Product & Partnership Inquiries</p>
+                <p class="en">Product & Partnership Inquiries</p><p class="ja">製品・パートナーシップのお問い合わせ</p>
                 <p>B2B / OEM / ODM</p>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <p class="ko">주식회사 호이바이오</p>
-                <p class="en">HOYBIO Co., Ltd.</p>
+                <p class="en">HOYBIO Co., Ltd.</p><p class="ja">HOYBIO Co., Ltd.</p>
                 <p>Republic of Korea</p>
                 <p>Made in Korea</p>
             </div>
@@ -1019,11 +1029,11 @@
         <div class="footer-links">
             <a href="#">
                 <span class="ko">개인정보처리방침</span>
-                <span class="en">Privacy Policy</span>
+                <span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span>
             </a>
             <a href="#">
                 <span class="ko">이용약관</span>
-                <span class="en">Terms</span>
+                <span class="en">Terms</span><span class="ja">利用規約</span>
             </a>
         </div>
     </div>
@@ -1036,11 +1046,11 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
     }
     function toggleLang() {
         const current = document.documentElement.dataset.lang || 'ko';
-        applyLang(current === 'ko' ? 'en' : 'ko');
+        applyLang(current === 'ko' ? 'en' : current === 'en' ? 'ja' : 'ko');
     }
     // Restore saved language on load
     (function() {

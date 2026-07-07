@@ -27,8 +27,9 @@
         }
 
         /* ===== LANGUAGE SWITCH ===== */
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
 
         html { scroll-behavior: smooth; }
 
@@ -644,7 +645,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()" style="background:none;border:none;cursor:pointer;font-family:inherit;">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()" style="background:none;border:none;cursor:pointer;font-family:inherit;">KO</button>
         <div class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
             <span></span><span></span><span></span>
         </div>
@@ -661,12 +662,12 @@
         <p class="eyebrow reveal">HOYBIO Presents</p>
         <h1 class="hero-title reveal">
             <span class="ko">피부 안의<br><em>빛을</em><br>깨우다</span>
-            <span class="en">Illuminate<br>Your Skin's<br><em>Inner Light</em></span>
+            <span class="en">Illuminate<br>Your Skin's<br><em>Inner Light</em></span><span class="ja">肌の奥から<br>内なる光を<br><em>呼び覚ます</em></span>
         </h1>
         <div class="hero-divider reveal"></div>
         <p class="hero-desc reveal">
             <span class="ko">TXA · PDRN · HA 트리플 복합 성분이 피부 깊은 곳에서부터 발광하는 아름다움을 깨웁니다. 임상적으로 검증된 성분의 시너지로 미백·재생·보습을 동시에 실현합니다.</span>
-            <span class="en">TXA · PDRN · HA Triple Complex awakens luminous beauty from deep within. Clinically validated ingredients work in synergy for brightening, renewal, and hydration — all at once.</span>
+            <span class="en">TXA · PDRN · HA Triple Complex awakens luminous beauty from deep within. Clinically validated ingredients work in synergy for brightening, renewal, and hydration — all at once.</span><span class="ja">TXA・PDRN・HAトリプル複合成分が、肌の深部から発光の美しさを呼び覚まします。臨床的に検証された成分がシナジー効果を発揮し、美白・再生・保湿をすべて同時に実現します。</span>
         </p>
         <div class="hero-complex reveal">
             <div class="complex-tag">TXA</div>
@@ -675,7 +676,7 @@
         </div>
         <a href="product.html" class="btn btn-white-outline reveal">
             <span class="ko">LOMIERE 알아보기</span>
-            <span class="en">Discover LOMIERE</span>
+            <span class="en">Discover LOMIERE</span><span class="ja">LOMIEREを知る</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
     </div>
@@ -730,16 +731,16 @@
         <p class="eyebrow reveal">Brand Story</p>
         <h2 class="section-title reveal">
             <span class="ko">빛을 품은<br><em>피부의 이야기</em></span>
-            <span class="en">The Story of Skin<br>That Holds <em>Light</em></span>
+            <span class="en">The Story of Skin<br>That Holds <em>Light</em></span><span class="ja">光を宿す<br><em>肌のストーリー</em></span>
         </h2>
         <p class="section-body reveal">
             <span class="ko">LOMIERE는 프랑스어로 '빛'을 의미합니다. 우리는 피부 본연의 빛을 되살리는 것을 목표로, 최첨단 바이오테크놀로지와 임상적으로 검증된 성분을 결합하여 탄생한 프리미엄 스킨 부스터 브랜드입니다.</span>
-            <span class="en">LOMIERE is inspired by the French word lumière, meaning light. Born from the union of cutting-edge biotechnology and clinically validated ingredients, LOMIERE is a premium skin booster brand dedicated to restoring the skin's natural radiance.</span>
+            <span class="en">LOMIERE is inspired by the French word lumière, meaning light. Born from the union of cutting-edge biotechnology and clinically validated ingredients, LOMIERE is a premium skin booster brand dedicated to restoring the skin's natural radiance.</span><span class="ja">LOMIEREはフランス語「lumière（光）」にインスパイアされています。最先端のバイオテクノロジーと臨床的に検証された成分の融合から生まれた、プレミアムスキンブースターブランドです。</span>
         </p>
         <br>
         <p class="section-body reveal">
             <span class="ko">HOYBIO의 연구진은 TXA(트라넥삼산), PDRN(폴리데옥시리보뉴클레오타이드), HA(히알루론산) 세 가지 핵심 성분의 시너지 효과를 극대화하여, 미백·재생·보습의 트리플 케어를 한 번에 실현했습니다.</span>
-            <span class="en">HOYBIO's research team maximized the synergy of three core ingredients — TXA (Tranexamic Acid), PDRN (Polydeoxyribonucleotide), and HA (Hyaluronic Acid) — to deliver triple-action care: brightening, renewal, and hydration in one formulation.</span>
+            <span class="en">HOYBIO's research team maximized the synergy of three core ingredients — TXA (Tranexamic Acid), PDRN (Polydeoxyribonucleotide), and HA (Hyaluronic Acid) — to deliver triple-action care: brightening, renewal, and hydration in one formulation.</span><span class="ja">HOYBIOの研究チームは、TXA（トラネキサム酸）、PDRN（ポリデオキシリボヌクレオチド）、HA（ヒアルロン酸）の3つの主要成分のシナジー効果を最大化し、美白・再生・保湿のトリプルケアをひとつの処方で実現しました。</span>
         </p>
         <div class="story-stats reveal">
             <div class="stat-box">
@@ -771,11 +772,11 @@
             <p style="font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Product</p>
             <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:20px;">
                 <span class="ko">LOMIERE<br><em>스킨 부스터 바이알</em></span>
-                <span class="en">LOMIERE<br><em>Skin Booster Vial</em></span>
+                <span class="en">LOMIERE<br><em>Skin Booster Vial</em></span><span class="ja">LOMIERE<br><em>スキンブースターバイアル</em></span>
             </h2>
             <p style="font-size:11px;font-weight:300;letter-spacing:0.06em;color:rgba(247,243,237,0.45);margin-bottom:32px;">TXA · PDRN · HA Complex · 4ml × 4 Vials</p>
             <span style="display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">
-                <span class="ko">자세히 보기</span><span class="en">View Product</span>
+                <span class="ko">자세히 보기</span><span class="en">View Product</span><span class="ja">製品を見る</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
         </div>
@@ -787,11 +788,11 @@
             <p style="font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Partnership</p>
             <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--charcoal);line-height:1.15;margin-bottom:20px;">
                 <span class="ko">글로벌<br><em>파트너십</em></span>
-                <span class="en">Global<br><em>Partnership</em></span>
+                <span class="en">Global<br><em>Partnership</em></span><span class="ja">グローバル<br><em>パートナーシップ</em></span>
             </h2>
             <p style="font-size:11px;font-weight:300;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:32px;">OEM · ODM · Distribution · Private Label</p>
             <span style="display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">
-                <span class="ko">파트너십 보기</span><span class="en">View Partnership</span>
+                <span class="ko">파트너십 보기</span><span class="en">View Partnership</span><span class="ja">パートナーシップを見る</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
         </div>
@@ -851,11 +852,11 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
     }
     function toggleLang() {
         const current = document.documentElement.dataset.lang || 'ko';
-        applyLang(current === 'ko' ? 'en' : 'ko');
+        applyLang(current === 'ko' ? 'en' : current === 'en' ? 'ja' : 'ko');
     }
     (function() {
         const saved = localStorage.getItem('lomiere-lang');

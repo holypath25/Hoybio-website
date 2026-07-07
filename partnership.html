@@ -25,8 +25,9 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--charcoal); overflow-x: hidden; }
         img { display: block; max-width: 100%; }
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
         .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -252,7 +253,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO</button>
         <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
 </nav>
@@ -264,11 +265,11 @@
         <p class="hero-eyebrow reveal">Global Partnership</p>
         <h1 class="hero-title reveal">
             <span class="ko">함께 성장하는<br><em>글로벌 파트너십</em></span>
-            <span class="en">Growing Together<br>Through <em>Global Partnership</em></span>
+            <span class="en">Growing Together<br>Through <em>Global Partnership</em></span><span class="ja">共に成長する<br><em>グローバルパートナーシップ</em></span>
         </h1>
         <p class="hero-subtitle reveal">
             <span class="ko">HOYBIO는 글로벌 파트너와 함께 LOMIERE의 가치를 전 세계에 전달합니다. 귀사의 비즈니스에 최적화된 맞춤형 파트너십을 제안합니다.</span>
-            <span class="en">HOYBIO delivers the value of LOMIERE to the world alongside global partners. We offer tailored partnership solutions optimized for your business.</span>
+            <span class="en">HOYBIO delivers the value of LOMIERE to the world alongside global partners. We offer tailored partnership solutions optimized for your business.</span><span class="ja">HOYBIOはグローバルパートナーと共に、LOMIEREの価値を世界へ届けます。貴社のビジネスに最適化されたパートナーシップソリューションを提供します。</span>
         </p>
     </div>
 </section>
@@ -278,11 +279,11 @@
     <p class="eyebrow reveal">Why LOMIERE</p>
     <h2 class="section-title reveal">
         <span class="ko">K-뷰티의 가치를<br><em>함께 전하세요</em></span>
-        <span class="en">Bring the Value of<br><em>K-Beauty Together</em></span>
+        <span class="en">Bring the Value of<br><em>K-Beauty Together</em></span><span class="ja">K-ビューティーの価値を<br><em>共に届けましょう</em></span>
     </h2>
     <p class="section-body reveal">
         <span class="ko">OEM/ODM부터 브랜드 라이선스까지, HOYBIO는 귀사의 비즈니스 단계에 맞는 최적의 파트너십 모델을 제공합니다. GMP 인증 시설에서 생산된 LOMIERE의 검증된 포뮬러를 기반으로 글로벌 시장에서 경쟁력을 갖추세요.</span>
-        <span class="en">From OEM/ODM to brand licensing, HOYBIO provides the optimal partnership model for your stage of business. Build global market competitiveness on the foundation of LOMIERE's validated formula, produced in a GMP-certified facility.</span>
+        <span class="en">From OEM/ODM to brand licensing, HOYBIO provides the optimal partnership model for your stage of business. Build global market competitiveness on the foundation of LOMIERE's validated formula, produced in a GMP-certified facility.</span><span class="ja">OEM/ODMからブランドライセンスまで、HOYBIOはお客様のビジネスステージに合った最適なパートナーシップモデルを提供します。GMP認定施設で生産されたLOMIEREの検証済みフォーミュラを基盤に、グローバル市場での競争力を構築しましょう。</span>
     </p>
 </div>
 
@@ -295,7 +296,7 @@
             <p class="partner-sub">Private Manufacturing</p>
             <p class="partner-body">
                 <span class="ko">자사 브랜드로 LOMIERE 포뮬러를 활용하세요. GMP 인증 시설에서 생산되는 고품질 제품을 귀사의 브랜드로 공급해 드립니다. 최소 발주 수량부터 유연하게 협의 가능합니다.</span>
-                <span class="en">Leverage the LOMIERE formula under your own brand. We supply high-quality products manufactured in GMP-certified facilities under your label. Minimum order quantities are flexible and negotiable.</span>
+                <span class="en">Leverage the LOMIERE formula under your own brand. We supply high-quality products manufactured in GMP-certified facilities under your label. Minimum order quantities are flexible and negotiable.</span><span class="ja">自社ブランドでLOMIEREフォーミュラをご活用ください。GMP認定施設で製造された高品質製品を貴社ブランドで供給します。最小発注数量から柔軟にご相談いただけます。</span>
             </p>
         </div>
         <div class="partner-card reveal">
@@ -304,7 +305,7 @@
             <p class="partner-sub">Exclusive Partnership</p>
             <p class="partner-body">
                 <span class="ko">아시아, 중동, 유럽 시장을 위한 독점 유통 파트너십을 체결하세요. 전문적인 마케팅 지원과 함께 글로벌 네트워크를 확장하고 현지 시장에 성공적으로 진출합니다.</span>
-                <span class="en">Establish exclusive distribution partnerships for Asia, Middle East, and European markets. Expand your global network with professional marketing support and successfully enter local markets.</span>
+                <span class="en">Establish exclusive distribution partnerships for Asia, Middle East, and European markets. Expand your global network with professional marketing support and successfully enter local markets.</span><span class="ja">アジア、中東、欧州市場向けの独占販売パートナーシップを締結しましょう。専門的なマーケティングサポートとともにグローバルネットワークを拡大し、現地市場へ成功裏に参入します。</span>
             </p>
         </div>
         <div class="partner-card reveal">
@@ -313,7 +314,7 @@
             <p class="partner-sub">Brand Building</p>
             <p class="partner-body">
                 <span class="ko">LOMIERE의 검증된 포뮬러를 기반으로 귀사만의 프리미엄 스킨케어 라인을 구축하세요. 패키지 디자인부터 브랜딩까지 원스톱으로 지원합니다.</span>
-                <span class="en">Build your own premium skincare line based on LOMIERE's validated formula. We provide one-stop support from package design to complete branding.</span>
+                <span class="en">Build your own premium skincare line based on LOMIERE's validated formula. We provide one-stop support from package design to complete branding.</span><span class="ja">LOMIEREの検証済みフォーミュラを基盤に、貴社独自のプレミアムスキンケアラインを構築しましょう。パッケージデザインからブランディングまで、ワンストップでサポートします。</span>
             </p>
         </div>
     </div>
@@ -326,11 +327,11 @@
             <p class="eyebrow reveal">Global Presence</p>
             <h2 class="section-title reveal">
                 <span class="ko">글로벌 시장으로<br><em>확장하세요</em></span>
-                <span class="en">Expand to<br><em>Global Markets</em></span>
+                <span class="en">Expand to<br><em>Global Markets</em></span><span class="ja">グローバル市場へ<br><em>展開しましょう</em></span>
             </h2>
             <p class="section-body reveal">
                 <span class="ko">HOYBIO는 미국, 캐나다, 호주, EU를 비롯한 글로벌 시장에서 LOMIERE를 공급하고 있습니다.</span>
-                <span class="en">HOYBIO supplies LOMIERE across global markets including the US, Canada, Australia, and the EU.</span>
+                <span class="en">HOYBIO supplies LOMIERE across global markets including the US, Canada, Australia, and the EU.</span><span class="ja">HOYBIOは米国、カナダ、オーストラリア、EUをはじめとするグローバル市場でLOMIEREを供給しています。</span>
             </p>
         </div>
         <div class="markets-grid">
@@ -363,19 +364,19 @@
     <p class="eyebrow-center reveal">Start Today</p>
     <h2 class="cta-title reveal">
         <span class="ko">파트너십 문의를<br><em>시작해보세요</em></span>
-        <span class="en">Begin Your<br><em>Partnership Journey</em></span>
+        <span class="en">Begin Your<br><em>Partnership Journey</em></span><span class="ja">パートナーシップの<br><em>旅を始めましょう</em></span>
     </h2>
     <p class="cta-desc reveal">
         <span class="ko">귀사의 비즈니스 목표와 규모에 맞는 최적의 파트너십 모델을 함께 설계하겠습니다.</span>
-        <span class="en">We'll design the optimal partnership model together, tailored to your business goals and scale.</span>
+        <span class="en">We'll design the optimal partnership model together, tailored to your business goals and scale.</span><span class="ja">貴社のビジネス目標と規模に合った最適なパートナーシップモデルを一緒に設計いたします。</span>
     </p>
     <div class="cta-btns reveal">
         <a href="contact.html" class="btn btn-dark">
-            <span class="ko">파트너십 문의하기</span><span class="en">Inquire About Partnership</span>
+            <span class="ko">파트너십 문의하기</span><span class="en">Inquire About Partnership</span><span class="ja">パートナーシップについてお問い合わせ</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="product.html" class="btn btn-outline">
-            <span class="ko">제품 살펴보기</span><span class="en">View Product</span>
+            <span class="ko">제품 살펴보기</span><span class="en">View Product</span><span class="ja">製品を見る</span>
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
     </div>
@@ -416,8 +417,8 @@
     <div class="footer-bottom">
         <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved. LOMIERE is a trademark of HOYBIO.</p>
         <div class="footer-links">
-            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
-            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span><span class="ja">利用規約</span></a>
         </div>
     </div>
 </footer>
@@ -427,9 +428,9 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
     }
-    function toggleLang() { applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko'); }
+    function toggleLang() { const c = document.documentElement.dataset.lang || 'ko'; applyLang(c === 'ko' ? 'en' : c === 'en' ? 'ja' : 'ko'); }
     (function() { const s = localStorage.getItem('lomiere-lang'); if (s) applyLang(s); })();
 
     function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }

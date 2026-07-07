@@ -27,8 +27,9 @@
         body { font-family: 'Montserrat', sans-serif; background: var(--charcoal); color: var(--cream); overflow-x: hidden; }
         img { display: block; max-width: 100%; }
 
-        html[data-lang="ko"] .en { display: none !important; }
-        html[data-lang="en"] .ko { display: none !important; }
+        html[data-lang="ko"] .en, html[data-lang="ko"] .ja { display: none !important; }
+        html[data-lang="en"] .ko, html[data-lang="en"] .ja { display: none !important; }
+        html[data-lang="ja"] .ko, html[data-lang="ja"] .en { display: none !important; }
 
         .reveal {
             opacity: 0; transform: translateY(32px);
@@ -422,7 +423,7 @@
         <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
     <div class="nav-right">
-        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO | EN</button>
+        <button class="nav-lang" id="langToggle" onclick="toggleLang()">KO</button>
         <div class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
             <span></span><span></span><span></span>
         </div>
@@ -435,15 +436,15 @@
     <div class="hero-content">
         <p class="hero-eyebrow reveal">
             <span class="ko">문의하기</span>
-            <span class="en">Get in Touch</span>
+            <span class="en">Get in Touch</span><span class="ja">お問い合わせ</span>
         </p>
         <h1 class="hero-title reveal">
             <span class="ko">함께<br><em>시작합시다</em></span>
-            <span class="en">Let's Start<br><em>Together</em></span>
+            <span class="en">Let's Start<br><em>Together</em></span><span class="ja">一緒に<br><em>始めましょう</em></span>
         </h1>
         <p class="hero-subtitle reveal">
             <span class="ko">제품 문의부터 글로벌 파트너십까지 — 여러분의 연락을 기다리고 있습니다.</span>
-            <span class="en">From product inquiries to global partnerships — we look forward to hearing from you.</span>
+            <span class="en">From product inquiries to global partnerships — we look forward to hearing from you.</span><span class="ja">製品のお問い合わせからグローバルパートナーシップまで — ご連絡をお待ちしています。</span>
         </p>
     </div>
 </section>
@@ -456,11 +457,11 @@
         <div class="contact-left reveal">
             <h2>
                 <span class="ko">LOMIERE와 함께<br>새로운 뷰티를<br>만들어가세요</span>
-                <span class="en">Create New Beauty<br>Together with<br>LOMIERE</span>
+                <span class="en">Create New Beauty<br>Together with<br>LOMIERE</span><span class="ja">LOMIEREと共に<br>新しいビューティーを<br>創りましょう</span>
             </h2>
             <p>
                 <span class="ko">제품 문의, 파트너십 협력, B2B 거래 모두 환영합니다. 아래 양식을 작성해 주시면 빠르게 답변 드리겠습니다.</span>
-                <span class="en">Product inquiries, partnership collaboration, and B2B transactions are all welcome. Fill in the form and we'll get back to you promptly.</span>
+                <span class="en">Product inquiries, partnership collaboration, and B2B transactions are all welcome. Fill in the form and we'll get back to you promptly.</span><span class="ja">製品のお問い合わせ、パートナーシップ協力、B2B取引はすべて歓迎します。フォームにご記入いただければ、迅速に回答いたします。</span>
             </p>
             <div class="contact-divider"></div>
             <div class="contact-info-card">
@@ -498,11 +499,11 @@
                     <div class="contact-info-text">
                         <span class="contact-info-label">
                             <span class="ko">응답 시간</span>
-                            <span class="en">Response Time</span>
+                            <span class="en">Response Time</span><span class="ja">返答時間</span>
                         </span>
                         <span class="contact-info-value">
                             <span class="ko">영업일 기준 1–2일 이내</span>
-                            <span class="en">Within 1–2 business days</span>
+                            <span class="en">Within 1–2 business days</span><span class="ja">営業日1〜2日以内</span>
                         </span>
                     </div>
                 </div>
@@ -513,14 +514,14 @@
         <div class="reveal">
             <p class="form-section-label">
                 <span class="ko">문의 양식</span>
-                <span class="en">Inquiry Form</span>
+                <span class="en">Inquiry Form</span><span class="ja">お問い合わせフォーム</span>
             </p>
             <div id="formWrapper">
                 <form class="inquiry-form" id="inquiryForm" novalidate>
                     <div class="form-group">
                         <label class="form-label" for="inq-name">
                             <span class="ko">이름 / 담당자명 *</span>
-                            <span class="en">Name *</span>
+                            <span class="en">Name *</span><span class="ja">お名前 / 担当者名 *</span>
                         </label>
                         <input class="form-input" id="inq-name" name="name" type="text" required
                             placeholder="Hong Gildong / 홍길동">
@@ -529,7 +530,7 @@
                         <div class="form-group">
                             <label class="form-label" for="inq-email">
                                 <span class="ko">이메일 *</span>
-                                <span class="en">Email *</span>
+                                <span class="en">Email *</span><span class="ja">メールアドレス *</span>
                             </label>
                             <input class="form-input" id="inq-email" name="email" type="email" required
                                 placeholder="email@company.com">
@@ -537,7 +538,7 @@
                         <div class="form-group">
                             <label class="form-label" for="inq-company">
                                 <span class="ko">회사명</span>
-                                <span class="en">Company</span>
+                                <span class="en">Company</span><span class="ja">会社名</span>
                             </label>
                             <input class="form-input" id="inq-company" name="company" type="text"
                                 placeholder="Company name">
@@ -546,32 +547,38 @@
                     <div class="form-group">
                         <label class="form-label" for="inq-type">
                             <span class="ko">문의 유형 *</span>
-                            <span class="en">Inquiry Type *</span>
+                            <span class="en">Inquiry Type *</span><span class="ja">お問い合わせの種類 *</span>
                         </label>
-                        <select class="form-select" id="inq-type" name="inquiry_type" required>
-                            <option value="" disabled selected>선택해주세요 / Please select</option>
-                            <option value="Product Inquiry">제품 문의 / Product Inquiry</option>
-                            <option value="Partnership">파트너십 / Partnership</option>
+                        <select class="form-select" id="inq-type" name="inquiry_type" required
+                            data-ko-0="선택해주세요" data-en-0="Please select" data-ja-0="選択してください"
+                            data-ko-1="제품 문의" data-en-1="Product Inquiry" data-ja-1="製品のお問い合わせ"
+                            data-ko-2="파트너십" data-en-2="Partnership" data-ja-2="パートナーシップ"
+                            data-ko-3="B2B / 도매" data-en-3="B2B / Wholesale" data-ja-3="B2B / 卸売"
+                            data-ko-4="OEM / ODM" data-en-4="OEM / ODM" data-ja-4="OEM / ODM"
+                            data-ko-5="기타" data-en-5="Other" data-ja-5="その他">
+                            <option value="" disabled selected>선택해주세요</option>
+                            <option value="Product Inquiry">제품 문의</option>
+                            <option value="Partnership">파트너십</option>
                             <option value="B2B / Wholesale">B2B / 도매</option>
                             <option value="OEM / ODM">OEM / ODM</option>
-                            <option value="Other">기타 / Other</option>
+                            <option value="Other">기타</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="inq-message">
                             <span class="ko">문의 내용 *</span>
-                            <span class="en">Message *</span>
+                            <span class="en">Message *</span><span class="ja">メッセージ *</span>
                         </label>
                         <textarea class="form-textarea" id="inq-message" name="message" required
                             placeholder="문의하실 내용을 자유롭게 적어주세요 / Please describe your inquiry in detail."></textarea>
                     </div>
                     <p class="form-error-msg" id="formError">
                         <span class="ko">필수 항목을 모두 입력해 주세요.</span>
-                        <span class="en">Please fill in all required fields.</span>
+                        <span class="en">Please fill in all required fields.</span><span class="ja">必須項目をすべてご入力ください。</span>
                     </p>
                     <button type="submit" class="form-submit" id="formSubmitBtn">
                         <span class="ko">문의 보내기</span>
-                        <span class="en">Send Inquiry</span>
+                        <span class="en">Send Inquiry</span><span class="ja">送信する</span>
                         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </button>
                 </form>
@@ -582,11 +589,11 @@
                 </div>
                 <h3>
                     <span class="ko">문의가 전달되었습니다</span>
-                    <span class="en">Inquiry Sent</span>
+                    <span class="en">Inquiry Sent</span><span class="ja">お問い合わせを受け付けました</span>
                 </h3>
                 <p>
                     <span class="ko">빠른 시일 내에 담당자가 회신 드리겠습니다.<br>감사합니다.</span>
-                    <span class="en">Our team will get back to you shortly.<br>Thank you.</span>
+                    <span class="en">Our team will get back to you shortly.<br>Thank you.</span><span class="ja">担当者より折り返しご連絡いたします。<br>ありがとうございます。</span>
                 </p>
             </div>
         </div>
@@ -615,7 +622,7 @@
                 <p>Email: info@holypathglobal.com</p>
                 <p>&nbsp;</p>
                 <p class="ko">제품 및 파트너십 문의</p>
-                <p class="en">Product &amp; Partnership Inquiries</p>
+                <p class="en">Product &amp; Partnership Inquiries</p><p class="ja">製品・パートナーシップのお問い合わせ</p>
                 <p>B2B / OEM / ODM</p>
             </div>
             <div class="footer-col">
@@ -631,8 +638,8 @@
     <div class="footer-bottom">
         <p class="footer-copy">© 2025 HOYBIO Co., Ltd. All Rights Reserved. LOMIERE is a trademark of HOYBIO.</p>
         <div class="footer-links">
-            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
-            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span></a>
+            <a href="#"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span></a>
+            <a href="#"><span class="ko">이용약관</span><span class="en">Terms</span><span class="ja">利用規約</span></a>
         </div>
     </div>
 </footer>
@@ -644,10 +651,19 @@
         document.documentElement.dataset.lang = lang;
         localStorage.setItem('lomiere-lang', lang);
         const btn = document.getElementById('langToggle');
-        if (btn) btn.textContent = lang === 'ko' ? 'KO | EN' : 'EN | KO';
+        if (btn) btn.textContent = lang === 'ko' ? 'KO' : lang === 'en' ? 'EN' : 'JA';
+        // Update select options
+        const sel = document.getElementById('inq-type');
+        if (sel) {
+            sel.options[0].text = sel.getAttribute(`data-${lang}-0`) || sel.options[0].text;
+            for (let i = 1; i < sel.options.length; i++) {
+                sel.options[i].text = sel.getAttribute(`data-${lang}-${i}`) || sel.options[i].text;
+            }
+        }
     }
     function toggleLang() {
-        applyLang(document.documentElement.dataset.lang === 'ko' ? 'en' : 'ko');
+        const c = document.documentElement.dataset.lang || 'ko';
+        applyLang(c === 'ko' ? 'en' : c === 'en' ? 'ja' : 'ko');
     }
     (function() {
         const saved = localStorage.getItem('lomiere-lang');
